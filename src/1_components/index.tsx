@@ -87,7 +87,7 @@ export function IndexScreen() {
             <SafeAreaView>
 
             <StatusBar barStyle="light-content" backgroundColor={indexStyle.statusbar.backgroundColor} />
-                
+
             {
                 connection
                 ? <Text style={indexStyle.textexample}>{JSON.stringify(data.weather[0].main)}</Text>
@@ -97,8 +97,8 @@ export function IndexScreen() {
             </SafeAreaView>
 
         </View>
-        
+
     );
-    
+
 };
 // -------------------------------------------------------------------------------------
