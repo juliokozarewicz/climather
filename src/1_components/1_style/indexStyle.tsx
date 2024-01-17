@@ -17,12 +17,24 @@ export default StyleSheet.create(
         backgroundColor: colors.gray1,
     },
 
+    statusbar: {
+      backgroundColor: colors.purple,
+    },
+
+
+
+
+
+
+
+    
+
     textexample: {
       marginTop: 200,
 
-      fontSize: 30,
+      fontSize: 15,
 
-      color: colors.gray5,
+      color: colors.purple,
 
       fontFamily: 'title',
     },
