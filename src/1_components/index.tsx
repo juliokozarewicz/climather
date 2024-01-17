@@ -90,7 +90,7 @@ export function IndexScreen() {
 
             {
                 connection
-                ? <Text style={indexStyle.textexample}>{JSON.stringify(data.weather[0].main)}</Text>
+                ? <Text style={indexStyle.textexample}>{data.weather[0].main}</Text>
                 : null
             }
 
