@@ -36,6 +36,7 @@ export function IndexScreen() {
 
         // request api data
         const [data, setData] = useState();
+        const [connection, setConnection] = useState(false);
         const [errorGetData, setErrorGetData] = useState(false);
         const [errorGetDataMSG, setErrorGetDataMSG] = useState('');
         const [reloadDataAPI, setReloadDataAPI] = useState(0);
@@ -60,10 +61,12 @@ export function IndexScreen() {
                 
                 setErrorGetData(false);
                 setData(result);
+                setConnection(true);
             
             } else {
 
                 setErrorGetData(true);
+                setConnection(false);
                 setErrorGetDataMSG('Falha na comunicação.');
 
             };
@@ -84,8 +87,12 @@ export function IndexScreen() {
             <SafeAreaView>
 
             <StatusBar barStyle="light-content" backgroundColor={indexStyle.statusbar.backgroundColor} />
-
-                <Text style={indexStyle.textexample}>{JSON.stringify(data)}</Text>
+                
+            {
+                connection
+                ? <Text style={indexStyle.textexample}>{JSON.stringify(data.weather[0].main)}</Text>
+                : null
+            }
 
             </SafeAreaView>
 
