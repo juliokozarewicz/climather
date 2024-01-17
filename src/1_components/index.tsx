@@ -38,6 +38,14 @@ export function IndexScreen() {
         const [data, setData] = useState();
         const [errorGetData, setErrorGetData] = useState(false);
         const [errorGetDataMSG, setErrorGetDataMSG] = useState('');
+        const [reloadDataAPI, setReloadDataAPI] = useState(0);
+    // -------------------------------------------------------------------------------------
+
+    // api request
+    // -------------------------------------------------------------------------------------
+    const reloadViewFunc = () => {
+        setReloadDataAPI(prevFlag => prevFlag + 1);
+    };
     // -------------------------------------------------------------------------------------
     
     // api request
@@ -49,13 +57,14 @@ export function IndexScreen() {
             const result = await getDataWeather();
 
             if (result && result.cod === 200) {
-            
+                
+                setErrorGetData(false);
                 setData(result);
             
             } else {
 
                 setErrorGetData(true);
-                setErrorGetDataMSG('Falha na comunicação. Falha na comunicação.Falha na comunicação.Falha na comunicação. Falha na comunicação.');
+                setErrorGetDataMSG('Falha na comunicação.');
 
             };
 
@@ -63,14 +72,14 @@ export function IndexScreen() {
 
         fetchDataFromApi();
 
-    }, []);
+    }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
 
     return (
 
-        <View style={indexStyle.allcontent}>
+        <View style={indexStyle.allcontent} key={reloadDataAPI}>
 
-            <SplashError errorGetData={errorGetData} errorGetDataMSG={errorGetDataMSG} />
+            <SplashError errorGetData={errorGetData} errorGetDataMSG={errorGetDataMSG} setErrorGetData={setErrorGetData} reloadViewFunc={reloadViewFunc}/>
 
             <SafeAreaView>
 

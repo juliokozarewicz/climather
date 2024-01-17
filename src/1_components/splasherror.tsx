@@ -5,6 +5,7 @@ import React, {
 import {
     View,
     Text,
+    TouchableWithoutFeedback,
 } from 'react-native';
 
 // import style sheet
@@ -27,16 +28,22 @@ export function SplashError(props) {
                 ?
                 
                     <View style={splasherrorStyle.splashall}>
-                        <View style={splasherrorStyle.msgerror}>
-                            <Text
-                                style={splasherrorStyle.txterro}
-                                numberOfLines={1}
-                                ellipsizeMode="tail"
-                            >
-                                {props.errorGetDataMSG}
-                            </Text>
-                            <Text style={splasherrorStyle.txtclose}>x</Text>
-                        </View>
+                        <TouchableWithoutFeedback onPress={ () => {
+                                props.setErrorGetData(false);
+                                props.reloadViewFunc();
+                                }
+                            }>
+                            <View style={splasherrorStyle.msgerror}>
+                                <Text
+                                    style={splasherrorStyle.txterro}
+                                    numberOfLines={1}
+                                    ellipsizeMode="tail"
+                                >
+                                    {props.errorGetDataMSG}
+                                </Text>
+                                <Text style={splasherrorStyle.txtclose}>x</Text>
+                            </View>
+                        </TouchableWithoutFeedback>
                     </View>
                 
                 :
