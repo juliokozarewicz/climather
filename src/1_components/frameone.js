@@ -36,7 +36,7 @@ export function FrameOne(props) {
                                     numberOfLines={1}
                                     ellipsizeMode="tail"
                                 >
-                                    Now [ Min: { Math.floor(props.data.main.temp_min) }° | Max: {Math.floor(props.data.main.temp_max) }° ]
+                                    now [ min: { Math.floor(props.data.main.temp_min) }° | max: {Math.floor(props.data.main.temp_max) }° ]
                                 </Text>
 
                                 <Text
@@ -52,7 +52,7 @@ export function FrameOne(props) {
                                     numberOfLines={1}
                                     ellipsizeMode="tail"
                                 >
-                                    Fells like: {Math.ceil(props.data.main.feels_like)}°
+                                    fells like: {Math.ceil(props.data.main.feels_like)}°
                                 </Text>
 
                             </View>
@@ -87,7 +87,23 @@ export function FrameOne(props) {
                 
                 :
 
-                    null
+                <View style={frameoneStyle.frameoneall}>
+
+                <View style={frameoneStyle.temperature}>
+                    <View style={frameoneStyle.backgr} ></View>
+                    <View style={frameoneStyle.frametxt1erro} >
+                        <Image source={require('./3_img/noconnection.png')} style={frameoneStyle.noconnection} />
+                    </View>
+                </View>
+
+                <View style={frameoneStyle.city}>
+                    <View style={frameoneStyle.backgr2} ></View>
+                    <View style={frameoneStyle.frametxt2} >
+                    <Image source={require('./3_img/noconnectionblue.png')} style={frameoneStyle.noconnection} />
+                    </View>
+                </View>
+
+            </View>
 
             }
        

@@ -83,7 +83,7 @@ export function BackgroundScreen(props) {
         return (
 
             <ImageBackground
-                source={require('./3_img/clear.jpg')}
+                source={require('./3_img/other.jpg')}
                 style={backgroundStyle.imgbackground}
             ></ImageBackground>
 

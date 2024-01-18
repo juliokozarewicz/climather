@@ -8,9 +8,7 @@ export default StyleSheet.create(
 
   {
 
-    frameoneall: {
-      zIndex: 1000000,
-     
+    frameoneall: {     
       position:'relative',
       top: 70,
 
@@ -44,7 +42,7 @@ export default StyleSheet.create(
 
       borderRadius: 20,
 
-      opacity: 0.4,
+      opacity: 0.6,
     },
 
     backgr2: {
@@ -57,7 +55,7 @@ export default StyleSheet.create(
 
       borderRadius: 20,
 
-      opacity: 0.4,
+      opacity: 0.6,
     },
 
     frametxt1: {
@@ -68,6 +66,14 @@ export default StyleSheet.create(
       justifyContent: 'center',
 
       paddingLeft: 20,
+    },
+
+    frametxt1erro: {
+      width: '100%',
+      height: '100%',
+
+      alignItems: 'center',
+      justifyContent: 'center',
     },
 
     txtblack1: {
@@ -81,6 +87,8 @@ export default StyleSheet.create(
       fontFamily: 'text',
 
       color: colors.black,
+
+      textTransform: 'capitalize',
     },
 
     txtpurple: {
@@ -106,6 +114,8 @@ export default StyleSheet.create(
       fontFamily: 'text',
 
       color: colors.black,
+
+      textTransform: 'capitalize',
     },
 
     frametxt2: {
@@ -142,12 +152,19 @@ export default StyleSheet.create(
       color: colors.white,
 
       textAlign: 'center',
+
+      textTransform: 'capitalize',
     },
 
     imgtemp: {
       width: 90,
       height:  90,
 
+    },
+
+    noconnection: {
+      width: 30,
+      height: 30,
     },
 
   }
