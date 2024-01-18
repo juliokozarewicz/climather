@@ -99,7 +99,7 @@ export function IndexScreen() {
                 <View style={indexStyle.absoluteframe}>
 
                     <View style={indexStyle.topframe}>
-                        <FrameOne connection={connection} />
+                        <FrameOne connection={connection} data={data}/>
                         <FrameTwo connection={connection} />
                         <FrameThree connection={connection} />
                     </View>
@@ -108,7 +108,7 @@ export function IndexScreen() {
 
                     </View>
                 
-                </View>                
+                </View>
 
             </SafeAreaView>
 
