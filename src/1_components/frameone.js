@@ -3,6 +3,7 @@ import React from 'react'
 import {
     View,
     Text,
+    Image,
 } from 'react-native';
 
 // import style sheet
@@ -59,7 +60,27 @@ export function FrameOne(props) {
 
                         <View style={frameoneStyle.city}>
                             <View style={frameoneStyle.backgr2} ></View>
-                            <View></View>
+                            <View style={frameoneStyle.frametxt2} >
+
+                                <Text
+                                    style={frameoneStyle.txtwhite1}
+                                    numberOfLines={1}
+                                    ellipsizeMode="tail"
+                                >
+                                    { props.data.name } ({ props.data.sys.country })
+                                </Text>
+
+                                <Image source={{ uri: `http://openweathermap.org/img/w/11d.png` }} style={frameoneStyle.imgtemp} />
+
+                                <Text
+                                    style={frameoneStyle.txtwhite2}
+                                    numberOfLines={1}
+                                    ellipsizeMode="tail"
+                                >
+                                    { props.data.weather[0].description }
+                                </Text>
+
+                            </View>
                         </View>
 
                     </View>

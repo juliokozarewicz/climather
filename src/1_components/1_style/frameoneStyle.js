@@ -108,6 +108,48 @@ export default StyleSheet.create(
       color: colors.black,
     },
 
+    frametxt2: {
+      width: '100%',
+      height: '100%',
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    txtwhite1: {
+      position: 'absolute',
+      top: 30,
+  
+      width: '90%',
+
+      fontSize: 11,
+      fontFamily: 'text',
+
+      color: colors.white,
+
+      textAlign: 'center',
+    },
+
+    txtwhite2: {
+      position: 'absolute',
+      bottom: 30,
+  
+      width: '90%',
+
+      fontSize: 11,
+      fontFamily: 'text',
+
+      color: colors.white,
+
+      textAlign: 'center',
+    },
+
+    imgtemp: {
+      width: 60,
+      height:  60,
+
+    },
+
   }
 
 );
