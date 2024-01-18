@@ -12,62 +12,147 @@ import backgroundStyle from './1_style/backgroundStyle';
 // -------------------------------------------------------------------------------------
 export function BackgroundScreen(props) {
 
-    if (props.connection && props.backgroundstyle.weather[0].main.toLowerCase() === 'clouds') {
+    function getHour() {
+        const timestamp = props.data.dt * 1000;
+        const data = new Date(timestamp);
+        const horas = data.getHours();
+      
+        return horas > 6 && horas < 19;
+    }
+
+    console.log(getHour())
+
+    if (props.connection && props.data.weather[0].main.toLowerCase() === 'clouds') {
 
         return (
 
-            <ImageBackground
-                source={require('./3_img/clouds.jpg')}
-                style={backgroundStyle.imgbackground}
-            ></ImageBackground>
+            getHour()
+
+            ?  (
+
+                <ImageBackground
+                    source={require('./3_img/clouds.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
+
+            : (
+
+                <ImageBackground
+                    source={require('./3_img/cloudsn.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
 
         );
 
-    } else if (props.connection && props.backgroundstyle.weather[0].main.toLowerCase() === 'clear') {
+    } else if (props.connection && props.data.weather[0].main.toLowerCase() === 'clear') {
 
         return (
 
-            <ImageBackground
-                source={require('./3_img/clear.jpg')}
-                style={backgroundStyle.imgbackground}
-            ></ImageBackground>
+            getHour()
+
+            ?  (
+
+                <ImageBackground
+                    source={require('./3_img/clear.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
+
+            : (
+
+                <ImageBackground
+                    source={require('./3_img/clearn.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
 
         );
 
-    } else if (props.connection && props.backgroundstyle.weather[0].main.toLowerCase() === 'drizzle') {
+    } else if (props.connection && props.data.weather[0].main.toLowerCase() === 'drizzle') {
 
         return (
 
-            <ImageBackground
-                source={require('./3_img/drizzle.jpg')}
-                style={backgroundStyle.imgbackground}
-            ></ImageBackground>
+            getHour()
+
+            ?  (
+
+                <ImageBackground
+                    source={require('./3_img/drizzle.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
+
+            : (
+
+                <ImageBackground
+                    source={require('./3_img/drizzlen.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
 
         );
 
-    } else if (props.connection && props.backgroundstyle.weather[0].main.toLowerCase() === 'rain') {
+    } else if (props.connection && props.data.weather[0].main.toLowerCase() === 'rain') {
 
         return (
 
-            <ImageBackground
-                source={require('./3_img/rain.jpg')}
-                style={backgroundStyle.imgbackground}
-            ></ImageBackground>
+            getHour()
+
+            ?  (
+
+                <ImageBackground
+                    source={require('./3_img/rain.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
+
+            : (
+
+                <ImageBackground
+                    source={require('./3_img/rainn.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
 
         );
 
-    } else if (props.connection && props.backgroundstyle.weather[0].main.toLowerCase() === 'snow') {
+    } else if (props.connection && props.data.weather[0].main.toLowerCase() === 'snow') {
 
         return (
 
-            <ImageBackground
-                source={require('./3_img/snow.jpg')}
-                style={backgroundStyle.imgbackground}
-            ></ImageBackground>
+            getHour()
+
+            ?  (
+
+                <ImageBackground
+                    source={require('./3_img/snow.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
+
+            : (
+
+                <ImageBackground
+                    source={require('./3_img/snown.jpg')}
+                    style={backgroundStyle.imgbackground}
+                ></ImageBackground>
+
+            )
 
         );
 
-    } else if (props.connection && props.backgroundstyle.weather[0].main.toLowerCase() === 'Thunderstorm') {
+    } else if (props.connection && props.data.weather[0].main.toLowerCase() === 'Thunderstorm') {
 
         return (
 

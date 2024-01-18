@@ -94,7 +94,7 @@ export function IndexScreen() {
 
                 <StatusBar barStyle="light-content" backgroundColor={indexStyle.statusbar.backgroundColor} />
 
-                <BackgroundScreen connection={connection} backgroundstyle={data}/>
+                <BackgroundScreen connection={connection} data={data}/>
 
                 <View style={indexStyle.absoluteframe}>
 
