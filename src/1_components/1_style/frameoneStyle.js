@@ -86,13 +86,13 @@ export default StyleSheet.create(
     txtpurple: {
       position: 'absolute',
       left: 20,
-      bottom: 42,
+      bottom: 50,
 
       fontFamily: 'title',
       color: colors.purple,
       textAlign: 'center',
 
-      fontSize: 80,
+      fontSize: 70,
     },
 
     txtblack2: {
