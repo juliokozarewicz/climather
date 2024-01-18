@@ -145,8 +145,8 @@ export default StyleSheet.create(
     },
 
     imgtemp: {
-      width: 60,
-      height:  60,
+      width: 90,
+      height:  90,
 
     },
 

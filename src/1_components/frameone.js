@@ -70,7 +70,7 @@ export function FrameOne(props) {
                                     { props.data.name } ({ props.data.sys.country })
                                 </Text>
 
-                                <Image source={{ uri: `http://openweathermap.org/img/w/11d.png` }} style={frameoneStyle.imgtemp} />
+                                <Image source={{ uri: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@4x.png` }} style={frameoneStyle.imgtemp} />
 
                                 <Text
                                     style={frameoneStyle.txtwhite2}
