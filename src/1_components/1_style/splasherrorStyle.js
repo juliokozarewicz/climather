@@ -12,7 +12,7 @@ export default StyleSheet.create(
       zIndex: 100,
      
       position:'absolute',
-      top: 20,
+      top: 35,
       
       width: '100%',
       

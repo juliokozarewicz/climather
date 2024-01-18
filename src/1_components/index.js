@@ -1,7 +1,7 @@
 import React, {
     useEffect,
     useState,
-} from 'react';
+} from 'react'
 
 import {
     View,
@@ -21,6 +21,7 @@ import { getDataWeather } from './0_functions/apirequest';
 // ===============================
 
 import {SplashError} from './splasherror';
+import {BackgroundScreen} from './background';
 
 // ===============================
 // External components (END)
@@ -67,7 +68,7 @@ export function IndexScreen() {
 
                 setErrorGetData(true);
                 setConnection(false);
-                setErrorGetDataMSG('Falha na comunicação.');
+                setErrorGetDataMSG('Communication failure.');
 
             };
 
@@ -84,15 +85,13 @@ export function IndexScreen() {
 
             <SplashError errorGetData={errorGetData} errorGetDataMSG={errorGetDataMSG} setErrorGetData={setErrorGetData} reloadViewFunc={reloadViewFunc}/>
 
-            <SafeAreaView>
+            <SafeAreaView style={indexStyle.allscreen}>
 
-            <StatusBar barStyle="light-content" backgroundColor={indexStyle.statusbar.backgroundColor} />
+                <Text style={indexStyle.txtlogo} >CLIMATHER</Text>
 
-            {
-                connection
-                ? <Text style={indexStyle.textexample}>{data.weather[0].main}</Text>
-                : null
-            }
+                <StatusBar barStyle="light-content" backgroundColor={indexStyle.statusbar.backgroundColor} />
+
+                <BackgroundScreen connection={connection} backgroundstyle={data}/>
 
             </SafeAreaView>
 

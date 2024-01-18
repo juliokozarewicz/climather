@@ -1,0 +1,55 @@
+import {StyleSheet} from 'react-native';
+
+//import colors
+import * as colors from './1_colors.json';
+
+// styles
+export default StyleSheet.create(
+
+  {
+
+    allcontent: {
+        width: '100%',
+        flex: 1,
+        
+        alignItems: 'center',
+        
+        backgroundColor: colors.gray1,
+    },
+
+    allscreen: {
+      width: '100%',
+      flex: 1,
+      
+      alignItems: 'center',
+    },
+
+    statusbar: {
+      backgroundColor: colors.purple,
+    },
+
+    txtlogo: {
+      zIndex: 10,
+
+      position: 'absolute',
+      top: 0,
+
+      paddingRight: 20,
+      paddingLeft: 20,
+      paddingTop: 0,
+      paddingBottom: 5,
+
+      fontFamily: 'title',
+      fontSize: 12,
+      letterSpacing: 3,
+
+      borderBottomLeftRadius: 10,
+      borderBottomRightRadius: 10,
+
+      backgroundColor: colors.purple,
+      color: colors.white,
+    },
+
+  }
+
+);
