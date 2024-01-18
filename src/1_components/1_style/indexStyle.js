@@ -50,6 +50,32 @@ export default StyleSheet.create(
       color: colors.white,
     },
 
+    absoluteframe: {
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+    },
+
+    topframe: {
+      position: 'relative',
+
+      width: '100%',
+      flex: 1,
+
+      alignItems: 'center',
+    },
+
+    bottomframe: {
+      position: 'relative',
+
+      width: '100%',
+      height: 190,
+
+      alignItems: 'center',
+      backgroundColor: 'red',
+    },
+
   }
 
 );

@@ -22,6 +22,9 @@ import { getDataWeather } from './0_functions/apirequest';
 
 import {SplashError} from './splasherror';
 import {BackgroundScreen} from './background';
+import {FrameOne} from './frameone';
+import {FrameTwo} from './frametwo';
+import {FrameThree} from './framethree';
 
 // ===============================
 // External components (END)
@@ -92,6 +95,20 @@ export function IndexScreen() {
                 <StatusBar barStyle="light-content" backgroundColor={indexStyle.statusbar.backgroundColor} />
 
                 <BackgroundScreen connection={connection} backgroundstyle={data}/>
+
+                <View style={indexStyle.absoluteframe}>
+
+                    <View style={indexStyle.topframe}>
+                        <FrameOne connection={connection} />
+                        <FrameTwo connection={connection} />
+                        <FrameThree connection={connection} />
+                    </View>
+
+                    <View style={indexStyle.bottomframe}>
+
+                    </View>
+                
+                </View>                
 
             </SafeAreaView>
 

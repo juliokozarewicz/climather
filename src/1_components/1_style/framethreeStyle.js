@@ -8,18 +8,20 @@ export default StyleSheet.create(
 
   {
 
-    frameoneall: {
-      zIndex: 1000000,
-     
-      position:'relative',
-      top: 70,
+    framethreeall: {
+      zIndex: 10,
 
-      width: '90%',
-      height: 200,
+      marginTop: 10,
+      
+      position:'absolute',
+      bottom: 40,
+      
+      width: '100%',
+      height: 130,
       
       alignItems: 'center',
 
-      backgroundColor: colors.gray2,
+      backgroundColor: colors.gray1,
     },
 
   }
