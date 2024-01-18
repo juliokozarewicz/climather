@@ -43,7 +43,7 @@ export function FrameOne(props) {
                                     numberOfLines={1}
                                     ellipsizeMode="tail"
                                 >
-                                    29°
+                                    { Math.ceil(props.data.main.temp) }°
                                 </Text>
 
                                 <Text
