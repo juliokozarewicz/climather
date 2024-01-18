@@ -12,21 +12,19 @@ import backgroundStyle from './1_style/backgroundStyle';
 // -------------------------------------------------------------------------------------
 export function BackgroundScreen(props) {
 
-    function getHour() {
-        const timestamp = props.data.dt * 1000;
+    function getHour(convert) {
+        const timestamp = convert * 1000;
         const data = new Date(timestamp);
         const horas = data.getHours();
       
         return horas > 6 && horas < 19;
     }
 
-    console.log(getHour())
-
     if (props.connection && props.data.weather[0].main.toLowerCase() === 'clouds') {
 
         return (
 
-            getHour()
+            getHour(props.data.dt)
 
             ?  (
 
@@ -52,7 +50,7 @@ export function BackgroundScreen(props) {
 
         return (
 
-            getHour()
+            getHour(props.data.dt)
 
             ?  (
 
@@ -78,7 +76,7 @@ export function BackgroundScreen(props) {
 
         return (
 
-            getHour()
+            getHour(props.data.dt)
 
             ?  (
 
@@ -104,7 +102,7 @@ export function BackgroundScreen(props) {
 
         return (
 
-            getHour()
+            getHour(props.data.dt)
 
             ?  (
 
@@ -130,7 +128,7 @@ export function BackgroundScreen(props) {
 
         return (
 
-            getHour()
+            getHour(props.data.dt)
 
             ?  (
 
