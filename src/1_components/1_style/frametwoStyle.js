@@ -15,14 +15,69 @@ export default StyleSheet.create(
       marginTop: 10,
 
       position:'relative',
-      top: 70,
+      top: 68,
 
       width: '90%',
       height: 100,
 
       alignItems: 'center',
+      justifyContent: 'center',
 
-      backgroundColor: colors.gray1,
+      flexDirection: 'row',
+
+      gap: 10,
+    },    
+
+    backgr: {
+      position: 'absolute',
+      
+      width: '100%',
+      height: '100%',
+
+      backgroundColor: colors.white,
+
+      borderRadius: 20,
+
+      opacity: 0.7,
+    },
+
+    leftside: {
+      width: '50%',
+      height: '90%',
+
+      justifyContent: 'center',
+
+      gap: 12,
+    },
+
+    rightside: {
+      width: '34%',
+      height: '90%',
+
+      justifyContent: 'center',
+
+      gap: 12,
+
+    },
+
+    linetext: {
+      flexDirection: 'row',
+    },
+
+    textpurple: {
+      fontFamily: 'text',
+      color: colors.purple,
+
+      fontSize: 11,
+
+      textTransform: 'capitalize',
+    },
+
+    textblack: {
+      fontFamily: 'text',
+      color: colors.black,
+
+      fontSize: 11,
     },
 
   }
