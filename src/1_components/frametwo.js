@@ -3,6 +3,7 @@ import React from 'react'
 import {
     View,
     Text,
+    Image,
 } from 'react-native';
 
 // import style sheet
@@ -80,7 +81,10 @@ export function FrameTwo(props) {
                 
                 :
 
-                    null
+                    <View style={frametwoStyle.frametwoall}>
+                        <View style={frametwoStyle.backgr} ></View>
+                        <Image source={require('./3_img/noconnection.png')} style={frametwoStyle.noconnection} />
+                    </View>
 
             }
        

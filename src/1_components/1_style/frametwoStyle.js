@@ -80,6 +80,11 @@ export default StyleSheet.create(
       fontSize: 11,
     },
 
+    noconnection: {
+      width: 30,
+      height: 30,
+    },
+
   }
 
 );
