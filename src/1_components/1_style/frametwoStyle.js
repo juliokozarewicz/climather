@@ -42,21 +42,21 @@ export default StyleSheet.create(
     },
 
     leftside: {
-      width: '50%',
+      width: '42%',
       height: '90%',
 
       justifyContent: 'center',
 
-      gap: 12,
+      gap: 10,
     },
 
     rightside: {
-      width: '34%',
+      width: '42%',
       height: '90%',
 
       justifyContent: 'center',
 
-      gap: 12,
+      gap: 10,
 
     },
 

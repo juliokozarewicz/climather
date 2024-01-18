@@ -14,10 +14,17 @@ import frametwoStyle from './1_style/frametwoStyle';
 // -------------------------------------------------------------------------------------
 export function FrameTwo(props) {
 
-    //const timestamp = props.data.sys.sunrise * 1000;
-    //const data = new Date(timestamp);
-    //const horas = data.getHours();
-    //const minutos = data.getMinutes();
+    function getdateformated(request) {
+
+        const timestamp = request * 1000;
+        const data = new Date(timestamp);
+        const horas = data.getHours();
+        const minutos = data.getMinutes();
+
+        return (
+            horas + ':' + (minutos < 10 ? '0' : '') + minutos + ' h'
+        );
+    };
 
     return (
         
@@ -46,7 +53,7 @@ export function FrameTwo(props) {
 
                             <View style={frametwoStyle.linetext}>
                                 <Text style={frametwoStyle.textpurple}>sunrise:</Text>
-                                <Text style={frametwoStyle.textblack}>  ****** h</Text>
+                                <Text style={frametwoStyle.textblack}>  {getdateformated(props.data.sys.sunrise)}</Text>
                             </View>
 
                         </View>
@@ -55,17 +62,17 @@ export function FrameTwo(props) {
 
                             <View style={frametwoStyle.linetext}>
                                 <Text style={frametwoStyle.textpurple}>visibility:</Text>
-                                <Text style={frametwoStyle.textblack}> valor</Text>
+                                <Text style={frametwoStyle.textblack}>  {props.data.visibility} m</Text>
                             </View>
 
                             <View style={frametwoStyle.linetext}>
                                 <Text style={frametwoStyle.textpurple}>wind:</Text>
-                                <Text style={frametwoStyle.textblack}> valor</Text>
+                                <Text style={frametwoStyle.textblack}>  {props.data.wind.speed * 3.6} km/h | {props.data.wind.deg}°</Text>
                             </View>
 
                             <View style={frametwoStyle.linetext}>
                                 <Text style={frametwoStyle.textpurple}>sunset:</Text>
-                                <Text style={frametwoStyle.textblack}> valor</Text>
+                                <Text style={frametwoStyle.textblack}>  {getdateformated(props.data.sys.sunset)}</Text>
                             </View>
 
                         </View>

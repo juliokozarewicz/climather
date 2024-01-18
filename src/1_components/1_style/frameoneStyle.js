@@ -13,7 +13,7 @@ export default StyleSheet.create(
       top: 70,
 
       width: '90%',
-      height: 200,
+      height: 180,
       
       alignItems: 'center',
 
@@ -94,7 +94,7 @@ export default StyleSheet.create(
     txtpurple: {
       position: 'absolute',
       left: 20,
-      bottom: 50,
+      bottom: 43,
 
       fontFamily: 'title',
       color: colors.purple,
