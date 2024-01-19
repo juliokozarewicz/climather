@@ -2,7 +2,9 @@ import React from 'react'
 
 import {
     View,
+    Text,
     ScrollView,
+    Image,
 } from 'react-native';
 
 // import style sheet
@@ -29,22 +31,50 @@ export function FrameThree(props) {
                         style={framethreeStyle.scrollall}
                     >
                         <View style={framethreeStyle.framethreeall} >
-                            
+
+                            <View style={framethreeStyle.allsquare}>
+                                <View style={framethreeStyle.backgrprp}></View>
+                                <View style={framethreeStyle.contenttexts}>
+                                    <Text style={framethreeStyle.txttop}>19</Text>
+                                    <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcenter} />
+                                    <Text style={framethreeStyle.txtbottom}>26°</Text>
+                                </View>
+                            </View>
 
 
 
 
 
 
-                            
-                            <View style={framethreeStyle.backgrblack}></View>
-                            <View style={framethreeStyle.backgrblack}></View>
-                            <View style={framethreeStyle.backgrblack}></View>
-                            <View style={framethreeStyle.backgrblack}></View>
-                            <View style={framethreeStyle.backgrblack}></View>
-                            <View style={framethreeStyle.backgrblack}></View>
-                            <View style={framethreeStyle.backgrblack}></View>
-                            <View style={framethreeStyle.backgrblack}></View>
+
+
+                            <View style={framethreeStyle.allsquare}>
+                                <View style={framethreeStyle.backgrprp}>
+                                </View>
+                            </View>
+
+                            <View style={framethreeStyle.allsquare}>
+                                <View style={framethreeStyle.backgrprp}>
+                                </View>
+                            </View>
+
+                            <View style={framethreeStyle.allsquare}>
+                                <View style={framethreeStyle.backgrprp}>
+                                </View>
+                            </View>
+
+                            <View style={framethreeStyle.allsquare}>
+                                <View style={framethreeStyle.backgrprp}>
+                                </View>
+                            </View>
+                            <View style={framethreeStyle.allsquare}>
+                                <View style={framethreeStyle.backgrprp}>
+                                </View>
+                            </View>
+                            <View style={framethreeStyle.allsquare}>
+                                <View style={framethreeStyle.backgrprp}>
+                                </View>
+                            </View>
 
 
 
