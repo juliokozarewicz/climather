@@ -42,7 +42,6 @@ export function IndexScreen() {
         const [data, setData] = useState();
         const [dataForecast, setDataForecast] = useState();
         const [connection, setConnection] = useState(false);
-        const [connectionForecast, setConnectionForecast] = useState(false);
         const [errorGetData, setErrorGetData] = useState(false);
         const [errorGetDataF, setErrorGetDataF] = useState(false);
         const [errorGetDataMSG, setErrorGetDataMSG] = useState('');
@@ -84,18 +83,17 @@ export function IndexScreen() {
 
             if (dataForecast && dataForecast.cod == '200') {
                 setDataForecast(dataForecast);
-                setConnectionForecast(true);
 
             } else {
-                setConnectionForecast(false);
                 setErrorGetData(true);
                 setErrorGetDataMSG('Communication failure: Forecast.');
             };
 
         };
 
-        fetchForecast();
-        fetchDataFromApi();
+        fetchDataFromApi().then( () => {
+            fetchForecast();
+        });
 
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
