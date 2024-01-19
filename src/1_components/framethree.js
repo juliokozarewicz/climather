@@ -2,6 +2,7 @@ import React from 'react'
 
 import {
     View,
+    ScrollView,
 } from 'react-native';
 
 // import style sheet
@@ -22,8 +23,39 @@ export function FrameThree(props) {
                 props.connection 
                 
                 ?
-                
-                    <View style={framethreeStyle.framethreeall}></View>
+                    <ScrollView
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        style={framethreeStyle.scrollall}
+                    >
+                        <View style={framethreeStyle.framethreeall} >
+                            
+
+
+
+
+
+
+                            
+                            <View style={framethreeStyle.backgrblack}></View>
+                            <View style={framethreeStyle.backgrblack}></View>
+                            <View style={framethreeStyle.backgrblack}></View>
+                            <View style={framethreeStyle.backgrblack}></View>
+                            <View style={framethreeStyle.backgrblack}></View>
+                            <View style={framethreeStyle.backgrblack}></View>
+                            <View style={framethreeStyle.backgrblack}></View>
+                            <View style={framethreeStyle.backgrblack}></View>
+
+
+
+
+
+
+
+
+
+                        </View>
+                    </ScrollView>
                 
                 :
 

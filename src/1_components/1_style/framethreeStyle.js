@@ -8,8 +8,8 @@ export default StyleSheet.create(
 
   {
 
-    framethreeall: {
-      zIndex: 10,
+    scrollall: {
+      zIndex: 1000,
 
       marginTop: 10,
       
@@ -18,10 +18,32 @@ export default StyleSheet.create(
       
       width: '100%',
       height: 130,
+    },
+
+    framethreeall: {
+      width: '100%',
+      height: '100%',
       
       alignItems: 'center',
 
-      backgroundColor: colors.gray1,
+      flexDirection: 'row',
+
+      paddingLeft: 21,
+
+      gap: 10,
+      
+    },
+
+    backgrblack: {
+
+      width: 80,
+      height: '100%',
+
+      backgroundColor: colors.purple,
+
+      borderRadius: 10,
+
+      opacity: 0.7,
     },
 
   }

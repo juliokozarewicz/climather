@@ -40,7 +40,7 @@ export default StyleSheet.create(
 
       backgroundColor: colors.white,
 
-      borderRadius: 20,
+      borderRadius: 10,
 
       opacity: 0.7,
     },
@@ -53,7 +53,7 @@ export default StyleSheet.create(
 
       backgroundColor: colors.purple,
 
-      borderRadius: 20,
+      borderRadius: 10,
 
       opacity: 0.7,
     },
