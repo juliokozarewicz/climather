@@ -15,7 +15,7 @@ import indexStyle from './1_style/indexStyle';
 
 
 // import func api request
-import { getDataWeather } from './0_functions/apirequest';
+import { getDataWeather, getDataForecast } from './0_functions/apirequest';
 
 // External components (INIT)
 // ===============================
@@ -40,6 +40,7 @@ export function IndexScreen() {
 
         // request api data
         const [data, setData] = useState();
+        const [dataF, setDataF] = useState();
         const [connection, setConnection] = useState(false);
         const [errorGetData, setErrorGetData] = useState(false);
         const [errorGetDataMSG, setErrorGetDataMSG] = useState('');
@@ -62,22 +63,39 @@ export function IndexScreen() {
             const result = await getDataWeather();
 
             if (result && result.cod === 200) {
-                
                 setErrorGetData(false);
                 setData(result);
                 setConnection(true);
             
             } else {
-
                 setErrorGetData(true);
                 setConnection(false);
-                setErrorGetDataMSG('Communication failure.');
+                setErrorGetDataMSG('Communication failure: Weather.');
 
             };
 
         };
 
-        fetchDataFromApi();
+        const fetchForecast = async () => {
+
+            const resultF = await getDataForecast();
+
+            if (resultF && resultF.cod === 200) {
+                setDataF(resultF);
+
+            } else {
+                setErrorGetData(true);
+                setConnection(false);
+                setErrorGetDataMSG('Communication failure: Forecast.');
+
+            };
+
+        };
+
+        setTimeout(() => {
+            fetchDataFromApi();
+            fetchForecast();
+        }, 2000);
 
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------

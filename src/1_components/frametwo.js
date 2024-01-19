@@ -68,7 +68,7 @@ export function FrameTwo(props) {
 
                             <View style={frametwoStyle.linetext}>
                                 <Text style={frametwoStyle.textpurple}>wind:</Text>
-                                <Text style={frametwoStyle.textblack}>  {props.data.wind.speed * 3.6} km/h | {props.data.wind.deg}°</Text>
+                                <Text style={frametwoStyle.textblack}>  {(props.data.wind.speed * 3.6).toFixed(0)} km/h | {props.data.wind.deg}°</Text>
                             </View>
 
                             <View style={frametwoStyle.linetext}>
