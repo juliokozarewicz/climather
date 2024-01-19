@@ -126,7 +126,7 @@ export function IndexScreen() {
                     <View style={indexStyle.topframe}>
                         <FrameOne connection={connection} data={data} />
                         <FrameTwo connection={connection} data={data} />
-                        <FrameThree connection={connection} data={dataForecast} />
+                        <FrameThree connectionF={connectionF} data={dataForecast} />
                     </View>
 
                     <View style={indexStyle.bottomframe}>

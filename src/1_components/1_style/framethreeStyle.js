@@ -99,6 +99,11 @@ export default StyleSheet.create(
       height: 18,
     },
 
+    imgcentererro: {
+      width: 14,
+      height: 14,
+    },
+
   }
 
 );

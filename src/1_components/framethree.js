@@ -22,7 +22,7 @@ export function FrameThree(props) {
 
             {
 
-                props.connection 
+                props.connectionF 
                 
                 ?
                     <ScrollView
@@ -36,7 +36,7 @@ export function FrameThree(props) {
                                 <View style={framethreeStyle.backgrprp}></View>
                                 <View style={framethreeStyle.contenttexts}>
                                     <Text style={framethreeStyle.txttop}>19</Text>
-                                    <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcenter} />
+                                    <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
                                     <Text style={framethreeStyle.txtbottom}>26°</Text>
                                 </View>
                             </View>
@@ -89,7 +89,61 @@ export function FrameThree(props) {
                 
                 :
 
-                    null
+                <ScrollView
+                    horizontal
+                    showsHorizontalScrollIndicator={false}
+                    style={framethreeStyle.scrollall}
+                >
+                    <View style={framethreeStyle.framethreeall} >
+
+                        <View style={framethreeStyle.allsquare}>
+                            <View style={framethreeStyle.backgrprp}></View>
+                            <View style={framethreeStyle.contenttexts}>
+                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
+                            </View>
+                        </View>
+                        <View style={framethreeStyle.allsquare}>
+                            <View style={framethreeStyle.backgrprp}></View>
+                            <View style={framethreeStyle.contenttexts}>
+                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
+                            </View>
+                        </View>
+                        <View style={framethreeStyle.allsquare}>
+                            <View style={framethreeStyle.backgrprp}></View>
+                            <View style={framethreeStyle.contenttexts}>
+                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
+                            </View>
+                        </View>
+                        <View style={framethreeStyle.allsquare}>
+                            <View style={framethreeStyle.backgrprp}></View>
+                            <View style={framethreeStyle.contenttexts}>
+                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
+                            </View>
+                        </View>
+                        <View style={framethreeStyle.allsquare}>
+                            <View style={framethreeStyle.backgrprp}></View>
+                            <View style={framethreeStyle.contenttexts}>
+                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
+                            </View>
+                        </View>
+                        <View style={framethreeStyle.allsquare}>
+                            <View style={framethreeStyle.backgrprp}></View>
+                            <View style={framethreeStyle.contenttexts}>
+                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
+                            </View>
+                        </View>
+                        <View style={framethreeStyle.allsquare}>
+                            <View style={framethreeStyle.backgrprp}></View>
+                            <View style={framethreeStyle.contenttexts}>
+                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
+                            </View>
+                        </View>
+
+
+
+
+                    </View>
+                </ScrollView>
 
             }
        
