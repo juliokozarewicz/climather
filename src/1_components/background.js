@@ -150,7 +150,7 @@ export function BackgroundScreen(props) {
 
         );
 
-    } else if (props.connection && props.data.weather[0].main.toLowerCase() === 'Thunderstorm') {
+    } else if (props.connection && props.data.weather[0].main.toLowerCase() === 'thunderstorm') {
 
         return (
 
