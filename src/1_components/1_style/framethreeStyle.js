@@ -29,6 +29,7 @@ export default StyleSheet.create(
       flexDirection: 'row',
 
       paddingLeft: 21,
+      paddingRight: 21,
 
       gap: 10,
       
