@@ -23,7 +23,7 @@ export default StyleSheet.create(
       width: '80%',
       height: 40,
       
-      backgroundColor: colors.purple,
+      backgroundColor: colors.red,
 
       borderRadius: 10,
 
@@ -42,7 +42,7 @@ export default StyleSheet.create(
 
       paddingLeft: 20,
 
-      color: colors.bluelight,
+      color: colors.gray1,
     },
 
     txtclose: {
@@ -52,7 +52,7 @@ export default StyleSheet.create(
 
       paddingRight: 15,
 
-      color: colors.bluelight,
+      color: colors.gray1,
     },
 
   }

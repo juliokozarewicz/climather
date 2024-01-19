@@ -15,7 +15,7 @@ import indexStyle from './1_style/indexStyle';
 
 
 // import func api request
-import { getDataWeather, getDataForecast } from './0_functions/apirequest';
+import { getDataWeather, getDataForecast, testGetDataForecast } from './0_functions/apirequest';
 
 // External components (INIT)
 // ===============================
@@ -40,9 +40,11 @@ export function IndexScreen() {
 
         // request api data
         const [data, setData] = useState();
-        const [dataF, setDataF] = useState();
+        const [dataForecast, setDataForecast] = useState();
         const [connection, setConnection] = useState(false);
+        const [connectionForecast, setConnectionForecast] = useState(false);
         const [errorGetData, setErrorGetData] = useState(false);
+        const [errorGetDataF, setErrorGetDataF] = useState(false);
         const [errorGetDataMSG, setErrorGetDataMSG] = useState('');
         const [reloadDataAPI, setReloadDataAPI] = useState(0);
     // -------------------------------------------------------------------------------------
@@ -62,7 +64,7 @@ export function IndexScreen() {
 
             const result = await getDataWeather();
 
-            if (result && result.cod === 200) {
+            if (result && result.cod == '200') {
                 setErrorGetData(false);
                 setData(result);
                 setConnection(true);
@@ -78,33 +80,39 @@ export function IndexScreen() {
 
         const fetchForecast = async () => {
 
-            const resultF = await getDataForecast();
+            const dataForecast = await getDataForecast();
 
-            if (resultF && resultF.cod === 200) {
-                setDataF(resultF);
+            if (dataForecast && dataForecast.cod == '200') {
+                setDataForecast(dataForecast);
+                setConnectionForecast(true);
 
             } else {
+                setConnectionForecast(false);
                 setErrorGetData(true);
-                setConnection(false);
                 setErrorGetDataMSG('Communication failure: Forecast.');
-
             };
 
         };
 
-        setTimeout(() => {
-            fetchDataFromApi();
-            fetchForecast();
-        }, 2000);
+        fetchForecast();
+        fetchDataFromApi();
 
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
+
 
     return (
 
         <View style={indexStyle.allcontent} key={reloadDataAPI}>
 
-            <SplashError errorGetData={errorGetData} errorGetDataMSG={errorGetDataMSG} setErrorGetData={setErrorGetData} reloadViewFunc={reloadViewFunc}/>
+            <SplashError
+                errorGetData={errorGetData}
+                setErrorGetData={setErrorGetData} 
+                
+                errorGetDataMSG={errorGetDataMSG}
+                
+                reloadViewFunc={reloadViewFunc}
+            />
 
             <SafeAreaView style={indexStyle.allscreen}>
 
@@ -119,7 +127,7 @@ export function IndexScreen() {
                     <View style={indexStyle.topframe}>
                         <FrameOne connection={connection} data={data} />
                         <FrameTwo connection={connection} data={data} />
-                        <FrameThree connection={connection} />
+                        <FrameThree connection={connection} data={dataForecast} />
                     </View>
 
                     <View style={indexStyle.bottomframe}>
