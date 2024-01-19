@@ -100,8 +100,8 @@ export default StyleSheet.create(
     },
 
     imgcentererro: {
-      width: 14,
-      height: 14,
+      width: 40,
+      height: 40,
     },
 
   }

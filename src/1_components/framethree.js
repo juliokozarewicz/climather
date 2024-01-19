@@ -11,10 +11,24 @@ import {
 import framethreeStyle from './1_style/framethreeStyle';
 
 
-
 // index screen function
 // -------------------------------------------------------------------------------------
 export function FrameThree(props) {
+
+    function loadForecast(data) {
+        return (
+            data.map((item, index) => (
+                <View style={framethreeStyle.allsquare} key={index}>
+                    <View style={framethreeStyle.backgrprp}></View>
+                    <View style={framethreeStyle.contenttexts}>
+                        <Text style={framethreeStyle.txttop}>19</Text>
+                        <Image source={{ uri: `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` } } style={framethreeStyle.imgcentererro} />
+                        <Text style={framethreeStyle.txtbottom}>{item.main.temp.toFixed(0)}°</Text>
+                    </View>
+                </View>
+            ))
+        );
+    };
 
     return (
         
@@ -32,57 +46,9 @@ export function FrameThree(props) {
                     >
                         <View style={framethreeStyle.framethreeall} >
 
-                            <View style={framethreeStyle.allsquare}>
-                                <View style={framethreeStyle.backgrprp}></View>
-                                <View style={framethreeStyle.contenttexts}>
-                                    <Text style={framethreeStyle.txttop}>19</Text>
-                                    <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
-                                    <Text style={framethreeStyle.txtbottom}>26°</Text>
-                                </View>
-                            </View>
-
-
-
-
-
-
-
-
-                            <View style={framethreeStyle.allsquare}>
-                                <View style={framethreeStyle.backgrprp}>
-                                </View>
-                            </View>
-
-                            <View style={framethreeStyle.allsquare}>
-                                <View style={framethreeStyle.backgrprp}>
-                                </View>
-                            </View>
-
-                            <View style={framethreeStyle.allsquare}>
-                                <View style={framethreeStyle.backgrprp}>
-                                </View>
-                            </View>
-
-                            <View style={framethreeStyle.allsquare}>
-                                <View style={framethreeStyle.backgrprp}>
-                                </View>
-                            </View>
-                            <View style={framethreeStyle.allsquare}>
-                                <View style={framethreeStyle.backgrprp}>
-                                </View>
-                            </View>
-                            <View style={framethreeStyle.allsquare}>
-                                <View style={framethreeStyle.backgrprp}>
-                                </View>
-                            </View>
-
-
-
-
-
-
-
-
+                            {
+                                loadForecast(props.data.list.slice(1, ))
+                            }
 
                         </View>
                     </ScrollView>
