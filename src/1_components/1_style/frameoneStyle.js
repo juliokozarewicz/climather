@@ -144,9 +144,9 @@ export default StyleSheet.create(
       position: 'absolute',
       bottom: 25,
   
-      width: '90%',
+      width: '80%',
 
-      fontSize: 10,
+      fontSize: 9,
       fontFamily: 'text',
 
       color: colors.white,
