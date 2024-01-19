@@ -74,7 +74,7 @@ export function FrameOne(props) {
 
                                 <Text
                                     style={frameoneStyle.txtwhite2}
-                                    numberOfLines={1}
+                                    numberOfLines={2}
                                     ellipsizeMode="tail"
                                 >
                                     { props.data.weather[0].description }

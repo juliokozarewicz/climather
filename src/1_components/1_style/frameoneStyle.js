@@ -142,11 +142,11 @@ export default StyleSheet.create(
 
     txtwhite2: {
       position: 'absolute',
-      bottom: 30,
+      bottom: 25,
   
       width: '90%',
 
-      fontSize: 11,
+      fontSize: 10,
       fontFamily: 'text',
 
       color: colors.white,
