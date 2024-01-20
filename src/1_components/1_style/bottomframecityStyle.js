@@ -59,12 +59,60 @@ export default StyleSheet.create(
       width: 100,
       height: '100%',
 
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    backgcity: {
+      width: 100,
+      height: '100%',
+
+      alignItems: 'center',
+      justifyContent: 'center',
+
       backgroundColor: colors.black,
 
       borderRadius: 10,
 
       opacity: 0.7,
-    },  
+    },
+
+    deleteimg: {
+      position: 'absolute',
+      top: 15,
+
+      width: 18,
+      height: 18,
+    },
+
+    txtcity: {
+      position: 'absolute',
+      bottom: 30,
+
+      fontFamily: 'title',
+      fontSize: 11,
+
+      color: colors.white,
+    },
+
+    txttemp: {
+      position: 'absolute',
+      bottom: 13,
+
+      fontFamily: 'title',
+      fontSize: 12,
+
+      color: colors.white,
+    },
+
+    imgtemp2: {
+      position: 'absolute',
+      bottom: 50,
+
+      width: 50,
+      height: 50,
+    },
+
   }
 
 );

@@ -148,7 +148,7 @@ export function IndexScreen() {
                             />
                         </TouchableOpacity>
 
-                        <BottomFrameCity connection={connection} menuActivate={menuActivate} />
+                        <BottomFrameCity connection={connection} menuActivate={menuActivate} data={data}/>
 
                     </View>
                 
