@@ -25,6 +25,7 @@ import {BackgroundScreen} from './background';
 import {FrameOne} from './frameone';
 import {FrameTwo} from './frametwo';
 import {FrameThree} from './framethree';
+import {BottomFrameCity} from './bottomframecity';
 
 // ===============================
 // External components (END)
@@ -130,6 +131,8 @@ export function IndexScreen() {
                     </View>
 
                     <View style={indexStyle.bottomframe}>
+
+                    <BottomFrameCity/>
 
                     </View>
                 

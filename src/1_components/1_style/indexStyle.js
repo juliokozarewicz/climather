@@ -73,7 +73,6 @@ export default StyleSheet.create(
       height: 190,
 
       alignItems: 'center',
-      backgroundColor: 'red',
     },
 
   }

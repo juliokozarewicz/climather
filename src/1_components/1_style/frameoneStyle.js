@@ -42,7 +42,7 @@ export default StyleSheet.create(
 
       borderRadius: 10,
 
-      opacity: 0.7,
+      opacity: 0.5,
     },
 
     backgr2: {
@@ -55,7 +55,7 @@ export default StyleSheet.create(
 
       borderRadius: 10,
 
-      opacity: 0.7,
+      opacity: 0.5,
     },
 
     frametxt1: {

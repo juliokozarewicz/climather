@@ -49,7 +49,7 @@ export default StyleSheet.create(
 
       borderRadius: 10,
 
-      opacity: 0.3,
+      opacity: 0.5,
     },
 
     contenttexts: {
@@ -134,7 +134,6 @@ export default StyleSheet.create(
       width: 50,
       height: 50,
     },
-
   }
 
 );
