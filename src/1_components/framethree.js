@@ -17,12 +17,19 @@ export function FrameThree(props) {
 
     function loadForecast(data) {
 
-        function loadForecast(date) {
+        function loadForecastData(dateraw) {
 
-            const diaDoMes = date.getUTCDate();
-            
+            const dateconv = new Date(dateraw * 1000);
 
-            return diaDoMes;
+            const daymonth = dateconv.getUTCDate();
+            //const minutes = dateconv.getUTCMinutes();
+            const hours = dateconv.getUTCHours();
+            const formattedHours = hours < 10 ? `0${hours}` : hours;
+
+            console.log(daymonth)
+
+            return ({"daymonth": daymonth, "hours": formattedHours});
+
         };
 
         return (
@@ -30,7 +37,8 @@ export function FrameThree(props) {
                 <View style={framethreeStyle.allsquare} key={index}>
                     <View style={framethreeStyle.backgrprp}></View>
                     <View style={framethreeStyle.contenttexts}>
-                        <Text style={framethreeStyle.txttop}> {loadForecast(item.list.dt)} </Text>
+                        <Text style={framethreeStyle.txttop}>{loadForecastData(item.dt).daymonth}</Text>
+                        <Text style={framethreeStyle.txttop2}>{loadForecastData(item.dt).hours} h</Text>
                         <Image source={{ uri: `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` } } style={framethreeStyle.imgcenter} />
                         <Text style={framethreeStyle.txtbottom}>{item.main.temp.toFixed(0)}°</Text>
                     </View>
@@ -56,7 +64,7 @@ export function FrameThree(props) {
                         <View style={framethreeStyle.framethreeall} >
 
                             {
-                                loadForecast(props.data.list.slice(1, ))
+                                loadForecast(props.data.list)
                             }
 
                         </View>

@@ -64,11 +64,11 @@ export default StyleSheet.create(
 
     txttop: {
       position: 'absolute',
-      top: 10,
+      top: 5,
   
       width: '90%',
 
-      fontSize: 15,
+      fontSize: 20,
       fontFamily: 'title',
 
       color: colors.white,
@@ -78,9 +78,23 @@ export default StyleSheet.create(
       textTransform: 'capitalize',
     },
 
+    txttop2: {
+      position: 'absolute',
+      top: 35,
+  
+      width: '90%',
+
+      fontSize: 12,
+      fontFamily: 'title',
+
+      color: colors.bluelight,
+
+      textAlign: 'center',
+    },
+
     txtbottom: {
       position: 'absolute',
-      bottom: 10,
+      bottom: 8,
   
       width: '90%',
 
@@ -100,6 +114,9 @@ export default StyleSheet.create(
     },
 
     imgcenter: {
+      position: 'absolute',
+      bottom: 25,
+
       width: 50,
       height: 50,
     },
