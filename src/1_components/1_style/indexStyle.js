@@ -75,6 +75,27 @@ export default StyleSheet.create(
       alignItems: 'center',
     },
 
+    closecities: {
+      zIndex: 10,
+      position: 'absolute',
+      top: -20,
+
+      width: 40,
+      height: 40,
+
+      borderRadius: 25,
+
+      backgroundColor: colors.purple,
+      
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    closeimg: {
+      width: 20,
+      height: 20,
+    },
+
   }
 
 );

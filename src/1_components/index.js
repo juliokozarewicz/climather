@@ -8,6 +8,7 @@ import {
     Text,
     StatusBar,
     SafeAreaView,
+    Image,
 } from 'react-native';
 
 // import style sheet
@@ -131,6 +132,13 @@ export function IndexScreen() {
                     </View>
 
                     <View style={indexStyle.bottomframe}>
+
+                        <View style={indexStyle.closecities}>
+                        <Image
+                            source={require('./3_img/tobottom.png')}
+                            style={indexStyle.closeimg}
+                        />
+                        </View>
 
                         <BottomFrameCity connection={connection}/>
 
