@@ -75,6 +75,15 @@ export default StyleSheet.create(
       alignItems: 'center',
     },
 
+    bottomframeClose: {
+      position: 'relative',
+
+      width: '100%',
+      height: 40,
+
+      alignItems: 'center',
+    },
+
     closecities: {
       zIndex: 10,
       position: 'absolute',

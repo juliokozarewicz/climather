@@ -48,6 +48,9 @@ export function IndexScreen() {
         const [errorGetData, setErrorGetData] = useState(false);
         const [errorGetDataMSG, setErrorGetDataMSG] = useState('');
         const [reloadDataAPI, setReloadDataAPI] = useState(0);
+
+        // menu
+        const [menuActivate, setMenuActivate] = useState(true);
     // -------------------------------------------------------------------------------------
 
     // api request
@@ -131,7 +134,7 @@ export function IndexScreen() {
                         <FrameThree connectionF={connectionF} data={dataForecast} />
                     </View>
 
-                    <View style={indexStyle.bottomframe}>
+                    <View style={menuActivate ? indexStyle.bottomframe : indexStyle.bottomframeClose}>
 
                         <View style={indexStyle.closecities}>
                         <Image
@@ -140,7 +143,7 @@ export function IndexScreen() {
                         />
                         </View>
 
-                        <BottomFrameCity connection={connection}/>
+                        <BottomFrameCity connection={connection} menuActivate={menuActivate} />
 
                     </View>
                 

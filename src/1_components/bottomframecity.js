@@ -25,31 +25,42 @@ export function BottomFrameCity(props) {
                 
                 ?
 
-                    <View style={bottomframecityStyle.framebottomall} >
-                        <View style={bottomframecityStyle.allcontent} >
-                            <View style={bottomframecityStyle.backgrdwhi} ></View>
+                    props.menuActivate
 
-                            <ScrollView
-                                showsHorizontalScrollIndicator={false}
-                                horizontal
-                                style={bottomframecityStyle.scrollsts}
-                            >
-                                <View style={bottomframecityStyle.insidescroll} >
+                    ?
 
-                                    <View style={bottomframecityStyle.city}></View>
-                                    <View style={bottomframecityStyle.city}></View>
-                                    <View style={bottomframecityStyle.city}></View>
-                                    <View style={bottomframecityStyle.city}></View>
-                                    <View style={bottomframecityStyle.city}></View>
-                                    <View style={bottomframecityStyle.city}></View>
+                        <View style={bottomframecityStyle.framebottomall} >
+                            <View style={bottomframecityStyle.allcontent} >
+                                <View style={bottomframecityStyle.backgrdwhi} ></View>
 
-                                </View>
-                            </ScrollView>
+                                <ScrollView
+                                    showsHorizontalScrollIndicator={false}
+                                    horizontal
+                                    style={bottomframecityStyle.scrollsts}
+                                >
+                                    <View style={bottomframecityStyle.insidescroll} >
+
+                                        <View style={bottomframecityStyle.city}></View>
+                                        <View style={bottomframecityStyle.city}></View>
+                                        <View style={bottomframecityStyle.city}></View>
+                                        <View style={bottomframecityStyle.city}></View>
+                                        <View style={bottomframecityStyle.city}></View>
+                                        <View style={bottomframecityStyle.city}></View>
+
+                                    </View>
+                                </ScrollView>
 
 
+                            </View>
                         </View>
-                    </View>
 
+                    :
+
+                        <View style={bottomframecityStyle.framebottomall} >
+                            <View style={bottomframecityStyle.allcontent} >
+                                <View style={bottomframecityStyle.backgrdwhi} ></View>
+                            </View>
+                        </View>
                 
                 :
 
