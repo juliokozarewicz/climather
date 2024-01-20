@@ -9,6 +9,7 @@ import {
     StatusBar,
     SafeAreaView,
     Image,
+    TouchableOpacity,
 } from 'react-native';
 
 // import style sheet
@@ -104,6 +105,7 @@ export function IndexScreen() {
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
 
+    const imagePath = menuActivate ? require('./3_img/tobottom.png') : require('./3_img/totop.png');
 
     return (
 
@@ -136,12 +138,15 @@ export function IndexScreen() {
 
                     <View style={menuActivate ? indexStyle.bottomframe : indexStyle.bottomframeClose}>
 
-                        <View style={indexStyle.closecities}>
-                        <Image
-                            source={require('./3_img/tobottom.png')}
-                            style={indexStyle.closeimg}
-                        />
-                        </View>
+                        <TouchableOpacity 
+                            style={indexStyle.closecities}
+                            onPress={() => menuActivate ? setMenuActivate(false) : setMenuActivate(true)}
+                        >
+                            <Image
+                                source={imagePath}
+                                style={indexStyle.closeimg}
+                            />
+                        </TouchableOpacity>
 
                         <BottomFrameCity connection={connection} menuActivate={menuActivate} />
 
