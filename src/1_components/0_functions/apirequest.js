@@ -8,7 +8,7 @@ export async function getDataWeather () {
 };
 
 export async function getDataForecast () {
-    const requestF = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Curitiba&cnt=8&units=metric&appid=${API_KEY}`);
+    const requestF = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=Curitiba&&units=metric&appid=${API_KEY}`);
     const resultF = await requestF.json();
     return resultF;
 };

@@ -19,10 +19,10 @@ export function FrameThree(props) {
 
         function loadForecast(date) {
 
-            const data  = new Date(date * 1000);
-            const dia = String(data.getDate()).padStart(2, '0');
+            const diaDoMes = date.getUTCDate();
+            
 
-            return dia;
+            return diaDoMes;
         };
 
         return (
@@ -30,8 +30,8 @@ export function FrameThree(props) {
                 <View style={framethreeStyle.allsquare} key={index}>
                     <View style={framethreeStyle.backgrprp}></View>
                     <View style={framethreeStyle.contenttexts}>
-                        <Text style={framethreeStyle.txttop}> {loadForecast(item.dt)} </Text>
-                        <Image source={{ uri: `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` } } style={framethreeStyle.imgcentererro} />
+                        <Text style={framethreeStyle.txttop}> {loadForecast(item.list.dt)} </Text>
+                        <Image source={{ uri: `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` } } style={framethreeStyle.imgcenter} />
                         <Text style={framethreeStyle.txtbottom}>{item.main.temp.toFixed(0)}°</Text>
                     </View>
                 </View>

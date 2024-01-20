@@ -68,7 +68,7 @@ export default StyleSheet.create(
   
       width: '90%',
 
-      fontSize: 20,
+      fontSize: 15,
       fontFamily: 'title',
 
       color: colors.white,
@@ -84,7 +84,7 @@ export default StyleSheet.create(
   
       width: '90%',
 
-      fontSize: 15,
+      fontSize: 13,
       fontFamily: 'title',
 
       color: colors.black,
@@ -94,14 +94,14 @@ export default StyleSheet.create(
       textTransform: 'capitalize',
     },
 
-    imgcenter: {
-      width: 18,
-      height: 18,
+    imgcentererro: {
+      width: 17,
+      height: 17,
     },
 
-    imgcentererro: {
-      width: 40,
-      height: 40,
+    imgcenter: {
+      width: 50,
+      height: 50,
     },
 
   }
