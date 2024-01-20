@@ -132,7 +132,7 @@ export function IndexScreen() {
 
                     <View style={indexStyle.bottomframe}>
 
-                    <BottomFrameCity/>
+                        <BottomFrameCity connection={connection}/>
 
                     </View>
                 

@@ -10,24 +10,28 @@ export default StyleSheet.create(
 
     framebottomall: {
       width: '100%',
-      flex: 1,
+      height: '100%',
     },
 
     allcontent: {
       width: '100%',
       height: '100%',
-      
-      alignItems: 'center',
     },
 
-    backg: {
+    backgrdwhi: {
+      position: 'absolute',
+
       width: '100%',
       height: '100%',
-      
-      alignItems: 'center',
 
       backgroundColor: colors.white,
-    },
+
+      opacity: 0.5,
+
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
+    }
+  
   }
 
 );

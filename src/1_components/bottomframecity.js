@@ -3,6 +3,7 @@ import React from 'react'
 import {
     View,
     ScrollView,
+    Text,
 } from 'react-native';
 
 // import style sheet
@@ -15,7 +16,7 @@ import bottomframecityStyle from './1_style/bottomframecityStyle';
 export function BottomFrameCity(props) {
 
     return (
-        
+
         <>
 
             {
@@ -23,15 +24,17 @@ export function BottomFrameCity(props) {
                 props.connection 
                 
                 ?
-                    <ScrollView style={bottomframecityStyle.framebottomall} >
+
+                    <View style={bottomframecityStyle.framebottomall}>
                         <View style={bottomframecityStyle.allcontent}>
-                            <View style={bottomframecityStyle.backg}></View>
+                            <View style={bottomframecityStyle.backgrdwhi}></View>
                         </View>
-                    </ScrollView>
+                    </View>
+
                 
                 :
 
-                <View style={bottomframecityStyle.framebottomall}></View>
+                    <View style={bottomframecityStyle.framebottomall}></View>
 
             }
        
