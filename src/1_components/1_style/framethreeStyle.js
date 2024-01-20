@@ -45,11 +45,11 @@ export default StyleSheet.create(
       width: '100%',
       height: '100%',
 
-      backgroundColor: colors.purple,
+      backgroundColor: '#8B6DF7',
 
       borderRadius: 10,
 
-      opacity: 0.7,
+      opacity: 0.3,
     },
 
     contenttexts: {
@@ -64,11 +64,11 @@ export default StyleSheet.create(
 
     txttop: {
       position: 'absolute',
-      top: 5,
+      top: 3,
   
       width: '90%',
 
-      fontSize: 20,
+      fontSize: 15,
       fontFamily: 'title',
 
       color: colors.white,
@@ -80,28 +80,42 @@ export default StyleSheet.create(
 
     txttop2: {
       position: 'absolute',
-      top: 35,
+      top: 25,
   
       width: '90%',
 
-      fontSize: 12,
+      fontSize: 10,
       fontFamily: 'title',
 
-      color: colors.bluelight,
+      color: colors.gray2,
+
+      textAlign: 'center',
+    },
+
+    txttop3: {
+      position: 'absolute',
+      bottom: 5,
+  
+      width: '90%',
+
+      fontSize: 9,
+      fontFamily: 'title',
+
+      color: colors.white,
 
       textAlign: 'center',
     },
 
     txtbottom: {
       position: 'absolute',
-      bottom: 8,
+      bottom: 18,
   
       width: '90%',
 
-      fontSize: 13,
+      fontSize: 12,
       fontFamily: 'title',
 
-      color: colors.black,
+      color: colors.white,
 
       textAlign: 'center',
 
@@ -115,7 +129,7 @@ export default StyleSheet.create(
 
     imgcenter: {
       position: 'absolute',
-      bottom: 25,
+      top: 40,
 
       width: 50,
       height: 50,
