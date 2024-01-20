@@ -35,14 +35,20 @@ export default StyleSheet.create(
       borderTopRightRadius: 20,
     },
 
-    contentcities: {
+    scrollsts: {
       position: 'absolute',
       bottom: 20,
 
       width: '100%',
       height: 140,
+    },
 
-      paddingLeft: 25,
+    insidescroll: {
+      width: '100%',
+      height: '100%',
+
+      paddingLeft: 21,
+      paddingRight: 21,
 
       flexDirection: 'row',
 
@@ -58,8 +64,7 @@ export default StyleSheet.create(
       borderRadius: 10,
 
       opacity: 0.7,
-    },
-  
+    },  
   }
 
 );
