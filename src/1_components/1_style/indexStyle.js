@@ -70,7 +70,7 @@ export default StyleSheet.create(
       position: 'relative',
 
       width: '100%',
-      height: 190,
+      height: 200,
 
       alignItems: 'center',
     },
