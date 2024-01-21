@@ -141,7 +141,40 @@ export function BottomFrameCity(props) {
                 
                 :
 
-                    <View style={bottomframecityStyle.framebottomall}></View>
+                    props.menuActivate
+
+                    ?
+
+                        <View style={bottomframecityStyle.framebottomall} >
+                            <View style={bottomframecityStyle.allcontent} >
+                                <View style={bottomframecityStyle.backgrdwhi} ></View>
+
+                                <ScrollView
+                                    showsHorizontalScrollIndicator={false}
+                                    horizontal
+                                    style={bottomframecityStyle.scrollsts}
+                                >
+                                    <View style={bottomframecityStyle.insidescroll} >
+                                        <TouchableWithoutFeedback onPress={() => console.log('*** CLICK ONE ***')} >
+                                            <View style={bottomframecityStyle.city} >
+                                                <View style={bottomframecityStyle.backgcity} ></View>
+                                                <Image source={require('./3_img/noconnection.png')} style={bottomframecityStyle.noconnection} />
+                                            </View>
+                                        </TouchableWithoutFeedback>
+                                    </View>
+                                </ScrollView>
+
+
+                            </View>
+                        </View>
+
+                    :
+
+                        <View style={bottomframecityStyle.framebottomall} >
+                            <View style={bottomframecityStyle.allcontent} >
+                                <View style={bottomframecityStyle.backgrdwhi} ></View>
+                            </View>
+                        </View>
 
             }
        

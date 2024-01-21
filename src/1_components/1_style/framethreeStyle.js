@@ -123,8 +123,10 @@ export default StyleSheet.create(
     },
 
     imgcentererro: {
-      width: 17,
-      height: 17,
+      width: 15,
+      height: 15,
+
+      opacity: 0.4,
     },
 
     imgcenter: {

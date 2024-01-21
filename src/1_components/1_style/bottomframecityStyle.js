@@ -113,6 +113,15 @@ export default StyleSheet.create(
       height: 50,
     },
 
+    noconnection: {
+      position: 'absolute',
+
+      width: 25,
+      height: 25,
+
+      opacity: 0.4,
+    },
+
   }
 
 );

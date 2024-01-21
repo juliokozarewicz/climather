@@ -81,8 +81,10 @@ export default StyleSheet.create(
     },
 
     noconnection: {
-      width: 30,
-      height: 30,
+      width: 25,
+      height: 25,
+
+      opacity: 0.4,
     },
 
   }

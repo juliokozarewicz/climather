@@ -84,46 +84,6 @@ export function FrameThree(props) {
                                 <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
                             </View>
                         </View>
-                        <View style={framethreeStyle.allsquare}>
-                            <View style={framethreeStyle.backgrprp}></View>
-                            <View style={framethreeStyle.contenttexts}>
-                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
-                            </View>
-                        </View>
-                        <View style={framethreeStyle.allsquare}>
-                            <View style={framethreeStyle.backgrprp}></View>
-                            <View style={framethreeStyle.contenttexts}>
-                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
-                            </View>
-                        </View>
-                        <View style={framethreeStyle.allsquare}>
-                            <View style={framethreeStyle.backgrprp}></View>
-                            <View style={framethreeStyle.contenttexts}>
-                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
-                            </View>
-                        </View>
-                        <View style={framethreeStyle.allsquare}>
-                            <View style={framethreeStyle.backgrprp}></View>
-                            <View style={framethreeStyle.contenttexts}>
-                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
-                            </View>
-                        </View>
-                        <View style={framethreeStyle.allsquare}>
-                            <View style={framethreeStyle.backgrprp}></View>
-                            <View style={framethreeStyle.contenttexts}>
-                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
-                            </View>
-                        </View>
-                        <View style={framethreeStyle.allsquare}>
-                            <View style={framethreeStyle.backgrprp}></View>
-                            <View style={framethreeStyle.contenttexts}>
-                                <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
-                            </View>
-                        </View>
-
-
-
-
                     </View>
                 </ScrollView>
 
