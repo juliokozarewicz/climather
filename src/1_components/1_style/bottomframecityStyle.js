@@ -64,7 +64,7 @@ export default StyleSheet.create(
     },
 
     city2: {
-      width: 75,
+      width: 90,
       height: '100%',
 
       alignItems: 'center',
