@@ -40,7 +40,7 @@ export default StyleSheet.create(
       bottom: 20,
 
       width: '100%',
-      height: 140,
+      height: 135,
     },
 
     insidescroll: {
@@ -52,11 +52,11 @@ export default StyleSheet.create(
 
       flexDirection: 'row',
 
-      gap: 15,
+      gap: 30,
     },
 
     city: {
-      width: 100,
+      width: 80,
       height: '100%',
 
       alignItems: 'center',
