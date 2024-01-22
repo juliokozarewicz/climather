@@ -95,6 +95,7 @@ export function BottomFrameCity(props) {
                                                 <Text style={bottomframecityStyle.txttemp} >29°</Text>
                                             </View>
                                         </TouchableWithoutFeedback>
+                                        
 
 
 
