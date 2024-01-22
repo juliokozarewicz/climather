@@ -19,6 +19,9 @@ import indexStyle from './1_style/indexStyle';
 // import func api request
 import { getDataWeather, getDataForecast, testGetDataForecast } from './0_functions/apirequest';
 
+// database
+import {CreateItemDataBase, ReadDataBase} from './0_functions/CRUD'
+
 // External components (INIT)
 // ===============================
 
@@ -35,7 +38,7 @@ import {BottomFrameCity} from './bottomframecity';
 
 // index screen function
 // -------------------------------------------------------------------------------------
-export function IndexScreen() {
+export function IndexScreen() {   
 
 
     // states
@@ -49,6 +52,9 @@ export function IndexScreen() {
         const [errorGetData, setErrorGetData] = useState(false);
         const [errorGetDataMSG, setErrorGetDataMSG] = useState('');
         const [reloadDataAPI, setReloadDataAPI] = useState(0);
+
+        // cities
+        const [getcity, setGetcity] = useState([]);
 
         // menu
         const [menuActivate, setMenuActivate] = useState(true);
@@ -98,14 +104,28 @@ export function IndexScreen() {
 
         };
 
+        async function fetchDataBase() {
+            try {
+              const result = await ReadDataBase();
+              setGetcity(result);
+            } catch (error) {
+              console.error('Erro ao obter dados:', error);
+            }
+          };
+
         fetchDataFromApi().then( () => {
-            fetchForecast();
+            fetchForecast().then( () => {
+                fetchDataBase();
+            });
         });
 
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
-
+    console.log(getcity)
+    // img menu
+    // -------------------------------------------------------------------------------------
     const imagePath = menuActivate ? require('./3_img/tobottom.png') : require('./3_img/totop.png');
+    // -------------------------------------------------------------------------------------
 
     return (
 
@@ -148,7 +168,7 @@ export function IndexScreen() {
                             />
                         </TouchableOpacity>
 
-                        <BottomFrameCity connection={connection} menuActivate={menuActivate} data={data}/>
+                        <BottomFrameCity getcity={getcity} connection={connection} menuActivate={menuActivate} data={data}/>
 
                     </View>
                 
