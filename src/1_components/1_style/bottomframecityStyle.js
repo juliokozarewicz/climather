@@ -52,11 +52,19 @@ export default StyleSheet.create(
 
       flexDirection: 'row',
 
-      gap: 30,
+      gap: 10,
     },
 
     city: {
-      width: 80,
+      width: 90,
+      height: '100%',
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    city2: {
+      width: 75,
       height: '100%',
 
       alignItems: 'center',
@@ -64,7 +72,7 @@ export default StyleSheet.create(
     },
 
     backgcity: {
-      width: 100,
+      width: '100%',
       height: '100%',
 
       alignItems: 'center',
@@ -120,6 +128,43 @@ export default StyleSheet.create(
       height: 25,
 
       opacity: 0.4,
+    },
+
+    addcitiadd: {
+      position: 'absolute',
+
+      width: 20,
+      height: 2,
+
+      backgroundColor: colors.white,
+
+      opacity: 0.7,
+    },
+
+    addcitiadd2: {
+      position: 'absolute',
+
+      width: 20,
+      height: 2,
+
+      backgroundColor: colors.white,
+
+      transform: [{ rotate: '90deg' }],
+
+      opacity: 0.7,
+    },
+
+    addcitytxt: {
+      position: 'absolute',
+      bottom: 20,
+
+      width: '100%',
+      textAlign: 'center',
+
+      fontFamily: 'text',
+      fontSize: 9,
+
+      color: colors.white,
     },
 
   }

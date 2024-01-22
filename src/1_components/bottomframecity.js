@@ -42,6 +42,15 @@ export function BottomFrameCity(props) {
                                     style={bottomframecityStyle.scrollsts}
                                 >
                                     <View style={bottomframecityStyle.insidescroll} >
+                                        <TouchableOpacity onPress={() => console.log('*** CLICK ONE ***')} >
+                                            <View style={bottomframecityStyle.city2} >
+                                                <View style={bottomframecityStyle.backgcity} ></View>
+                                                <View style={bottomframecityStyle.addcitiadd} ></View>
+                                                <View style={bottomframecityStyle.addcitiadd2} ></View>
+                                                <Text style={bottomframecityStyle.addcitytxt} >Add City</Text>
+                                            </View>
+                                        </TouchableOpacity>
+
                                         <TouchableWithoutFeedback onPress={() => console.log('*** CLICK ONE ***')} >
                                             <View style={bottomframecityStyle.city} >
                                                 <View style={bottomframecityStyle.backgcity} ></View>
@@ -57,6 +66,8 @@ export function BottomFrameCity(props) {
                                                 <Text style={bottomframecityStyle.txttemp} >29°</Text>
                                             </View>
                                         </TouchableWithoutFeedback>
+
+                                        
 
 
 
@@ -84,37 +95,6 @@ export function BottomFrameCity(props) {
                                                 <Text style={bottomframecityStyle.txttemp} >29°</Text>
                                             </View>
                                         </TouchableWithoutFeedback>
-                                        <TouchableWithoutFeedback onPress={() => console.log('*** CLICK THREE ***')} >
-                                            <View style={bottomframecityStyle.city} >
-                                                <View style={bottomframecityStyle.backgcity} ></View>
-                                                <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
-                                                <Image source={{ uri: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@4x.png` }} style={bottomframecityStyle.imgtemp2} />
-                                                <Text
-                                                    numberOfLines={1}
-                                                    ellipsizeMode="tail"
-                                                    style={bottomframecityStyle.txtcity}
-                                                >
-                                                    Curitiba
-                                                </Text>
-                                                <Text style={bottomframecityStyle.txttemp} >29°</Text>
-                                            </View>
-                                        </TouchableWithoutFeedback>
-                                        <TouchableWithoutFeedback onPress={() => console.log('*** CLICK FOUR ***')} >
-                                            <View style={bottomframecityStyle.city} >
-                                                <View style={bottomframecityStyle.backgcity} ></View>
-                                                <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
-                                                <Image source={{ uri: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@4x.png` }} style={bottomframecityStyle.imgtemp2} />
-                                                <Text
-                                                    numberOfLines={1}
-                                                    ellipsizeMode="tail"
-                                                    style={bottomframecityStyle.txtcity}
-                                                >
-                                                    Curitiba
-                                                </Text>
-                                                <Text style={bottomframecityStyle.txttemp} >29°</Text>
-                                            </View>
-                                        </TouchableWithoutFeedback>
-
 
 
 
