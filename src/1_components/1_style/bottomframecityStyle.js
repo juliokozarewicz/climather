@@ -29,7 +29,7 @@ export default StyleSheet.create(
 
       backgroundColor: colors.white,
 
-      opacity: 0.5,
+      opacity: 0.3,
 
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
@@ -70,11 +70,11 @@ export default StyleSheet.create(
       alignItems: 'center',
       justifyContent: 'center',
 
-      backgroundColor: colors.black,
+      backgroundColor: colors.purple,
 
       borderRadius: 10,
 
-      opacity: 0.7,
+      opacity: 0.4,
     },
 
     deleteimg: {

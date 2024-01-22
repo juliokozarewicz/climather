@@ -25,7 +25,7 @@ export function BottomFrameCity(props) {
             {
 
                 props.connection 
-                
+
                 ?
 
                     props.menuActivate
