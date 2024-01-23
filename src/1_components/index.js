@@ -10,6 +10,7 @@ import {
     SafeAreaView,
     Image,
     TouchableOpacity,
+    TouchableWithoutFeedback,
 } from 'react-native';
 
 // import style sheet
@@ -58,6 +59,9 @@ export function IndexScreen() {
 
         // menu
         const [menuActivate, setMenuActivate] = useState(true);
+
+        // add city
+        const [insertCity, setInsertCity] = useState(true);
     // -------------------------------------------------------------------------------------
 
     // api request
@@ -148,7 +152,7 @@ export function IndexScreen() {
 
                 <BackgroundScreen connection={connection} data={data}/>
 
-                <View style={indexStyle.absoluteframe}>
+                <View style={indexStyle.absoluteframe} >
 
                     <View style={indexStyle.topframe}>
                         <FrameOne connection={connection} data={data} />
@@ -175,11 +179,19 @@ export function IndexScreen() {
                             connection={connection}
                             menuActivate={menuActivate}
                             data={data}
+                            setInsertCity={setInsertCity}
                             reloadViewFunc={reloadViewFunc}
                         />
 
                     </View>
                 
+                </View>
+
+                <View style={insertCity? indexStyle.addnewvity: { display: 'none' }}>
+                    <TouchableWithoutFeedback onPress={ () => setInsertCity(false)}>
+                        <View style={indexStyle.backgroundColorBlack}></View>
+                    </TouchableWithoutFeedback>
+                    <View style={indexStyle.frameinput}></View>
                 </View>
 
             </SafeAreaView>

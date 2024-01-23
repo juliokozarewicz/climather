@@ -9,7 +9,7 @@ export default StyleSheet.create(
   {
 
     scrollall: {
-      zIndex: 1000,
+      zIndex: 20,
 
       marginTop: 10,
       

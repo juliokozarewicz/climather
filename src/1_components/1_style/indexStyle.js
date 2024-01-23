@@ -105,6 +105,45 @@ export default StyleSheet.create(
       height: 20,
     },
 
+    addnewvity: {
+      zIndex: 50,
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+      
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    backgroundColorBlack: {
+      zIndex: 510,
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+      
+      backgroundColor: colors.black,
+
+      opacity: 0.7,
+    },
+
+    frameinput: {
+      zIndex: 510,
+      position: 'absolute',
+      bottom: 10,
+
+      width: '95%',
+      height: 250,
+      
+      backgroundColor: colors.gray1,
+
+      borderRadius: 15,
+
+      borderWidth: 4,
+      borderColor: colors.blue,
+    },
+
   }
 
 );

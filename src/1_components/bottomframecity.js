@@ -42,7 +42,7 @@ export function BottomFrameCity(props) {
                                     style={bottomframecityStyle.scrollsts}
                                 >
                                     <View style={bottomframecityStyle.insidescroll} >
-                                        <TouchableOpacity onPress={() => console.log('*** CLICK ONE ***')} >
+                                        <TouchableOpacity onPress={() => props.setInsertCity(true)} >
                                             <View style={bottomframecityStyle.city2} >
                                                 <View style={bottomframecityStyle.backgcity} ></View>
                                                 <View style={bottomframecityStyle.addcitiadd} ></View>
@@ -89,7 +89,6 @@ export function BottomFrameCity(props) {
                                     </View>
                                 </ScrollView>
 
-
                             </View>
                         </View>
 
@@ -100,7 +99,7 @@ export function BottomFrameCity(props) {
                                 <View style={bottomframecityStyle.backgrdwhi} ></View>
                             </View>
                         </View>
-                
+
                 :
 
                     props.menuActivate
