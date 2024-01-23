@@ -83,9 +83,9 @@ export function IndexScreen() {
     // -------------------------------------------------------------------------------------
     useEffect(() => {
 
-        const fetchDataFromApi = async () => {
+        const fetchDataFromApi = async (city) => {
 
-            const result = await getDataWeather();
+            const result = await getDataWeather(city);
 
             if (result && result.cod == '200') {
                 setErrorGetData(false);
@@ -101,9 +101,9 @@ export function IndexScreen() {
 
         };
 
-        const fetchForecast = async () => {
+        const fetchForecast = async (city) => {
 
-            const dataForecast = await getDataForecast();
+            const dataForecast = await getDataForecast(city);
 
             if (dataForecast && dataForecast.cod == '200') {
                 setDataForecast(dataForecast);
@@ -116,8 +116,8 @@ export function IndexScreen() {
 
         };
 
-        fetchDataFromApi().then( () => {
-            fetchForecast();
+        fetchDataFromApi('Curitiba, BR').then( () => {
+            fetchForecast('Curitiba, BR');
         });
 
     }, [reloadDataAPI]);

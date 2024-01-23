@@ -17,7 +17,7 @@ export function BackgroundScreen(props) {
         const data = new Date(timestamp);
         const horas = data.getHours();
       
-        return horas > 6 && horas < 18;
+        return horas > 6 && horas < 19;
     }
 
     if (props.connection && props.data.weather[0].main.toLowerCase() === 'clouds') {

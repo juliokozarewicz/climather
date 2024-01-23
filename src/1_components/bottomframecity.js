@@ -13,7 +13,6 @@ import {
 import bottomframecityStyle from './1_style/bottomframecityStyle';
 
 
-
 // index screen function
 // -------------------------------------------------------------------------------------
 export function BottomFrameCity(props) {
@@ -53,36 +52,42 @@ export function BottomFrameCity(props) {
 
                                         {
 
-                                            props.getcity.map((item, index) => (
-                                                <TouchableWithoutFeedback key={index} onPress={() => console.log('*** CLICK ***')} >
-                                                    <View style={bottomframecityStyle.city} >
+                                            props.getcity.map((item, index) => {
 
-                                                        <View style={bottomframecityStyle.backgcity} ></View>
+                                                return (
 
-                                                        <TouchableOpacity
-                                                            style={bottomframecityStyle.btndel}
-                                                            onPress={ () => {
-                                                                props.deleteItemFromDatabase(item.id);
-                                                                props.reloadDB();
-                                                            }}
-                                                        >
-                                                            <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
-                                                        </TouchableOpacity>
+                                                    <TouchableWithoutFeedback key={index} onPress={() => console.log('*** CLICK ***')} >
+                                                        <View style={bottomframecityStyle.city} >
 
-                                                        <Image style={bottomframecityStyle.imgtemp2} source={{ uri: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@4x.png` }} />
+                                                            <View style={bottomframecityStyle.backgcity} ></View>
 
-                                                        <Text
-                                                            numberOfLines={1}
-                                                            ellipsizeMode="tail"
-                                                            style={bottomframecityStyle.txtcity}
-                                                        >
-                                                            {item.city}
-                                                        </Text>
+                                                            <TouchableOpacity
+                                                                style={bottomframecityStyle.btndel}
+                                                                onPress={ () => {
+                                                                    props.deleteItemFromDatabase(item.id);
+                                                                    props.reloadDB();
+                                                                }}
+                                                            >
+                                                                <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
+                                                            </TouchableOpacity>
 
-                                                        <Text style={bottomframecityStyle.txttemp} >** °</Text>
-                                                    </View>
-                                                </TouchableWithoutFeedback>
-                                            ))
+                                                            <Image style={bottomframecityStyle.imgtemp2} source={{ uri: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@4x.png` }} />
+
+                                                            <Text
+                                                                numberOfLines={1}
+                                                                ellipsizeMode="tail"
+                                                                style={bottomframecityStyle.txtcity}
+                                                            >
+                                                                {item.city}
+                                                            </Text>
+
+                                                            <Text style={bottomframecityStyle.txttemp} >** °</Text>
+                                                        </View>
+                                                    </TouchableWithoutFeedback>
+
+                                                )
+
+                                                })
 
                                         }
 
