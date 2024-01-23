@@ -230,7 +230,7 @@ export function IndexScreen() {
                                     style={inputFocused ? indexStyle.textcitiesaddFocus : indexStyle.textcitiesadd}
 
                                     value={citytext}
-                                    placeholder={'Please enter a city...'}
+                                    placeholder={'Please enter a city. (Ex: New York, US)'}
                                     placeholderTextColor={indexStyle.placeholdertextcolor.color}
                                     onChangeText={(text) => setCitytext(text)}
                                     onFocus={() => setInputFocused(true)}
