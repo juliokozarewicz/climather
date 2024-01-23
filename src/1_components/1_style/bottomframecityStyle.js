@@ -95,8 +95,11 @@ export default StyleSheet.create(
       position: 'absolute',
       bottom: 30,
 
+      width: '90%',
+      textAlign: 'center',
+
       fontFamily: 'title',
-      fontSize: 11,
+      fontSize: 10,
 
       color: colors.white,
     },
@@ -113,7 +116,7 @@ export default StyleSheet.create(
 
     imgtemp2: {
       position: 'absolute',
-      bottom: 50,
+      bottom: 45,
 
       width: 50,
       height: 50,
