@@ -121,8 +121,9 @@ export function IndexScreen() {
           };
         
         fetchDataBase();
+
         fetchDataFromApi().then( () => {
-            fetchForecast()
+            fetchForecast();
         });
 
     }, [reloadDataAPI]);
