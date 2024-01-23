@@ -191,7 +191,10 @@ export function IndexScreen() {
                     <TouchableWithoutFeedback onPress={ () => setInsertCity(false)}>
                         <View style={indexStyle.backgroundColorBlack}></View>
                     </TouchableWithoutFeedback>
-                    <View style={indexStyle.frameinput}></View>
+                    <View style={indexStyle.frameinput}>
+                        <Text style={indexStyle.txtaddcity}>Add a City</Text>
+                        <Text style={indexStyle.txtdesccity}>Add multiple cities and keep an eye on their weather conditions. This is very useful, for example, before planning a trip.</Text>
+                    </View>
                 </View>
 
             </SafeAreaView>

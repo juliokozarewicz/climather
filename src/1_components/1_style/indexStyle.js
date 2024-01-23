@@ -141,7 +141,33 @@ export default StyleSheet.create(
       borderRadius: 15,
 
       borderWidth: 4,
-      borderColor: colors.blue,
+      borderColor: colors.purple,
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    txtaddcity: {
+      position: 'absolute',
+      top: 25,
+
+      fontFamily: 'title',
+      fontSize: 20,
+
+      color: colors.purple,
+    },
+
+    txtdesccity: {
+      position: 'absolute',
+      top: 70,
+
+      fontFamily: 'text',
+      fontSize: 9,
+
+      color: colors.gray3,
+
+      width: '85%',
+      textAlign: 'center',
     },
 
   }
