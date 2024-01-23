@@ -62,15 +62,20 @@ export function IndexScreen() {
 
         // menu
         const [menuActivate, setMenuActivate] = useState(true);
+        const [reloadDataDB, setReloadDataDB] = useState(0);
 
         // input city colors
         const [inputFocused, setInputFocused] = useState(false);
     // -------------------------------------------------------------------------------------
 
-    // api request
+    // reload
     // -------------------------------------------------------------------------------------
     const reloadViewFunc = () => {
         setReloadDataAPI(prevFlag => prevFlag + 1);
+    };
+
+    const reloadDB = () => {
+        setReloadDataDB(prevFlag => prevFlag + 1);
     };
     // -------------------------------------------------------------------------------------
     
@@ -111,6 +116,13 @@ export function IndexScreen() {
 
         };
 
+        fetchDataFromApi().then( () => {
+            fetchForecast();
+        });
+
+    }, [reloadDataAPI]);
+
+    useEffect(() => {
         async function fetchDataBase() {
             try {
               const result = await ReadDataBase();
@@ -121,12 +133,7 @@ export function IndexScreen() {
           };
         
         fetchDataBase();
-
-        fetchDataFromApi().then( () => {
-            fetchForecast();
-        });
-
-    }, [reloadDataAPI]);
+    }, [reloadDataDB]);
     // -------------------------------------------------------------------------------------
 
     // img menu
@@ -182,19 +189,27 @@ export function IndexScreen() {
                             menuActivate={menuActivate}
                             data={data}
                             setInsertCity={setInsertCity}
-                            reloadViewFunc={reloadViewFunc}
+                            reloadDB={reloadDB}
                         />
 
                     </View>
                 
                 </View>
 
-                <View style={insertCity? indexStyle.addnewvity: { display: 'none' }}>
-                    <TouchableWithoutFeedback onPress={ () => setInsertCity(false)}>
+                <View key={reloadDataDB} style={insertCity? indexStyle.addnewvity: { display: 'none' }}>
+                    <TouchableWithoutFeedback onPress={ () => {
+                        setInsertCity(false);
+                        setCitytext('');
+                        reloadDB();
+                    }}>
                         <View style={indexStyle.backgroundColorBlack}></View>
                     </TouchableWithoutFeedback>
                     <View style={indexStyle.frameinput}>
-                        <TouchableOpacity  style={indexStyle.closeaddcity} onPress={() => setInsertCity(false)}>
+                        <TouchableOpacity  style={indexStyle.closeaddcity} onPress={() => {
+                            setInsertCity(false);
+                            setCitytext('');
+                            reloadDB();
+                        }}>
                             <Text style={indexStyle.closeaddcitytxt}>x</Text>
                         </TouchableOpacity>
                         <Text style={indexStyle.txtaddcity}>Add a City</Text>
@@ -212,7 +227,8 @@ export function IndexScreen() {
                         <TouchableOpacity  style={indexStyle.btnsend} onPress={() => {
                             CreateItemDataBase(citytext);
                             setInsertCity(false);
-                            reloadViewFunc();
+                            setCitytext('');
+                            reloadDB();
                         }}>
                             <Text style={indexStyle.sendbtntxt}>+ Add City</Text>
                         </TouchableOpacity>
