@@ -57,12 +57,11 @@ export function IndexScreen() {
 
         // cities
         const [getcity, setGetcity] = useState([]);
+        const [citytext, setCitytext] = useState('');
+        const [insertCity, setInsertCity] = useState(false);
 
         // menu
         const [menuActivate, setMenuActivate] = useState(true);
-
-        // add city
-        const [insertCity, setInsertCity] = useState(false);
 
         // input city colors
         const [inputFocused, setInputFocused] = useState(false);
@@ -179,7 +178,6 @@ export function IndexScreen() {
                         <BottomFrameCity
                             getcity={getcity}
                             deleteItemFromDatabase={deleteItemFromDatabase}
-                            CreateItemDataBase={CreateItemDataBase}
                             connection={connection}
                             menuActivate={menuActivate}
                             data={data}
@@ -204,14 +202,15 @@ export function IndexScreen() {
                         <TextInput
                             style={indexStyle.inputtxtcity}
 
-                            //value={taskInputUpdate}
+                            value={citytext}
                             placeholder='Please enter a city...'
                             placeholderTextColor={indexStyle.placeholdertextcolor.color}
-                            //onChangeText={(text) => settaskInputUpdate(text)}
+                            onChangeText={(text) => setCitytext(text)}
                             onFocus={() => setInputFocused(true)}
                             onBlur={() => setInputFocused(false)}
                         />
                         <TouchableOpacity  style={indexStyle.btnsend} onPress={() => {
+                            CreateItemDataBase(citytext);
                             setInsertCity(false);
                             reloadViewFunc();
                         }}>
