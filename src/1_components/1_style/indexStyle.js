@@ -157,6 +157,32 @@ export default StyleSheet.create(
       color: colors.purple,
     },
 
+    closeaddcity: {
+      position: 'absolute',
+      top: -18,
+      right: -10,
+
+      width: 35,
+      height: 35,
+
+      borderRadius: 25,
+      
+      backgroundColor: colors.purple,
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    closeaddcitytxt: {
+      position: 'absolute',
+      top: -1,
+
+      fontFamily: 'title',
+      fontSize: 20,
+
+      color: colors.white,
+    },
+
     txtdesccity: {
       position: 'absolute',
       top: 70,
@@ -168,6 +194,48 @@ export default StyleSheet.create(
 
       width: '85%',
       textAlign: 'center',
+    },
+
+    inputtxtcity: {
+      position: 'absolute',
+      bottom: 75,
+
+      width: '90%',
+      height: 50,
+
+      borderWidth: 1,
+      borderColor: colors.gray3,
+      borderRadius: 10,
+
+      padding: 15,
+
+      color: colors.black
+    },
+
+    placeholdertextcolor: {
+      color: colors.gray3,
+    },
+
+    btnsend: {
+      position: 'absolute',
+      bottom: 15,
+
+      width: '90%',
+      height: 50,
+
+      borderRadius: 10,
+      
+      backgroundColor: colors.purple,
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    sendbtntxt: {
+      fontFamily: 'title',
+      fontSize: 15,
+
+      color: colors.white,
     },
 
   }

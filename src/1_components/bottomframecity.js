@@ -115,14 +115,14 @@ export function BottomFrameCity(props) {
                                     horizontal
                                     style={bottomframecityStyle.scrollsts}
                                 >
-                                    <View style={bottomframecityStyle.insidescroll} >
-                                        <TouchableWithoutFeedback onPress={() => console.log('*** CLICK ONE ***')} >
-                                            <View style={bottomframecityStyle.city} >
-                                                <View style={bottomframecityStyle.backgcity} ></View>
-                                                <Image source={require('./3_img/noconnection.png')} style={bottomframecityStyle.noconnection} />
-                                            </View>
-                                        </TouchableWithoutFeedback>
-                                    </View>
+                                    <TouchableOpacity onPress={() => props.setInsertCity(true)} >
+                                        <View style={bottomframecityStyle.city2} >
+                                            <View style={bottomframecityStyle.backgcity} ></View>
+                                            <View style={bottomframecityStyle.addcitiadd} ></View>
+                                            <View style={bottomframecityStyle.addcitiadd2} ></View>
+                                            <Text style={bottomframecityStyle.addcitytxt} >Add City</Text>
+                                        </View>
+                                    </TouchableOpacity>
                                 </ScrollView>
 
 

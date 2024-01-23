@@ -11,6 +11,7 @@ import {
     Image,
     TouchableOpacity,
     TouchableWithoutFeedback,
+    TextInput,
 } from 'react-native';
 
 // import style sheet
@@ -61,7 +62,10 @@ export function IndexScreen() {
         const [menuActivate, setMenuActivate] = useState(true);
 
         // add city
-        const [insertCity, setInsertCity] = useState(true);
+        const [insertCity, setInsertCity] = useState(false);
+
+        // input city colors
+        const [inputFocused, setInputFocused] = useState(false);
     // -------------------------------------------------------------------------------------
 
     // api request
@@ -192,8 +196,27 @@ export function IndexScreen() {
                         <View style={indexStyle.backgroundColorBlack}></View>
                     </TouchableWithoutFeedback>
                     <View style={indexStyle.frameinput}>
+                        <TouchableOpacity  style={indexStyle.closeaddcity} onPress={() => setInsertCity(false)}>
+                            <Text style={indexStyle.closeaddcitytxt}>x</Text>
+                        </TouchableOpacity>
                         <Text style={indexStyle.txtaddcity}>Add a City</Text>
                         <Text style={indexStyle.txtdesccity}>Add multiple cities and keep an eye on their weather conditions. This is very useful, for example, before planning a trip.</Text>
+                        <TextInput
+                            style={indexStyle.inputtxtcity}
+
+                            //value={taskInputUpdate}
+                            placeholder='Please enter a city...'
+                            placeholderTextColor={indexStyle.placeholdertextcolor.color}
+                            //onChangeText={(text) => settaskInputUpdate(text)}
+                            onFocus={() => setInputFocused(true)}
+                            onBlur={() => setInputFocused(false)}
+                        />
+                        <TouchableOpacity  style={indexStyle.btnsend} onPress={() => {
+                            setInsertCity(false);
+                            reloadViewFunc();
+                        }}>
+                            <Text style={indexStyle.sendbtntxt}>+ Add City</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
