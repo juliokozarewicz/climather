@@ -1,4 +1,5 @@
 import React, {
+    useEffect,
     useState,
 } from 'react'
 
@@ -69,6 +70,10 @@ export function BottomFrameCity(props) {
                                                     const result = await getDataWeather(city);
                                                     setCityData(result);
                                                 };
+
+                                                useEffect(() => {
+                                                    fetchDataFromApiCities(item.city); // Chame a função dentro do useEffect ou em outro lugar conforme necessário
+                                                  }, []);
                                                 // ------------------------------------------------------------
 
                                                 console.log(citiData);
