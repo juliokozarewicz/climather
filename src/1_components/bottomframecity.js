@@ -51,59 +51,40 @@ export function BottomFrameCity(props) {
                                             </View>
                                         </TouchableOpacity>
 
-                                        <TouchableWithoutFeedback onPress={() => console.log('*** CLICK ONE ***')} >
-                                            <View style={bottomframecityStyle.city} >
-                                                <View style={bottomframecityStyle.backgcity} ></View>
-                                                <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
-                                                <Image source={{ uri: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@4x.png` }} style={bottomframecityStyle.imgtemp2} />
-                                                <Text
-                                                    numberOfLines={1}
-                                                    ellipsizeMode="tail"
-                                                    style={bottomframecityStyle.txtcity}
-                                                >
-                                                    Curitiba
-                                                </Text>
-                                                <Text style={bottomframecityStyle.txttemp} >29°</Text>
-                                            </View>
-                                        </TouchableWithoutFeedback>
+                                        {
 
-                                        
+                                            props.getcity.map((item, index) => (
+                                                <TouchableWithoutFeedback key={index} onPress={() => console.log('*** CLICK ***')} >
+                                                    <View style={bottomframecityStyle.city} >
 
+                                                        <View style={bottomframecityStyle.backgcity} ></View>
 
+                                                        <TouchableOpacity
+                                                            style={bottomframecityStyle.btndel}
+                                                            onPress={ () => {
+                                                                props.reloadViewFunc();
+                                                                props.deleteItemFromDatabase(item.id)
+                                                            }}
+                                                        >
+                                                            <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
+                                                        </TouchableOpacity>
 
+                                                        <Image source={{ uri: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@4x.png` }} style={bottomframecityStyle.imgtemp2} />
 
+                                                        <Text
+                                                            numberOfLines={1}
+                                                            ellipsizeMode="tail"
+                                                            style={bottomframecityStyle.txtcity}
+                                                        >
+                                                            {item.city}
+                                                        </Text>
 
+                                                        <Text style={bottomframecityStyle.txttemp} >** °</Text>
+                                                    </View>
+                                                </TouchableWithoutFeedback>
+                                            ))
 
-
-
-
-
-
-
-                                        <TouchableWithoutFeedback onPress={() => console.log('*** CLICK TWO ***')} >
-                                            <View style={bottomframecityStyle.city} >
-                                                <View style={bottomframecityStyle.backgcity} ></View>
-                                                <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
-                                                <Image source={{ uri: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@4x.png` }} style={bottomframecityStyle.imgtemp2} />
-                                                <Text
-                                                    numberOfLines={1}
-                                                    ellipsizeMode="tail"
-                                                    style={bottomframecityStyle.txtcity}
-                                                >
-                                                    Curitiba
-                                                </Text>
-                                                <Text style={bottomframecityStyle.txttemp} >29°</Text>
-                                            </View>
-                                        </TouchableWithoutFeedback>
-                                        
-
-
-
-
-
-
-
-
+                                        }
 
                                     </View>
                                 </ScrollView>

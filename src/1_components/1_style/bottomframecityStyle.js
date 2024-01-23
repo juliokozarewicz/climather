@@ -86,7 +86,6 @@ export default StyleSheet.create(
 
     deleteimg: {
       position: 'absolute',
-      top: 15,
 
       width: 18,
       height: 18,
@@ -164,6 +163,16 @@ export default StyleSheet.create(
       fontSize: 9,
 
       color: colors.white,
+    },
+
+    btndel: {  
+      position: 'absolute',
+      top: 15,
+
+      width: '100%',
+      height: 20,  
+
+      alignItems: 'center',
     },
 
   }

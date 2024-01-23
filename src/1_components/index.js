@@ -20,7 +20,7 @@ import indexStyle from './1_style/indexStyle';
 import { getDataWeather, getDataForecast, testGetDataForecast } from './0_functions/apirequest';
 
 // database
-import {CreateItemDataBase, ReadDataBase} from './0_functions/CRUD'
+import {CreateItemDataBase, ReadDataBase, deleteItemFromDatabase} from './0_functions/CRUD'
 
 // External components (INIT)
 // ===============================
@@ -121,7 +121,7 @@ export function IndexScreen() {
 
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
-    console.log(getcity)
+
     // img menu
     // -------------------------------------------------------------------------------------
     const imagePath = menuActivate ? require('./3_img/tobottom.png') : require('./3_img/totop.png');
@@ -129,7 +129,7 @@ export function IndexScreen() {
 
     return (
 
-        <View style={indexStyle.allcontent} key={reloadDataAPI}>
+        <View style={indexStyle.allcontent}>
 
             <SplashError
                 errorGetData={errorGetData}
@@ -140,7 +140,7 @@ export function IndexScreen() {
                 reloadViewFunc={reloadViewFunc}
             />
 
-            <SafeAreaView style={indexStyle.allscreen}>
+            <SafeAreaView style={indexStyle.allscreen} key={reloadDataAPI}>
 
                 <Text style={indexStyle.txtlogo} >CLIMATHER</Text>
 
@@ -168,7 +168,15 @@ export function IndexScreen() {
                             />
                         </TouchableOpacity>
 
-                        <BottomFrameCity getcity={getcity} connection={connection} menuActivate={menuActivate} data={data}/>
+                        <BottomFrameCity
+                            getcity={getcity}
+                            deleteItemFromDatabase={deleteItemFromDatabase}
+                            CreateItemDataBase={CreateItemDataBase}
+                            connection={connection}
+                            menuActivate={menuActivate}
+                            data={data}
+                            reloadViewFunc={reloadViewFunc}
+                        />
 
                     </View>
                 
