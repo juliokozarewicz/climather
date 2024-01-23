@@ -1,4 +1,6 @@
-import React from 'react'
+import React, {
+    useState,
+} from 'react'
 
 import {
     View,
@@ -59,16 +61,17 @@ export function BottomFrameCity(props) {
 
                                                 // *****
                                                 // ------------------------------------------------------------
+
+                                                const [citiData, setCityData] = useState();
+
+
                                                 const fetchDataFromApiCities = async (city) => {
                                                     const result = await getDataWeather(city);
-                                            
-                                                    console.log(result);
-                                            
-                                                    return result;
+                                                    setCityData(result);
                                                 };
-                                            
-                                                fetchDataFromApiCities(item.city)
                                                 // ------------------------------------------------------------
+
+                                                console.log(citiData);
 
                                                 return (
 
@@ -103,7 +106,7 @@ export function BottomFrameCity(props) {
 
                                                 )
 
-                                                })
+                                            })
 
                                         }
 
