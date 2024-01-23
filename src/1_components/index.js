@@ -193,47 +193,73 @@ export function IndexScreen() {
                         />
 
                     </View>
-                
+
                 </View>
 
-                <View key={reloadDataDB} style={insertCity? indexStyle.addnewvity: { display: 'none' }}>
-                    <TouchableWithoutFeedback onPress={ () => {
-                        setInsertCity(false);
-                        setCitytext('');
-                        reloadDB();
-                    }}>
-                        <View style={indexStyle.backgroundColorBlack}></View>
-                    </TouchableWithoutFeedback>
-                    <View style={indexStyle.frameinput}>
-                        <TouchableOpacity  style={indexStyle.closeaddcity} onPress={() => {
-                            setInsertCity(false);
-                            setCitytext('');
-                            reloadDB();
-                        }}>
-                            <Text style={indexStyle.closeaddcitytxt}>x</Text>
-                        </TouchableOpacity>
-                        <Text style={indexStyle.txtaddcity}>Add a City</Text>
-                        <Text style={indexStyle.txtdesccity}>Add multiple cities and keep an eye on their weather conditions. This is very useful, for example, before planning a trip.</Text>
-                        <TextInput
-                            style={indexStyle.inputtxtcity}
 
-                            value={citytext}
-                            placeholder='Please enter a city...'
-                            placeholderTextColor={indexStyle.placeholdertextcolor.color}
-                            onChangeText={(text) => setCitytext(text)}
-                            onFocus={() => setInputFocused(true)}
-                            onBlur={() => setInputFocused(false)}
-                        />
-                        <TouchableOpacity  style={indexStyle.btnsend} onPress={() => {
-                            CreateItemDataBase(citytext);
-                            setInsertCity(false);
-                            setCitytext('');
-                            reloadDB();
-                        }}>
-                            <Text style={indexStyle.sendbtntxt}>+ Add City</Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
+                {
+
+                    insertCity ? (
+
+                        <View
+                            key={reloadDataDB}
+                            style={indexStyle.addnewvity}
+                        >
+
+                            <TouchableWithoutFeedback onPress={ () => {
+                                setInsertCity(false);
+                                setCitytext('');
+                                reloadDB();
+                                setInputFocused(false);
+                            }}>
+                                <View style={indexStyle.backgroundColorBlack}></View>
+                            </TouchableWithoutFeedback>
+
+                            <View style={indexStyle.frameinput}>
+                                <TouchableOpacity  style={indexStyle.closeaddcity} onPress={() => {
+                                    setInsertCity(false);
+                                    setCitytext('');
+                                    reloadDB();
+                                    setInputFocused(false);
+                                }}>
+                                    <Text style={indexStyle.closeaddcitytxt}>x</Text>
+                                </TouchableOpacity>
+                                <Text style={indexStyle.txtaddcity}>Add a City</Text>
+                                <Text style={indexStyle.txtdesccity}>Add multiple cities and keep an eye on their weather conditions. This is very useful, for example, before planning a trip.</Text>
+                                <TextInput
+                                    style={inputFocused ? indexStyle.textcitiesaddFocus : indexStyle.textcitiesadd}
+
+                                    value={citytext}
+                                    placeholder={'Please enter a city...'}
+                                    placeholderTextColor={indexStyle.placeholdertextcolor.color}
+                                    onChangeText={(text) => setCitytext(text)}
+                                    onFocus={() => setInputFocused(true)}
+                                    onBlur={() => setInputFocused(false)}
+
+                                    autoFocus={false}
+                                />
+                                <TouchableOpacity  style={indexStyle.btnsend} onPress={() => {
+                                    CreateItemDataBase(citytext);
+                                    setInsertCity(false);
+                                    setCitytext('');
+                                    reloadDB();
+                                    setInputFocused(false);
+                                }}>
+                                    <Text style={indexStyle.sendbtntxt}>+ Add City</Text>
+                                </TouchableOpacity>
+                            </View>
+
+                        </View>
+
+                    )
+
+                    : (
+
+                        null
+
+                    )
+
+                }
 
             </SafeAreaView>
 

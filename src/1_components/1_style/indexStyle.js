@@ -196,7 +196,9 @@ export default StyleSheet.create(
       textAlign: 'center',
     },
 
-    inputtxtcity: {
+    textcitiesadd: {
+      display: 'flex',
+
       position: 'absolute',
       bottom: 75,
 
@@ -207,7 +209,27 @@ export default StyleSheet.create(
       borderColor: colors.gray3,
       borderRadius: 10,
 
-      padding: 15,
+      paddingLeft: 15,
+      paddingRight: 10,
+
+      color: colors.gray3,
+    },
+
+    textcitiesaddFocus: {
+      display: 'flex',
+
+      position: 'absolute',
+      bottom: 75,
+
+      width: '90%',
+      height: 50,
+
+      borderWidth: 1,
+      borderColor: colors.blue,
+      borderRadius: 10,
+
+      paddingLeft: 15,
+      paddingRight: 10,
 
       color: colors.black
     },
