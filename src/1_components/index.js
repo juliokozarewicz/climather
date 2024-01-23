@@ -119,11 +119,10 @@ export function IndexScreen() {
               console.error('Erro ao obter dados:', error);
             }
           };
-
+        
+        fetchDataBase();
         fetchDataFromApi().then( () => {
-            fetchForecast().then( () => {
-                fetchDataBase();
-            });
+            fetchForecast()
         });
 
     }, [reloadDataAPI]);
