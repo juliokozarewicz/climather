@@ -12,6 +12,9 @@ import {
 // import style sheet
 import bottomframecityStyle from './1_style/bottomframecityStyle';
 
+// import func api request
+import { getDataWeather } from './0_functions/apirequest';
+
 
 // index screen function
 // -------------------------------------------------------------------------------------
@@ -53,6 +56,19 @@ export function BottomFrameCity(props) {
                                         {
 
                                             props.getcity.map((item, index) => {
+
+                                                // *****
+                                                // ------------------------------------------------------------
+                                                const fetchDataFromApiCities = async (city) => {
+                                                    const result = await getDataWeather(city);
+                                            
+                                                    console.log(result);
+                                            
+                                                    return result;
+                                                };
+                                            
+                                                fetchDataFromApiCities(item.city)
+                                                // ------------------------------------------------------------
 
                                                 return (
 
