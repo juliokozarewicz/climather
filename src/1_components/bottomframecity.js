@@ -15,9 +15,6 @@ import {
 // import style sheet
 import bottomframecityStyle from './1_style/bottomframecityStyle';
 
-// import func api request
-import { getDataWeather } from './0_functions/apirequest';
-
 
 // index screen function
 // -------------------------------------------------------------------------------------
@@ -60,23 +57,6 @@ export function BottomFrameCity(props) {
 
                                             props.getcity.map((item, index) => {
 
-                                                // Call api data for cities
-                                                // ------------------------------------------------------------
-
-                                                const [citiData, setCityData] = useState();
-
-
-                                                const fetchDataFromApiCities = async (city) => {
-                                                    const result = await getDataWeather(city);
-                                                    setCityData(result);
-                                                };
-
-                                                useEffect(() => {
-                                                    fetchDataFromApiCities(item.city);
-                                                  }, [item.city]);
-                                                
-                                                // ------------------------------------------------------------
-
                                                 return (
 
                                                     <TouchableWithoutFeedback key={index} onPress={() => console.log('*** CLICK ***')} >
@@ -84,62 +64,28 @@ export function BottomFrameCity(props) {
 
                                                             <View style={bottomframecityStyle.backgcity} ></View>
 
-                                                            {citiData && citiData.weather && citiData.main 
-                                                            
-                                                            ? (
+                                                            <TouchableOpacity
+                                                                style={bottomframecityStyle.btndel}
+                                                                onPress={ () => {
+                                                                    props.deleteItemFromDatabase(item.id);
+                                                                    props.reloadDB();
+                                                                }}
+                                                            >
+                                                                <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
+                                                            </TouchableOpacity>
 
-                                                                <>
-                                                                    <TouchableOpacity
-                                                                        style={bottomframecityStyle.btndel}
-                                                                        onPress={ () => {
-                                                                            props.deleteItemFromDatabase(item.id);
-                                                                            props.reloadDB();
-                                                                        }}
-                                                                    >
-                                                                        <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
-                                                                    </TouchableOpacity>
+                                                            <Image style={bottomframecityStyle.imgtemp2} source={{ uri: `http://openweathermap.org/img/wn/${props.data.weather[0].icon}@4x.png` }} />
 
-                                                                    <Image style={bottomframecityStyle.imgtemp2} source={{ uri: `http://openweathermap.org/img/wn/${citiData.weather[0].icon}@4x.png` }} />
+                                                            <Text
+                                                                numberOfLines={1}
+                                                                ellipsizeMode="tail"
+                                                                style={bottomframecityStyle.txtcity}
+                                                            >
+                                                                {item.city}
+                                                            </Text>
 
-                                                                    <Text
-                                                                        numberOfLines={1}
-                                                                        ellipsizeMode="tail"
-                                                                        style={bottomframecityStyle.txtcity}
-                                                                    >
-                                                                        {item.city}
-                                                                    </Text>
-
-                                                                    <Text style={bottomframecityStyle.txttemp} >{Math.ceil(citiData.main.temp)}°</Text>
-
-                                                                </>
-
-                                                            ) : (
-
-                                                                <>
-                                                                    <TouchableOpacity
-                                                                        style={bottomframecityStyle.btndel}
-                                                                        onPress={ () => {
-                                                                            props.deleteItemFromDatabase(item.id);
-                                                                            props.reloadDB();
-                                                                        }}
-                                                                    >
-                                                                        <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
-                                                                    </TouchableOpacity>
-
-                                                                    <Text
-                                                                        numberOfLines={1}
-                                                                        ellipsizeMode="tail"
-                                                                        style={bottomframecityStyle.txtcity}
-                                                                    >
-                                                                        {item.city}
-                                                                    </Text>
-
-                                                                    <Text style={bottomframecityStyle.txttemp} >°</Text>
-
-                                                                </>
-
-                                                            )}
-
+                                                            <Text style={bottomframecityStyle.txttemp} >**°</Text>
+                                   
                                                         </View>
                                                     </TouchableWithoutFeedback>
 
