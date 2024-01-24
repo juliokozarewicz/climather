@@ -147,6 +147,7 @@ export function IndexScreen() {
                 const dataDictArray = [];
         
                 for (const item of result) {
+
                     const citiData = await fetchDataFromApiDB(item.city);
         
                     if (citiData && citiData.name && citiData.main && citiData.main.temp) {
