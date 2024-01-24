@@ -122,6 +122,14 @@ export default StyleSheet.create(
       height: 50,
     },
 
+    imgtemp2erro: {
+      position: 'absolute',
+      bottom: 60,
+
+      width: 20,
+      height: 20,
+    },
+
     noconnection: {
       position: 'absolute',
 

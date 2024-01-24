@@ -2,6 +2,7 @@ import { API_KEY } from '@env';
 
 const GET_API_KEY = API_KEY;
 
+const GET_API_KEY = API_KEY;
 
 export async function getDataWeather (city) {
     const request = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&units=metric&appid=${GET_API_KEY}`);

@@ -187,7 +187,6 @@ export function IndexScreen() {
                             deleteItemFromDatabase={deleteItemFromDatabase}
                             connection={connection}
                             menuActivate={menuActivate}
-                            data={data}
                             setInsertCity={setInsertCity}
                             reloadDB={reloadDB}
                         />
