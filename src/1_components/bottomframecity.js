@@ -51,7 +51,13 @@ export function BottomFrameCity(props) {
 
                                             return (
 
-                                                <TouchableWithoutFeedback key={index} onPress={() => console.log('*** CLICK ***')} >
+                                                <TouchableWithoutFeedback
+                                                    key={index}
+                                                    onPress={() => {
+                                                        props.setinitcity(item.city);
+                                                        props.reloadViewFunc();
+                                                    }} >
+                                                        
                                                     <View style={bottomframecityStyle.city} >
 
                                                         <View style={bottomframecityStyle.backgcity} ></View>

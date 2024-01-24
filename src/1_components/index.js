@@ -143,10 +143,6 @@ export function IndexScreen() {
 
             try {
                 const result = await ReadDataBase();
-
-                console.log('*******************************************************')
-                console.log(result)
-                console.log('*******************************************************')
         
                 const dataDictArray = [];
         
@@ -182,29 +178,6 @@ export function IndexScreen() {
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
     console.log(getcity)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // img menu
     // -------------------------------------------------------------------------------------
@@ -259,6 +232,7 @@ export function IndexScreen() {
                             menuActivate={menuActivate}
                             setInsertCity={setInsertCity}
                             reloadViewFunc={reloadViewFunc}
+                            setinitcity={setinitcity}
                         />
 
                     </View>
