@@ -19,7 +19,7 @@ import indexStyle from './1_style/indexStyle';
 
 
 // import func api request
-import { getDataWeather, getDataForecast, testGetDataForecast } from './0_functions/apirequest';
+import { getDataWeather, getDataForecast} from './0_functions/apirequest';
 
 // database
 import {CreateItemDataBase, ReadDataBase, deleteItemFromDatabase} from './0_functions/CRUD'
@@ -59,10 +59,10 @@ export function IndexScreen() {
         const [getcity, setGetcity] = useState([]);
         const [citytext, setCitytext] = useState('');
         const [insertCity, setInsertCity] = useState(false);
+        const [initcity, setinitcity] = useState('New York, US');
 
         // menu
         const [menuActivate, setMenuActivate] = useState(true);
-        const [reloadDataDB, setReloadDataDB] = useState(0);
 
         // input city colors
         const [inputFocused, setInputFocused] = useState(false);
@@ -72,10 +72,6 @@ export function IndexScreen() {
     // -------------------------------------------------------------------------------------
     const reloadViewFunc = () => {
         setReloadDataAPI(prevFlag => prevFlag + 1);
-    };
-
-    const reloadDB = () => {
-        setReloadDataDB(prevFlag => prevFlag + 1);
     };
     // -------------------------------------------------------------------------------------
 
@@ -115,26 +111,12 @@ export function IndexScreen() {
 
         };
 
-        fetchDataFromApi('Curitiba, BR').then( () => {
-            fetchForecast('Curitiba, BR');
+        fetchDataFromApi(initcity).then( () => {
+            fetchForecast(initcity);
         });
 
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // Data api from Db
     // -------------------------------------------------------------------------------------
@@ -158,41 +140,48 @@ export function IndexScreen() {
         };
 
         const fetchDataBase = async () => {
+
             try {
                 const result = await ReadDataBase();
 
-                ***** dict
+                console.log('*******************************************************')
+                console.log(result)
+                console.log('*******************************************************')
         
-                const dataPromises = result.map(async (item, index) => {
-
+                const dataDictArray = [];
+        
+                for (const item of result) {
                     const citiData = await fetchDataFromApiDB(item.city);
         
-                    const dataReturn = {
-                        "id": item.id,
-                        "city": citiData.name,
-                        "temp": citiData.main.temp,
-                    };
+                    if (citiData && citiData.name && citiData.main && citiData.main.temp) {
+
+                        const dataReturn = {
+                            "id": item.id,
+                            "city": citiData.name,
+                            "temp": citiData.main.temp,
+                            "icon": citiData.weather[0].icon,
+                        };
         
-                    ***** append dataReturn to dict
-                });
+                        dataDictArray.push(dataReturn);
+
+                    } else {
+                        deleteItemFromDatabase(item.id);
+                    }
+                }
         
-        
-                setGetcity(***** dict);
+                setGetcity(dataDictArray);
         
             } catch (error) {
-                console.error('Erro ao obter dados:', error);
+
+                console.error(error);
+
             }
         };
-        
-
 
         fetchDataBase();
-    }, [reloadDataDB]);
+    }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
-
-    console.log(getcity);
-
-
+    console.log(getcity)
 
 
 
@@ -269,7 +258,7 @@ export function IndexScreen() {
                             connection={connection}
                             menuActivate={menuActivate}
                             setInsertCity={setInsertCity}
-                            reloadDB={reloadDB}
+                            reloadViewFunc={reloadViewFunc}
                         />
 
                     </View>
@@ -282,14 +271,14 @@ export function IndexScreen() {
                     insertCity ? (
 
                         <View
-                            key={reloadDataDB}
+                            key={reloadDataAPI}
                             style={indexStyle.addnewvity}
                         >
 
                             <TouchableWithoutFeedback onPress={ () => {
                                 setInsertCity(false);
                                 setCitytext('');
-                                reloadDB();
+                                reloadViewFunc();
                                 setInputFocused(false);
                             }}>
                                 <View style={indexStyle.backgroundColorBlack}></View>
@@ -299,7 +288,7 @@ export function IndexScreen() {
                                 <TouchableOpacity  style={indexStyle.closeaddcity} onPress={() => {
                                     setInsertCity(false);
                                     setCitytext('');
-                                    reloadDB();
+                                    reloadViewFunc();
                                     setInputFocused(false);
                                 }}>
                                     <Text style={indexStyle.closeaddcitytxt}>x</Text>
@@ -322,7 +311,7 @@ export function IndexScreen() {
                                     CreateItemDataBase(citytext);
                                     setInsertCity(false);
                                     setCitytext('');
-                                    reloadDB();
+                                    reloadViewFunc();
                                     setInputFocused(false);
                                 }}>
                                     <Text style={indexStyle.sendbtntxt}>+ Add City</Text>

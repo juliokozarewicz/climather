@@ -60,13 +60,13 @@ export function BottomFrameCity(props) {
                                                             style={bottomframecityStyle.btndel}
                                                             onPress={ () => {
                                                                 props.deleteItemFromDatabase(item.id);
-                                                                props.reloadDB();
+                                                                props.reloadViewFunc();
                                                             }}
                                                         >
                                                             <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
                                                         </TouchableOpacity>
 
-                                                        <Image style={bottomframecityStyle.imgtemp2} source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` }} />
+                                                        <Image style={bottomframecityStyle.imgtemp2} source={{ uri: `http://openweathermap.org/img/wn/${item.icon}@4x.png` }} />
 
                                                         <Text
                                                             numberOfLines={1}
@@ -76,7 +76,7 @@ export function BottomFrameCity(props) {
                                                             {item.city}
                                                         </Text>
 
-                                                        <Text style={bottomframecityStyle.txttemp} >** °</Text>
+                                                        <Text style={bottomframecityStyle.txttemp} >{Math.ceil(item.temp)}°</Text>
                                                     </View>
                                                 </TouchableWithoutFeedback>
 
