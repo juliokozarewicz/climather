@@ -24,7 +24,7 @@ export function BackgroundScreen(props) {
 
         return (
 
-            getHour(props.timezone)
+            getHour(props.data.dt)
 
             ?  (
 
@@ -50,7 +50,7 @@ export function BackgroundScreen(props) {
 
         return (
 
-            getHour(props.timezone)
+            getHour(props.data.dt)
 
             ?  (
 
@@ -76,7 +76,7 @@ export function BackgroundScreen(props) {
 
         return (
 
-            getHour(props.timezone)
+            getHour(props.data.dt)
 
             ?  (
 
@@ -102,7 +102,7 @@ export function BackgroundScreen(props) {
 
         return (
 
-            getHour(props.timezone)
+            getHour(props.data.dt)
 
             ?  (
 
@@ -128,7 +128,7 @@ export function BackgroundScreen(props) {
 
         return (
 
-            getHour(props.timezone)
+            getHour(props.data.dt)
 
             ?  (
 
