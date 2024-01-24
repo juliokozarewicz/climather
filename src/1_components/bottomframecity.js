@@ -13,10 +13,6 @@ import {
 import bottomframecityStyle from './1_style/bottomframecityStyle';
 
 
-import { API_KEY } from '@env';
-const GET_API_KEY = API_KEY;
-
-
 // index screen function
 // -------------------------------------------------------------------------------------
 export function BottomFrameCity(props) {
@@ -58,22 +54,6 @@ export function BottomFrameCity(props) {
 
                                             props.getcity.map((item, index) => {
 
-                                                const [dataCity, setDataCity] = useState(null);
-
-                                                async function getDataWeather2(city) {
-                                                    const request = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${GET_API_KEY}`);
-                                                    const result = await request.json();
-                                                    return result;
-                                                }
-
-                                                useEffect(() => {
-                                                    getDataWeather2(item.city)
-                                                    .then(data => {
-                                                        setDataCity(data);
-                                                    })
-                                                    .catch(error => console.error('Error:', error));
-                                                }, [item.city]);
-
                                                 return (
 
                                                     <TouchableWithoutFeedback key={index} onPress={() => console.log('*** CLICK ***')} >
@@ -91,9 +71,7 @@ export function BottomFrameCity(props) {
                                                                 <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
                                                             </TouchableOpacity>
 
-                                                            <Image
-                                                                style={dataCity !== null ? bottomframecityStyle.imgtemp2 : bottomframecityStyle.imgtemp2erro}
-                                                                source={dataCity !== null ? { uri: `http://openweathermap.org/img/wn/${dataCity.weather[0].icon}@4x.png` } : require('./3_img/noconnectionblue.png')} />
+                                                            <Image style={bottomframecityStyle.imgtemp2} source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` }} />
 
                                                             <Text
                                                                 numberOfLines={1}
@@ -103,8 +81,7 @@ export function BottomFrameCity(props) {
                                                                 {item.city}
                                                             </Text>
 
-                                                            <Text style={bottomframecityStyle.txttemp} >**°</Text>
-                                   
+                                                            <Text style={bottomframecityStyle.txttemp} >** °</Text>
                                                         </View>
                                                     </TouchableWithoutFeedback>
 
@@ -143,7 +120,7 @@ export function BottomFrameCity(props) {
                                     horizontal
                                     style={bottomframecityStyle.scrollsts}
                                 >
-                                    <TouchableOpacity >
+                                    <TouchableOpacity onPress={() => props.setInsertCity(true)} >
                                         <View style={bottomframecityStyle.city2} >
                                             <View style={bottomframecityStyle.backgcity} ></View>
                                             <View style={bottomframecityStyle.addcitiadd} ></View>
