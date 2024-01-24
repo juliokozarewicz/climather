@@ -160,6 +160,8 @@ export function IndexScreen() {
         const fetchDataBase = async () => {
             try {
                 const result = await ReadDataBase();
+
+                ***** dict
         
                 const dataPromises = result.map(async (item, index) => {
 
@@ -167,15 +169,15 @@ export function IndexScreen() {
         
                     const dataReturn = {
                         "id": item.id,
-                        "city": item.city,
+                        "city": citiData.name,
+                        "temp": citiData.main.temp,
                     };
         
-                    return dataReturn;
+                    ***** append dataReturn to dict
                 });
         
-                const dataResults = await Promise.all(dataPromises);
         
-                setGetcity(dataResults);
+                setGetcity(***** dict);
         
             } catch (error) {
                 console.error('Erro ao obter dados:', error);
