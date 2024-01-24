@@ -78,7 +78,7 @@ export function IndexScreen() {
         setReloadDataDB(prevFlag => prevFlag + 1);
     };
     // -------------------------------------------------------------------------------------
-    
+
     // api request
     // -------------------------------------------------------------------------------------
     useEffect(() => {
@@ -96,7 +96,6 @@ export function IndexScreen() {
                 setErrorGetData(true);
                 setConnection(false);
                 setErrorGetDataMSG('Communication failure: Weather.');
-
             };
 
         };
@@ -121,20 +120,100 @@ export function IndexScreen() {
         });
 
     }, [reloadDataAPI]);
+    // -------------------------------------------------------------------------------------
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Data api from Db
+    // -------------------------------------------------------------------------------------
     useEffect(() => {
-        async function fetchDataBase() {
+
+        const fetchDataFromApiDB = async (city) => {
+
+            const resultDB = await getDataWeather(city);
+
+            if (resultDB && resultDB.cod == '200') {
+                setErrorGetData(false);
+                setConnection(true);
+                return resultDB;
+            
+            } else {
+                setErrorGetData(true);
+                setConnection(false);
+                setErrorGetDataMSG('Communication failure: Cities data.');
+            };
+
+        };
+
+        const fetchDataBase = async () => {
             try {
-              const result = await ReadDataBase();
-              setGetcity(result);
-            } catch (error) {
-              console.error('Erro ao obter dados:', error);
-            }
-          };
+                const result = await ReadDataBase();
         
+                const dataPromises = result.map(async (item, index) => {
+
+                    const citiData = await fetchDataFromApiDB(item.city);
+        
+                    const dataReturn = {
+                        "id": item.id,
+                        "city": item.city,
+                    };
+        
+                    return dataReturn;
+                });
+        
+                const dataResults = await Promise.all(dataPromises);
+        
+                setGetcity(dataResults);
+        
+            } catch (error) {
+                console.error('Erro ao obter dados:', error);
+            }
+        };
+        
+
+
         fetchDataBase();
     }, [reloadDataDB]);
     // -------------------------------------------------------------------------------------
+
+    console.log(getcity);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     // img menu
     // -------------------------------------------------------------------------------------
