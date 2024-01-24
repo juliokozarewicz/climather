@@ -203,7 +203,7 @@ export function IndexScreen() {
 
                 <StatusBar barStyle="light-content" backgroundColor={indexStyle.statusbar.backgroundColor} />
 
-                <BackgroundScreen connection={connection} data={data}/>
+                <BackgroundScreen key={reloadDataAPI} connection={connection} data={data}/>
 
                 <View style={indexStyle.absoluteframe} >
 
