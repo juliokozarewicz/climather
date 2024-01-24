@@ -1,5 +1,8 @@
 import { API_KEY } from '@env';
 
+const GET_API_KEY = API_KEY;
+
+const GET_API_KEY = API_KEY;
 
 const GET_API_KEY = API_KEY;
 
