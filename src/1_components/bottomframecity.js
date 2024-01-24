@@ -1,7 +1,4 @@
-import React, {
-    useEffect,
-    useState,
-} from 'react'
+import React from 'react'
 
 import {
     View,
@@ -84,14 +81,13 @@ export function BottomFrameCity(props) {
                                                                 {item.city}
                                                             </Text>
 
-                                                            <Text style={bottomframecityStyle.txttemp} >**°</Text>
-                                   
+                                                            <Text style={bottomframecityStyle.txttemp} >** °</Text>
                                                         </View>
                                                     </TouchableWithoutFeedback>
 
                                                 )
 
-                                            })
+                                                })
 
                                         }
 
