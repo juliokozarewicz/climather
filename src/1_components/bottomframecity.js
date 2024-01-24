@@ -74,7 +74,7 @@ export function BottomFrameCity(props) {
                                                     .then(data => {
                                                         setDataCity(data);
                                                     })
-                                                    .catch(error => console.error('Erro ao buscar dados do clima:', error));
+                                                    .catch(error => console.error('Error:', error));
                                                 }, [item.city]);
 
                                                 return (
