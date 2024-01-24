@@ -124,7 +124,7 @@ export function BottomFrameCity(props) {
                                     horizontal
                                     style={bottomframecityStyle.scrollsts}
                                 >
-                                    <TouchableOpacity onPress={() => props.setInsertCity(true)} >
+                                    <TouchableOpacity >
                                         <View style={bottomframecityStyle.city2} >
                                             <View style={bottomframecityStyle.backgcity} ></View>
                                             <View style={bottomframecityStyle.addcitiadd} ></View>
