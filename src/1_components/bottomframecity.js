@@ -61,18 +61,17 @@ export function BottomFrameCity(props) {
 
                                             props.getcity.map((item, index) => {
 
+                                                const [dataCity, setDataCity] = useState(null);
+
                                                 async function getDataWeather2(city) {
                                                     const request = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${GET_API_KEY}`);
                                                     const result = await request.json();
                                                     return result;
                                                 }
 
-                                                const [dataCity, setDataCity] = useState(null);
-
                                                 useEffect(() => {
                                                     getDataWeather2(item.city)
                                                     .then(data => {
-                                                        console.log(data.main.temp);
                                                         setDataCity(data);
                                                     })
                                                     .catch(error => console.error('Erro ao buscar dados do clima:', error));
