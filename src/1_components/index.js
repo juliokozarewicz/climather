@@ -154,7 +154,7 @@ export function IndexScreen() {
 
                         const dataReturn = {
                             "id": item.id,
-                            "city": citiData.name,
+                            "city": item.city,
                             "temp": citiData.main.temp,
                             "icon": citiData.weather[0].icon,
                         };
