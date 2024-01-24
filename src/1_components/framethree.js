@@ -38,7 +38,7 @@ export function FrameThree(props) {
                         <Text style={framethreeStyle.txttop}>{loadForecastData(item.dt).daymonth}</Text>
                         <Text style={framethreeStyle.txttop2}>{loadForecastData(item.dt).hours} h</Text>
                         <Text style={framethreeStyle.txttop3}>{item.weather[0].main}</Text>
-                        <Image source={{ uri: `http://openweathermap.org/img/wn/${item.icon}@4x.png` } } style={framethreeStyle.imgcenter} />
+                        <Image source={{ uri: `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` } } style={framethreeStyle.imgcenter} />
                         <Text style={framethreeStyle.txtbottom}>{item.main.temp.toFixed(0)}°</Text>
                     </View>
                 </View>
