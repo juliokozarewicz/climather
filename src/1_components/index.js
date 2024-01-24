@@ -177,7 +177,6 @@ export function IndexScreen() {
         fetchDataBase();
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
-    console.log(getcity)
 
     // img menu
     // -------------------------------------------------------------------------------------
@@ -203,7 +202,7 @@ export function IndexScreen() {
 
                 <StatusBar barStyle="light-content" backgroundColor={indexStyle.statusbar.backgroundColor} />
 
-                <BackgroundScreen key={reloadDataAPI} connection={connection} data={data}/>
+                <BackgroundScreen connection={connection} data={data}/>
 
                 <View style={indexStyle.absoluteframe} >
 
@@ -245,7 +244,6 @@ export function IndexScreen() {
                     insertCity ? (
 
                         <View
-                            key={reloadDataAPI}
                             style={indexStyle.addnewvity}
                         >
 
