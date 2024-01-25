@@ -201,25 +201,26 @@ export function IndexScreen() {
                         
         return(
 
-                loading
+            loading
 
-                ?
-                    <View style={indexStyle.loadingpage}>
-                        <View style={indexStyle.loadback}></View>
-                        <Text style={indexStyle.logoload} >loading</Text>
-                        
-                        <View style={indexStyle.allcricle}>
-                            <View style={[indexStyle.circle]}></View>
-                            <View style={[indexStyle.circle]}></View>
-                            <View style={[indexStyle.circle]}></View>
-                            <View style={[indexStyle.circle]}></View>
-                        </View>
-
+            ?
+                <View style={indexStyle.loadingpage}>
+                    <View style={indexStyle.loadback}></View>
+                    <Text style={indexStyle.logoload} >loading</Text>
+                    
+                    <View style={indexStyle.allcricle}>
+                        <View style={[indexStyle.circle]}></View>
+                        <View style={[indexStyle.circle]}></View>
+                        <View style={[indexStyle.circle]}></View>
+                        <View style={[indexStyle.circle]}></View>
                     </View>
 
-                :
-                    null
+                </View>
+
+            :
+                null
         )
+
     }
     // -------------------------------------------------------------------------------------
     
