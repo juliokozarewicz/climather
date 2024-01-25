@@ -260,6 +260,71 @@ export default StyleSheet.create(
       color: colors.white,
     },
 
+    loadingpage: {
+      zIndex: 100,
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+      
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    loadback: {
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+      
+      backgroundColor: colors.black,
+
+      opacity: 0.7,
+    },
+
+    logoload: {
+      zIndex: 102,
+
+      position: 'absolute',
+
+
+      fontFamily: 'title',
+      fontSize: 25,
+      letterSpacing: 3,
+
+      color: colors.white,
+
+      opacity: 0.4,
+
+      textTransform: 'uppercase',
+    },
+
+    allcricle: {
+      position: 'absolute',
+      bottom: 20,
+
+      width: 80,
+      height: 80,
+
+      borderRadius: 50,
+      
+      alignItems: 'center',
+      justifyContent: 'center',
+
+      flexDirection: 'row',
+
+      gap: 10,
+    },
+
+    circle: {
+      width: 8,
+      height: 8,
+      
+      backgroundColor: colors.white,
+
+      borderRadius: 50,
+    },
+
   }
 
 );

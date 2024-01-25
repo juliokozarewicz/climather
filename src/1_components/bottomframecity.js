@@ -54,6 +54,7 @@ export function BottomFrameCity(props) {
                                                 <TouchableWithoutFeedback
                                                     key={index}
                                                     onPress={() => {
+                                                        props.setloading(true);
                                                         props.setinitcity(item.city);
                                                         props.reloadViewFunc();
                                                     }} >

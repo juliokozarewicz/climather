@@ -42,7 +42,6 @@ import {BottomFrameCity} from './bottomframecity';
 // -------------------------------------------------------------------------------------
 export function IndexScreen() {   
 
-
     // states
     // -------------------------------------------------------------------------------------
 
@@ -66,6 +65,10 @@ export function IndexScreen() {
 
         // input city colors
         const [inputFocused, setInputFocused] = useState(false);
+
+        // loadingpage
+        const [loading, setloading] = useState(true);
+
     // -------------------------------------------------------------------------------------
 
     // reload
@@ -183,7 +186,45 @@ export function IndexScreen() {
     // -------------------------------------------------------------------------------------
     const imagePath = menuActivate ? require('./3_img/tobottom.png') : require('./3_img/totop.png');
     // -------------------------------------------------------------------------------------
+    
+    // loadscreen
+    // -------------------------------------------------------------------------------------
+    function LoadingScreen (props) {
 
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                props.setloading(false);
+            }, 3000);
+        
+            return () => clearTimeout(timer);
+          }, []);
+                        
+        return(
+
+                loading
+
+                ?
+                    <View style={indexStyle.loadingpage}>
+                        <View style={indexStyle.loadback}></View>
+                        <Text style={indexStyle.logoload} >loading</Text>
+                        
+                        <View style={indexStyle.allcricle}>
+                            <View style={[indexStyle.circle]}></View>
+                            <View style={[indexStyle.circle]}></View>
+                            <View style={[indexStyle.circle]}></View>
+                            <View style={[indexStyle.circle]}></View>
+                        </View>
+
+                    </View>
+
+                :
+                    null
+        )
+    }
+    // -------------------------------------------------------------------------------------
+    
+    
+    
     return (
 
         <View style={indexStyle.allcontent}>
@@ -233,6 +274,7 @@ export function IndexScreen() {
                             setInsertCity={setInsertCity}
                             reloadViewFunc={reloadViewFunc}
                             setinitcity={setinitcity}
+                            setloading={setloading}
                         />
 
                     </View>
@@ -250,7 +292,6 @@ export function IndexScreen() {
                             <TouchableWithoutFeedback onPress={ () => {
                                 setInsertCity(false);
                                 setCitytext('');
-                                reloadViewFunc();
                                 setInputFocused(false);
                             }}>
                                 <View style={indexStyle.backgroundColorBlack}></View>
@@ -260,7 +301,6 @@ export function IndexScreen() {
                                 <TouchableOpacity  style={indexStyle.closeaddcity} onPress={() => {
                                     setInsertCity(false);
                                     setCitytext('');
-                                    reloadViewFunc();
                                     setInputFocused(false);
                                 }}>
                                     <Text style={indexStyle.closeaddcitytxt}>x</Text>
@@ -280,6 +320,7 @@ export function IndexScreen() {
                                     autoFocus={false}
                                 />
                                 <TouchableOpacity  style={indexStyle.btnsend} onPress={() => {
+                                    setloading(true);
                                     CreateItemDataBase(citytext);
                                     setInsertCity(false);
                                     setCitytext('');
@@ -301,6 +342,10 @@ export function IndexScreen() {
 
                     )
 
+                }
+
+                {
+                    <LoadingScreen setloading={setloading} />
                 }
 
             </SafeAreaView>
