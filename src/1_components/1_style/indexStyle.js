@@ -29,7 +29,7 @@ export default StyleSheet.create(
     },
 
     txtlogo: {
-      zIndex: 10,
+      zIndex: 101,
 
       position: 'absolute',
       top: 0,

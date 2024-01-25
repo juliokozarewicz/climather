@@ -187,7 +187,7 @@ export function IndexScreen() {
     return (
 
         <View style={indexStyle.allcontent}>
-
+  
             <SplashError
                 errorGetData={errorGetData}
                 setErrorGetData={setErrorGetData} 
@@ -239,7 +239,6 @@ export function IndexScreen() {
 
                 </View>
 
-
                 {
 
                     insertCity ? (
@@ -286,6 +285,7 @@ export function IndexScreen() {
                                     setCitytext('');
                                     reloadViewFunc();
                                     setInputFocused(false);
+                                    setinitcity(citytext);
                                 }}>
                                     <Text style={indexStyle.sendbtntxt}>+ Add City</Text>
                                 </TouchableOpacity>
