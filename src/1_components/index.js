@@ -77,49 +77,7 @@ export function IndexScreen() {
         setReloadDataAPI(prevFlag => prevFlag + 1);
     };
     // -------------------------------------------------------------------------------------
-
-    // api request
-    // -------------------------------------------------------------------------------------
-    useEffect(() => {
-
-        const fetchDataFromApi = async (city) => {
-
-            const result = await getDataWeather(city);
-
-            if (result && result.cod == '200') {
-                setErrorGetData(false);
-                setData(result);
-                setConnection(true);
-            
-            } else {
-                setErrorGetData(true);
-                setConnection(false);
-                setErrorGetDataMSG('Communication failure: Weather.');
-            };
-
-        };
-
-        const fetchForecast = async (city) => {
-
-            const dataForecast = await getDataForecast(city);
-
-            if (dataForecast && dataForecast.cod == '200') {
-                setDataForecast(dataForecast);
-                setConnectionF(true);
-            } else {
-                setConnectionF(false);
-                setErrorGetData(true);
-                setErrorGetDataMSG('Communication failure: Forecast.');
-            };
-
-        };
-
-        fetchDataFromApi(initcity);
-        fetchForecast(initcity);
-
-    }, [reloadDataAPI]);
-    // -------------------------------------------------------------------------------------
-
+    
     // Data api from Db
     // -------------------------------------------------------------------------------------
     useEffect(() => {
@@ -178,6 +136,64 @@ export function IndexScreen() {
         };
 
         fetchDataBase();
+    }, [reloadDataAPI]);
+    // -------------------------------------------------------------------------------------
+
+    // api request
+    // -------------------------------------------------------------------------------------
+    useEffect(() => {
+
+        const fetchDataFromApi = async (city) => {
+
+            try {
+                
+                const result = await getDataWeather(city);
+
+                if (result && result.cod == '200') {
+                    setErrorGetData(false);
+                    setData(result);
+                    setConnection(true);
+                
+                } else {
+                    const result = await getDataWeather('New York, US');
+                    setData(result);
+                };
+
+            } catch {
+                setErrorGetData(true);
+                setConnection(false);
+                setErrorGetDataMSG('Communication failure: Weather.');
+            }
+        };
+
+        const fetchForecast = async (city) => {
+            
+            try {
+                const dataForecast = await getDataForecast(city);
+
+                if (dataForecast && dataForecast.cod == '200') {
+                
+                    setDataForecast(dataForecast);
+                    setConnectionF(true);
+    
+                } else {
+    
+                    const dataForecast = await getDataForecast('New York, US');
+                    setDataForecast(dataForecast);
+
+                };
+
+            } catch {
+                setConnectionF(false);
+                setErrorGetData(true);
+                setErrorGetDataMSG('Communication failure: Forecast.');
+            } 
+
+        };
+
+        fetchDataFromApi(initcity);
+        fetchForecast(initcity);
+
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
 

@@ -52,7 +52,7 @@ export function FrameThree(props) {
                 <View style={framethreeStyle.framethreeall} >
 
                     {
-                        props.data.list.map((item, index) => (
+                        props.data.list.slice(0 , 7).map((item, index) => (
                             <View style={framethreeStyle.allsquare} key={index}>
                                 <View style={framethreeStyle.backgrprp}></View>
                                 <View style={framethreeStyle.contenttexts}>
