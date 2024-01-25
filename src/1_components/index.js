@@ -40,7 +40,7 @@ import {BottomFrameCity} from './bottomframecity';
 
 // index screen function
 // -------------------------------------------------------------------------------------
-export function IndexScreen() {   
+export function IndexScreen() {
 
     // states
     // -------------------------------------------------------------------------------------
@@ -114,9 +114,8 @@ export function IndexScreen() {
 
         };
 
-        fetchDataFromApi(initcity).then( () => {
-            fetchForecast(initcity);
-        });
+        fetchDataFromApi(initcity);
+        fetchForecast(initcity);
 
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
@@ -194,7 +193,7 @@ export function IndexScreen() {
         useEffect(() => {
             const timer = setTimeout(() => {
                 props.setloading(false);
-            }, 3000);
+            }, 100);
         
             return () => clearTimeout(timer);
           }, []);
