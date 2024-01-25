@@ -32,10 +32,10 @@ export function FrameThree(props) {
             const datetimezone = dateconv.format(new Date(dateunix * 1e3 + timezone * 1e3));
 
             const day = datetimezone.substring(0, 2);
-            const month = datetimezone.substring(3, 5);
-            const year = datetimezone.substring(6, 8);
+            //const month = datetimezone.substring(3, 5);
+            //const year = datetimezone.substring(6, 8);
             const hours = datetimezone.substring(10, 12);
-            const minutes = datetimezone.substring(13, 15);
+            //const minutes = datetimezone.substring(13, 15);
 
             return ({"daymonth": day, "hours": hours});
 
