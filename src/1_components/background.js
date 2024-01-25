@@ -17,18 +17,16 @@ export function BackgroundScreen(props) {
 
         function getHour(hour, timezone) {
 
+            const dtFormat = new Intl.DateTimeFormat('en-GB', {
+                hour: 'numeric',
+                hour12: false,
+                timeZone: 'UTC'
+            });
+            
+            const hours = dtFormat.format(new Date(hour * 1e3 + timezone * 1e3));
 
-            const date = new Date(hour * 1000 + ( timezone * 1000 ) );
-
-            const year = date.getFullYear();
-            const month = date.getMonth() + 1;
-            const day = date.getDate();
-            const hours = date.getHours();
-            const minutes = date.getMinutes();
-            const seconds = date.getSeconds();
-        
             return hours > 6 && hours < 19;
-        }
+        };
 
         if (props.connection && props.data.weather[0].main.toLowerCase() === 'clouds') {
 
