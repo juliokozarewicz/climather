@@ -131,12 +131,17 @@ export function IndexScreen() {
             try {
 
                 const result = await getDataWeather(city);
+                const CitiesDB = await ReadDataBase();
 
                 if (result && result.cod == '200') {
                     setErrorGetData(false);
                     setData(result);
                     setConnection(true);
 
+                } else if (CitiesDB.length > 0 && CitiesDB[0].city) {
+                    const result = await getDataWeather(CitiesDB[0].city);
+                    setData(result);
+                    
                 } else {
                     const result = await getDataWeather('New York, US');
                     setData(result);
@@ -147,6 +152,7 @@ export function IndexScreen() {
                 setErrorGetData(true);
                 setConnection(false);
                 setErrorGetDataMSG('Communication failure: Weather.');
+
             }
 
         };
@@ -162,7 +168,6 @@ export function IndexScreen() {
                     setConnectionF(true);
     
                 } else {
-    
                     const dataForecast = await getDataForecast('New York, US');
                     setDataForecast(dataForecast);
 
