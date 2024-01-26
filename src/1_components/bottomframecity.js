@@ -33,7 +33,15 @@ export function BottomFrameCity(props) {
 
                     <View style={bottomframecityStyle.framebottomall} >
 
-                        <View style={bottomframecityStyle.backgroundColorBlack}></View>
+                        <TouchableWithoutFeedback
+                            style={bottomframecityStyle.backgroundColorBlack.zIndex}
+
+                            onPress={ () => {
+                                props.setMenuActivate(false);
+                            }}
+                        >
+                            <View style={bottomframecityStyle.backgroundColorBlack}></View>
+                        </TouchableWithoutFeedback>
 
                         <View style={bottomframecityStyle.allcontent} >
 
@@ -88,6 +96,7 @@ export function BottomFrameCity(props) {
                                                             onPress={ () => {
                                                                 props.deleteItemFromDatabase(item.id);
                                                                 props.reloadViewFunc();
+                                                                props.setMenuActivate(false);
                                                             }}
                                                         >
                                                             <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
@@ -121,7 +130,7 @@ export function BottomFrameCity(props) {
 
                 :
 
-                    <View style={bottomframecityStyle.framebottomall} >
+                    <View style={bottomframecityStyle.framebottomallOFF} >
                         <View style={bottomframecityStyle.allcontentMenuOff} >
                             <TouchableOpacity 
                                 style={bottomframecityStyle.closecitiesOFF}

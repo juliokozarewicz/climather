@@ -20,6 +20,18 @@ export default StyleSheet.create(
       justifyContent: 'flex-end',
     },
 
+    framebottomallOFF: {
+      zIndex: 2,
+
+      position: 'absolute',
+      bottom: 0,
+
+      width: '100%',
+      height: '100%',
+
+      justifyContent: 'flex-end',
+    },
+
     allcontent: {
       zIndex: 40,
 
