@@ -14,7 +14,7 @@ export default StyleSheet.create(
       marginTop: 10,
       
       position:'absolute',
-      bottom: 40,
+      bottom: 80,
       
       width: '100%',
       height: 130,

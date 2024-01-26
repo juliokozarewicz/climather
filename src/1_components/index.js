@@ -196,11 +196,6 @@ export function IndexScreen() {
 
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
-
-    // img menu
-    // -------------------------------------------------------------------------------------
-    const imagePath = menuActivate ? require('./3_img/tobottom.png') : require('./3_img/totop.png');
-    // -------------------------------------------------------------------------------------
     
     // loadscreen
     // -------------------------------------------------------------------------------------
@@ -270,30 +265,17 @@ export function IndexScreen() {
                         <FrameThree connectionF={connectionF} data={dataForecast} />
                     </View>
 
-                    <View style={menuActivate ? indexStyle.bottomframe : indexStyle.bottomframeClose}>
-
-                        <TouchableOpacity 
-                            style={indexStyle.closecities}
-                            onPress={() => menuActivate ? setMenuActivate(false) : setMenuActivate(true)}
-                        >
-                            <Image
-                                source={imagePath}
-                                style={indexStyle.closeimg}
-                            />
-                        </TouchableOpacity>
-
-                        <BottomFrameCity
-                            getcity={getcity}
-                            deleteItemFromDatabase={deleteItemFromDatabase}
-                            connection={connection}
-                            menuActivate={menuActivate}
-                            setInsertCity={setInsertCity}
-                            reloadViewFunc={reloadViewFunc}
-                            setinitcity={setinitcity}
-                            setloading={setloading}
-                        />
-
-                    </View>
+                    <BottomFrameCity
+                        getcity={getcity}
+                        deleteItemFromDatabase={deleteItemFromDatabase}
+                        connection={connection}
+                        menuActivate={menuActivate}
+                        setInsertCity={setInsertCity}
+                        reloadViewFunc={reloadViewFunc}
+                        setinitcity={setinitcity}
+                        setloading={setloading}
+                        setMenuActivate={setMenuActivate}
+                    />
 
                 </View>
 

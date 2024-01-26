@@ -66,47 +66,8 @@ export default StyleSheet.create(
       alignItems: 'center',
     },
 
-    bottomframe: {
-      position: 'relative',
-
-      width: '100%',
-      height: 200,
-
-      alignItems: 'center',
-    },
-
-    bottomframeClose: {
-      position: 'relative',
-
-      width: '100%',
-      height: 40,
-
-      alignItems: 'center',
-    },
-
-    closecities: {
-      zIndex: 10,
-      position: 'absolute',
-      top: -20,
-
-      width: 40,
-      height: 40,
-
-      borderRadius: 25,
-
-      backgroundColor: colors.purple,
-      
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-
-    closeimg: {
-      width: 20,
-      height: 20,
-    },
-
     addnewvity: {
-      zIndex: 50,
+      zIndex: 70,
       position: 'absolute',
 
       width: '100%',

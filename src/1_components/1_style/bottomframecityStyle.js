@@ -9,13 +9,28 @@ export default StyleSheet.create(
   {
 
     framebottomall: {
+      zIndex: 60,
+
+      position: 'absolute',
+      bottom: 0,
+
       width: '100%',
       height: '100%',
+
+      justifyContent: 'flex-end',
     },
 
     allcontent: {
       width: '100%',
-      height: '100%',
+      height: 200,
+
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    allcontentMenuOff: {
+      width: '100%',
+      height: 40,
 
       alignItems: 'center',
       justifyContent: 'center',
@@ -25,14 +40,28 @@ export default StyleSheet.create(
       position: 'absolute',
 
       width: '100%',
-      height: '100%',
+      height: 200,
 
       backgroundColor: colors.white,
 
-      opacity: 0.3,
+      borderTopLeftRadius: 20,
+      borderTopRightRadius: 20,
+
+    },
+
+    allcontentOff: {
+      position: 'absolute',
+      bottom:0,
+
+      width: '100%',
+      height: 40,
+
+      backgroundColor: colors.white,
 
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
+
+      opacity: 0.3,
     },
 
     scrollsts: {
@@ -80,8 +109,6 @@ export default StyleSheet.create(
       backgroundColor: colors.purple,
 
       borderRadius: 10,
-
-      opacity: 0.4,
     },
 
     deleteimg: {
@@ -184,6 +211,27 @@ export default StyleSheet.create(
       height: 20,  
 
       alignItems: 'center',
+    },
+
+    closecities: {
+      zIndex: 10,
+      position: 'absolute',
+      top: -20,
+
+      width: 40,
+      height: 40,
+
+      borderRadius: 25,
+
+      backgroundColor: colors.purple,
+      
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    closeimg: {
+      width: 20,
+      height: 20,
     },
 
   }

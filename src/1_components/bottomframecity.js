@@ -17,6 +17,11 @@ import bottomframecityStyle from './1_style/bottomframecityStyle';
 // -------------------------------------------------------------------------------------
 export function BottomFrameCity(props) {
 
+    // img menu
+    // -------------------------------------------------------------------------------------
+    const imagePath = props.menuActivate ? require('./3_img/tobottom.png') : require('./3_img/totop.png');
+    // -------------------------------------------------------------------------------------
+
     return (
 
         <>
@@ -27,7 +32,19 @@ export function BottomFrameCity(props) {
                 ?
 
                     <View style={bottomframecityStyle.framebottomall} >
+
                         <View style={bottomframecityStyle.allcontent} >
+
+                            <TouchableOpacity 
+                                style={bottomframecityStyle.closecities}
+                                onPress={() => props.menuActivate ? props.setMenuActivate(false) : props.setMenuActivate(true)}
+                            >
+                                <Image
+                                    source={imagePath}
+                                    style={bottomframecityStyle.closeimg}
+                                />
+                            </TouchableOpacity>
+
                             <View style={bottomframecityStyle.backgrdwhi} ></View>
 
                             <ScrollView
@@ -36,7 +53,7 @@ export function BottomFrameCity(props) {
                                 style={bottomframecityStyle.scrollsts}
                             >
                                 <View style={bottomframecityStyle.insidescroll} >
-                                    <TouchableOpacity onPress={() => props.setInsertCity(true)} >
+                                    <TouchableOpacity onPress={() => {props.setInsertCity(true); props.setMenuActivate(false);} } >
                                         <View style={bottomframecityStyle.city2} >
                                             <View style={bottomframecityStyle.backgcity} ></View>
                                             <View style={bottomframecityStyle.addcitiadd} ></View>
@@ -57,8 +74,9 @@ export function BottomFrameCity(props) {
                                                         props.setloading(true);
                                                         props.setinitcity(item.city);
                                                         props.reloadViewFunc();
+                                                        props.setMenuActivate(false);
                                                     }} >
-                                                        
+
                                                     <View style={bottomframecityStyle.city} >
 
                                                         <View style={bottomframecityStyle.backgcity} ></View>
@@ -102,8 +120,17 @@ export function BottomFrameCity(props) {
                 :
 
                     <View style={bottomframecityStyle.framebottomall} >
-                        <View style={bottomframecityStyle.allcontent} >
-                            <View style={bottomframecityStyle.backgrdwhi} ></View>
+                        <View style={bottomframecityStyle.allcontentMenuOff} >
+                            <TouchableOpacity 
+                                style={bottomframecityStyle.closecities}
+                                onPress={() => props.menuActivate ? props.setMenuActivate(false) : props.setMenuActivate(true)}
+                            >
+                                <Image
+                                    source={imagePath}
+                                    style={bottomframecityStyle.closeimg}
+                                />
+                            </TouchableOpacity>
+                            <View style={bottomframecityStyle.allcontentOff} ></View>
                         </View>
                     </View>
 
