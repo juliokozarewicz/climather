@@ -205,10 +205,10 @@ export function IndexScreen() {
             const timer = setTimeout(() => {
                 props.setloading(false);
             }, 100);
-        
+
             return () => clearTimeout(timer);
           }, []);
-                        
+
         return(
 
             loading
@@ -233,7 +233,6 @@ export function IndexScreen() {
 
     }
     // -------------------------------------------------------------------------------------
-    
     
     
     return (

@@ -33,6 +33,8 @@ export function BottomFrameCity(props) {
 
                     <View style={bottomframecityStyle.framebottomall} >
 
+                        <View style={bottomframecityStyle.backgroundColorBlack}></View>
+
                         <View style={bottomframecityStyle.allcontent} >
 
                             <TouchableOpacity 
