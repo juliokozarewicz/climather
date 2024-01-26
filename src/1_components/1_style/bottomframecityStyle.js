@@ -119,11 +119,11 @@ export default StyleSheet.create(
       alignItems: 'center',
       justifyContent: 'center',
 
-      backgroundColor: colors.black,
+      backgroundColor: colors.white,
 
       borderRadius: 10,
 
-      opacity: 0.5,
+      opacity: 0.4,
     },
 
     deleteimg: {
@@ -148,12 +148,12 @@ export default StyleSheet.create(
 
     txttemp: {
       position: 'absolute',
-      bottom: 13,
+      bottom: 8,
 
       fontFamily: 'title',
       fontSize: 12,
 
-      color: colors.white,
+      color: colors.purple,
     },
 
     imgtemp2: {
