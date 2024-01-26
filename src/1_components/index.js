@@ -82,50 +82,6 @@ export function IndexScreen() {
     // -------------------------------------------------------------------------------------
     useEffect(() => {
 
-        const fetchDataBase = async () => {
-
-            try {
-                const result = await ReadDataBase();
-        
-                const dataDictArray = [];
-        
-                for (const item of result) {
-                    
-                    const citiData = await getDataWeather(item.city);
-        
-                    if (citiData && citiData.name && citiData.main && citiData.main.temp) {
-
-                        const dataReturn = {
-                            "id": item.id,
-                            "city": item.city,
-                            "temp": citiData.main.temp,
-                            "icon": citiData.weather[0].icon,
-                        };
-        
-                        dataDictArray.push(dataReturn);
-
-                    } else {
-                        deleteItemFromDatabase(item.id);
-                    }
-                }
-        
-                setGetcity(dataDictArray);
-        
-            } catch (error) {
-
-                console.error(error);
-
-            }
-        };
-
-        fetchDataBase();
-    }, [reloadDataAPI]);
-    // -------------------------------------------------------------------------------------
-
-    // api request
-    // -------------------------------------------------------------------------------------
-    useEffect(() => {
-
         const fetchDataFromApi = async (city) => {
 
             try {
@@ -161,12 +117,19 @@ export function IndexScreen() {
             
             try {
                 const dataForecast = await getDataForecast(city);
+                const CitiesDBF = await ReadDataBase();
 
                 if (dataForecast && dataForecast.cod == '200') {
                 
                     setDataForecast(dataForecast);
                     setConnectionF(true);
     
+                } else if (CitiesDBF.length > 0 && CitiesDBF[0].city) {
+                    
+                    console.log(CitiesDBF[0].city)
+                    const dataForecast = await getDataForecast(CitiesDBF[0].city);
+                    setDataForecast(dataForecast);
+                    
                 } else {
                     const dataForecast = await getDataForecast('New York, US');
                     setDataForecast(dataForecast);
@@ -181,9 +144,45 @@ export function IndexScreen() {
 
         };
 
-        fetchDataFromApi(initcity);
-        fetchForecast(initcity);
+        const fetchDataBase = async () => {
 
+            try {
+                const result = await ReadDataBase();
+        
+                const dataDictArray = [];
+        
+                for (const item of result) {
+                    
+                    const citiData = await getDataWeather(item.city);
+        
+                    if (citiData && citiData.name && citiData.main && citiData.main.temp) {
+
+                        const dataReturn = {
+                            "id": item.id,
+                            "city": item.city,
+                            "temp": citiData.main.temp,
+                            "icon": citiData.weather[0].icon,
+                        };
+        
+                        dataDictArray.push(dataReturn);
+
+                    } else {
+                        deleteItemFromDatabase(item.id);
+                    }
+                }
+        
+                setGetcity(dataDictArray);
+                fetchDataFromApi(initcity);
+                fetchForecast(initcity);
+        
+            } catch (error) {
+
+                console.error(error);
+
+            }
+        };
+
+        fetchDataBase();
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
     
