@@ -82,23 +82,6 @@ export function IndexScreen() {
     // -------------------------------------------------------------------------------------
     useEffect(() => {
 
-        const fetchDataFromApiDB = async (city) => {
-
-            const resultDB = await getDataWeather(city);
-
-            if (resultDB && resultDB.cod == '200') {
-                setErrorGetData(false);
-                setConnection(true);
-                return resultDB;
-            
-            } else {
-                setErrorGetData(true);
-                setConnection(false);
-                setErrorGetDataMSG('Communication failure: Cities data.');
-            };
-
-        };
-
         const fetchDataBase = async () => {
 
             try {
@@ -107,8 +90,8 @@ export function IndexScreen() {
                 const dataDictArray = [];
         
                 for (const item of result) {
-
-                    const citiData = await fetchDataFromApiDB(item.city);
+                    
+                    const citiData = await getDataWeather(item.city);
         
                     if (citiData && citiData.name && citiData.main && citiData.main.temp) {
 
