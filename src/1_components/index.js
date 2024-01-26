@@ -1,3 +1,4 @@
+// React
 import React, {
     useEffect,
     useState,
@@ -8,7 +9,6 @@ import {
     Text,
     StatusBar,
     SafeAreaView,
-    Image,
     TouchableOpacity,
     TouchableWithoutFeedback,
     TextInput,
@@ -17,12 +17,12 @@ import {
 // import style sheet
 import indexStyle from './1_style/indexStyle';
 
-
 // import func api request
 import { getDataWeather, getDataForecast} from './0_functions/apirequest';
 
 // database
 import {CreateItemDataBase, ReadDataBase, deleteItemFromDatabase} from './0_functions/CRUD'
+
 
 // External components (INIT)
 // ===============================
@@ -146,17 +146,18 @@ export function IndexScreen() {
         const fetchDataFromApi = async (city) => {
 
             try {
-                
+
                 const result = await getDataWeather(city);
 
                 if (result && result.cod == '200') {
                     setErrorGetData(false);
                     setData(result);
                     setConnection(true);
-                
+
                 } else {
                     const result = await getDataWeather('New York, US');
                     setData(result);
+
                 };
 
             } catch {
@@ -164,6 +165,7 @@ export function IndexScreen() {
                 setConnection(false);
                 setErrorGetDataMSG('Communication failure: Weather.');
             }
+
         };
 
         const fetchForecast = async (city) => {
@@ -204,7 +206,7 @@ export function IndexScreen() {
         useEffect(() => {
             const timer = setTimeout(() => {
                 props.setloading(false);
-            }, 100);
+            }, 1000);
 
             return () => clearTimeout(timer);
           }, []);

@@ -240,7 +240,7 @@ export default StyleSheet.create(
       
       backgroundColor: colors.black,
 
-      opacity: 0.7,
+      opacity: 0.8,
     },
 
     logoload: {
@@ -250,12 +250,12 @@ export default StyleSheet.create(
 
 
       fontFamily: 'title',
-      fontSize: 25,
+      fontSize: 18,
       letterSpacing: 3,
 
       color: colors.white,
 
-      opacity: 0.4,
+      opacity: 0.6,
 
       textTransform: 'uppercase',
     },
