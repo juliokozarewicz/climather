@@ -44,7 +44,7 @@ export default StyleSheet.create(
       width: '100%',
       height: 200,
 
-      backgroundColor: colors.white,
+      backgroundColor: colors.purple,
 
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
@@ -93,7 +93,7 @@ export default StyleSheet.create(
     },
 
     city2: {
-      width: 90,
+      width: 80,
       height: '100%',
 
       alignItems: 'center',
@@ -107,11 +107,11 @@ export default StyleSheet.create(
       alignItems: 'center',
       justifyContent: 'center',
 
-      backgroundColor: colors.purple,
+      backgroundColor: colors.black,
 
       borderRadius: 10,
 
-      opacity: 0.8,
+      opacity: 0.5,
     },
 
     deleteimg: {
@@ -217,6 +217,22 @@ export default StyleSheet.create(
     },
 
     closecities: {
+      zIndex: 10,
+      position: 'absolute',
+      top: -20,
+
+      width: 40,
+      height: 40,
+
+      borderRadius: 25,
+
+      backgroundColor: colors.white,
+      
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    closecitiesOFF: {
       zIndex: 10,
       position: 'absolute',
       top: -20,

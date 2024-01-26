@@ -124,7 +124,7 @@ export function BottomFrameCity(props) {
                     <View style={bottomframecityStyle.framebottomall} >
                         <View style={bottomframecityStyle.allcontentMenuOff} >
                             <TouchableOpacity 
-                                style={bottomframecityStyle.closecities}
+                                style={bottomframecityStyle.closecitiesOFF}
                                 onPress={() => props.menuActivate ? props.setMenuActivate(false) : props.setMenuActivate(true)}
                             >
                                 <Image

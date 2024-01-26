@@ -61,7 +61,7 @@ export function IndexScreen() {
         const [initcity, setinitcity] = useState('New York, US');
 
         // menu
-        const [menuActivate, setMenuActivate] = useState(true);
+        const [menuActivate, setMenuActivate] = useState(false);
 
         // input city colors
         const [inputFocused, setInputFocused] = useState(false);
