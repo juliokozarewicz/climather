@@ -58,7 +58,7 @@ export function IndexScreen() {
         const [getcity, setGetcity] = useState([]);
         const [citytext, setCitytext] = useState('');
         const [insertCity, setInsertCity] = useState(false);
-        const [initcity, setinitcity] = useState('New York, US');
+        const [initcity, setinitcity] = useState();
 
         // menu
         const [menuActivate, setMenuActivate] = useState(false);
@@ -77,7 +77,7 @@ export function IndexScreen() {
         setReloadDataAPI(prevFlag => prevFlag + 1);
     };
     // -------------------------------------------------------------------------------------
-    
+
     // Data api from Db
     // -------------------------------------------------------------------------------------
     useEffect(() => {
@@ -170,10 +170,12 @@ export function IndexScreen() {
                         deleteItemFromDatabase(item.id);
                     }
                 }
+
+                const initCityValue = initcity ? initcity : result.length > 0 && result[0].city ? result[0].city : 'New York, US';
         
                 setGetcity(dataDictArray);
-                fetchDataFromApi(initcity);
-                fetchForecast(initcity);
+                fetchDataFromApi(initCityValue);
+                fetchForecast(initCityValue);
         
             } catch (error) {
 
