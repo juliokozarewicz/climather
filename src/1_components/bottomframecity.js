@@ -97,6 +97,7 @@ export function BottomFrameCity(props) {
                                                                 props.deleteItemFromDatabase(item.id);
                                                                 props.reloadViewFunc();
                                                                 props.setMenuActivate(false);
+                                                                props.setloading(true);
                                                             }}
                                                         >
                                                             <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
