@@ -12,6 +12,7 @@ import {
     TouchableOpacity,
     TouchableWithoutFeedback,
     TextInput,
+    Image,
 } from 'react-native';
 
 // import style sheet
@@ -67,7 +68,8 @@ export function IndexScreen() {
         const [inputFocused, setInputFocused] = useState(false);
 
         // loadingpage
-        const [loading, setloading] = useState(true);
+        const [loading, setloading] = useState(false);
+        const [loadingINIT, setloadingINIT] = useState(true);
 
     // -------------------------------------------------------------------------------------
 
@@ -194,7 +196,7 @@ export function IndexScreen() {
 
         useEffect(() => {
             const timer = setTimeout(() => {
-                props.setloading(false);
+                setloading(false);
             }, 1000);
 
             return () => clearTimeout(timer);
@@ -214,6 +216,40 @@ export function IndexScreen() {
                         <View style={[indexStyle.circle]}></View>
                         <View style={[indexStyle.circle]}></View>
                         <View style={[indexStyle.circle]}></View>
+                    </View>
+
+                </View>
+
+            :
+                null
+        )
+
+    }
+    // -------------------------------------------------------------------------------------
+
+    // loadscreen
+    // -------------------------------------------------------------------------------------
+    function LoadingScreenINIT () {
+
+        useEffect(() => {
+            const timer = setTimeout(() => {
+                setloadingINIT(false);
+            }, 2500);
+
+            return () => clearTimeout(timer);
+          }, []);
+
+        return(
+
+            loadingINIT
+
+            ?
+                <View style={indexStyle.loadingpageinit}>
+                    <View style={indexStyle.loadbackinit}></View>
+
+                    <View style={indexStyle.centercontent}>
+                        <Image source={require('./3_img/logo.png')} style={indexStyle.initloadlogo} />
+                        <Text style={indexStyle.textinitload} >Loading...</Text>
                     </View>
 
                 </View>
@@ -332,9 +368,10 @@ export function IndexScreen() {
 
                 }
 
-                {
-                    <LoadingScreen setloading={setloading} />
-                }
+                <LoadingScreen />
+
+                <LoadingScreenINIT />
+
 
             </SafeAreaView>
 

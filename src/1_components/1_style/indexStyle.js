@@ -232,6 +232,17 @@ export default StyleSheet.create(
       justifyContent: 'center',
     },
 
+    loadingpageinit: {
+      zIndex: 900,
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+      
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
     loadback: {
       position: 'absolute',
 
@@ -243,6 +254,15 @@ export default StyleSheet.create(
       opacity: 0.8,
     },
 
+    loadbackinit: {
+      position: 'absolute',
+
+      width: '100%',
+      height: '100%',
+      
+      backgroundColor: colors.purple,
+    },
+
     logoload: {
       zIndex: 102,
 
@@ -250,7 +270,7 @@ export default StyleSheet.create(
 
 
       fontFamily: 'title',
-      fontSize: 18,
+      fontSize: 15,
       letterSpacing: 3,
 
       color: colors.white,
@@ -284,6 +304,31 @@ export default StyleSheet.create(
       backgroundColor: colors.white,
 
       borderRadius: 50,
+    },
+
+    initloadlogo: {
+      width: 100,
+      height: 100,
+    },
+
+    textinitload: {
+      zIndex: 102,
+
+      fontFamily: 'title',
+      fontSize: 10,
+      letterSpacing: 2,
+
+      color: colors.white,
+
+      opacity: 0.7,
+
+      textAlign: 'center',
+    },
+
+    centercontent: {
+      position: 'absolute',
+
+      gap: 10,
     },
 
   }
