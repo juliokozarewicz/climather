@@ -197,7 +197,7 @@ export function IndexScreen() {
         useEffect(() => {
             const timer = setTimeout(() => {
                 setloading(false);
-            }, 1000);
+            }, 3000);
 
             return () => clearTimeout(timer);
           }, []);

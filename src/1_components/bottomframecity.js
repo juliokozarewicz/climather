@@ -95,9 +95,10 @@ export function BottomFrameCity(props) {
                                                             style={bottomframecityStyle.btndel}
                                                             onPress={ () => {
                                                                 props.deleteItemFromDatabase(item.id);
-                                                                props.reloadViewFunc();
+                                                                props.setinitcity('')
                                                                 props.setMenuActivate(false);
                                                                 props.setloading(true);
+                                                                props.reloadViewFunc();
                                                             }}
                                                         >
                                                             <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
