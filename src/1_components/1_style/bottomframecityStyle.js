@@ -274,7 +274,7 @@ export default StyleSheet.create(
       
       backgroundColor: colors.black,
 
-      opacity: 0.7,
+      opacity: 0.87,
     },
 
   }

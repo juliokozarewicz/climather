@@ -52,9 +52,129 @@ export function FrameThree(props) {
                 <View style={framethreeStyle.framethreeall} >
 
                     {
-                        <View style={framethreeStyle.allsquare}>
-                            <View style={framethreeStyle.backgrprp}></View>
-                        </View>
+
+                        <>
+                            <View style={framethreeStyle.allsquare} >
+
+                                <View style={framethreeStyle.backgrprp}></View>
+
+                                <Text style={framethreeStyle.txttop}>1</Text>
+                                
+                                <ScrollView style={framethreeStyle.contenttexts} showsVerticalScrollIndicator={false} >
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+                                    <View style={framethreeStyle.contenttemphori}>
+                                        <Text style={framethreeStyle.txttop2}>03 h</Text>
+                                        <Text style={framethreeStyle.txtbottom}>30°</Text>
+                                        <Text style={framethreeStyle.txttop3}>Clouds</Text>
+                                        <Image source={{ uri: `http://openweathermap.org/img/wn/02d@4x.png` } } style={framethreeStyle.imgcenter} />
+                                    </View>
+
+
+                                </ScrollView>
+
+                            </View>
+
+
+
+
+
+
+
+                            <View style={framethreeStyle.allsquare} >
+                                <View style={framethreeStyle.backgrprp}></View>
+                            </View>
+
+                            <View style={framethreeStyle.allsquare} >
+                                <View style={framethreeStyle.backgrprp}></View>
+                            </View>
+
+                            <View style={framethreeStyle.allsquare} >
+                                <View style={framethreeStyle.backgrprp}></View>
+                            </View>
+
+                            <View style={framethreeStyle.allsquare} >
+                                <View style={framethreeStyle.backgrprp}></View>
+                            </View>
+
+                        </>
+
                     }
 
                 </View>

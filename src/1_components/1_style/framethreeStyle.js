@@ -17,7 +17,6 @@ export default StyleSheet.create(
       bottom: 80,
       
       width: '100%',
-      height: 130,
     },
 
     framethreeall: {
@@ -37,38 +36,40 @@ export default StyleSheet.create(
     allsquare: {
       position: 'relative',
 
-      width: 80,
-      height: '100%',
+      width: 250,
+      height: 200,
+
+      alignItems: 'center',
+      justifyContent: 'center'
     },
 
     backgrprp: {
       width: '100%',
       height: '100%',
 
-      backgroundColor: '#8B6DF7',
+      backgroundColor: colors.purple,
 
       borderRadius: 10,
 
-      opacity: 0.5,
+      opacity: 0.7,
     },
 
     contenttexts: {
       position: 'absolute',
+      top: 60,
 
       width: '100%',
-      height: '100%',
+      height: 120,
 
-      alignItems: 'center',
-      justifyContent: 'center',
     },
 
     txttop: {
       position: 'absolute',
-      top: 3,
+      top: 15,
   
       width: '90%',
 
-      fontSize: 15,
+      fontSize: 20,
       fontFamily: 'title',
 
       color: colors.white,
@@ -79,47 +80,26 @@ export default StyleSheet.create(
     },
 
     txttop2: {
-      position: 'absolute',
-      top: 25,
-  
-      width: '90%',
-
       fontSize: 10,
       fontFamily: 'title',
 
       color: colors.gray2,
 
-      textAlign: 'center',
+      marginLeft: 30,
     },
 
     txttop3: {
-      position: 'absolute',
-      bottom: 5,
-  
-      width: '90%',
-
-      fontSize: 9,
+      fontSize: 10,
       fontFamily: 'title',
 
-      color: colors.white,
-
-      textAlign: 'center',
+      color: colors.gray2,
     },
 
     txtbottom: {
-      position: 'absolute',
-      bottom: 18,
-  
-      width: '90%',
-
-      fontSize: 12,
+      fontSize: 10,
       fontFamily: 'title',
 
-      color: colors.white,
-
-      textAlign: 'center',
-
-      textTransform: 'capitalize',
+      color: colors.gray2,
     },
 
     imgcentererro: {
@@ -130,12 +110,25 @@ export default StyleSheet.create(
     },
 
     imgcenter: {
-      position: 'absolute',
-      top: 40,
+      width: 30,
+      height: 30,
 
-      width: 50,
-      height: 50,
+      marginRight: 30,
     },
+
+    contenttemphori: {
+      position: 'relative',
+
+      flexDirection: 'row',
+
+      width: '100%',
+
+      alignItems: 'center',
+      justifyContent: 'space-between',
+
+      gap: 20,
+    },
+
   }
 
 );
