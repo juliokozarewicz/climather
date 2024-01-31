@@ -249,7 +249,6 @@ export function IndexScreen() {
 
                     <View style={indexStyle.centercontent}>
                         <Image source={require('./3_img/logo.png')} style={indexStyle.initloadlogo} />
-                        <Text style={indexStyle.textinitload} >Loading...</Text>
                     </View>
 
                 </View>
@@ -260,8 +259,8 @@ export function IndexScreen() {
 
     }
     // -------------------------------------------------------------------------------------
-    
-    
+
+
     return (
 
         <View style={indexStyle.allcontent}>
@@ -371,7 +370,6 @@ export function IndexScreen() {
                 <LoadingScreen />
 
                 <LoadingScreenINIT />
-
 
             </SafeAreaView>
 

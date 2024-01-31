@@ -307,12 +307,15 @@ export default StyleSheet.create(
     },
 
     initloadlogo: {
-      width: 100,
-      height: 100,
+      width: 70,
+      height: 70,
     },
 
     textinitload: {
       zIndex: 102,
+
+      position: 'absolute',
+      bottom: 30,
 
       fontFamily: 'title',
       fontSize: 10,
@@ -327,8 +330,6 @@ export default StyleSheet.create(
 
     centercontent: {
       position: 'absolute',
-
-      gap: 10,
     },
 
   }

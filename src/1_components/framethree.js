@@ -52,18 +52,9 @@ export function FrameThree(props) {
                 <View style={framethreeStyle.framethreeall} >
 
                     {
-                        props.data.list.slice(0 , 7).map((item, index) => (
-                            <View style={framethreeStyle.allsquare} key={index}>
-                                <View style={framethreeStyle.backgrprp}></View>
-                                <View style={framethreeStyle.contenttexts}>
-                                    <Text style={framethreeStyle.txttop}>{loadForecastData(item.dt, props.data.city.timezone).daymonth}</Text>
-                                    <Text style={framethreeStyle.txttop2}>{loadForecastData(item.dt, props.data.city.timezone).hours} h</Text>
-                                    <Text style={framethreeStyle.txttop3}>{item.weather[0].main}</Text>
-                                    <Image source={{ uri: `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` } } style={framethreeStyle.imgcenter} />
-                                    <Text style={framethreeStyle.txtbottom}>{item.main.temp.toFixed(0)}°</Text>
-                                </View>
-                            </View>
-                        ))
+                        <View style={framethreeStyle.allsquare}>
+                            <View style={framethreeStyle.backgrprp}></View>
+                        </View>
                     }
 
                 </View>
