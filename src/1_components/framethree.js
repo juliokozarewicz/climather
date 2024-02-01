@@ -55,6 +55,8 @@ export function FrameThree(props) {
                 {
                     Object.keys(props.dataForecast).map((date, index) => (
 
+                        console.log(date),
+
                         <View style={framethreeStyle.allsquare} key={index}>
 
                             <View style={framethreeStyle.backgrprp}></View>
@@ -64,7 +66,7 @@ export function FrameThree(props) {
 
                                 {props.dataForecast[date].map((item, innerIndex) => (
 
-                                    console.log(item),
+                                  
 
                                     <View style={framethreeStyle.contenttemphori} key={innerIndex}>
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop2}>{loadForecastData(item.dt, -10800).daymonth} {loadForecastData(item.dt, -10800).hours} h</Text>

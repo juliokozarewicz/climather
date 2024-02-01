@@ -124,13 +124,18 @@ export function IndexScreen() {
                 if (dataForecast && dataForecast.cod == '200') {
                 
                     const dataReduced = dataForecast.list.reduce((acc, obj) => {
-                        const dateTime = obj.dt_txt.split(' ')[0]; // Pegando a data sem a hora
-                        if (!acc[dateTime]) {
-                            acc[dateTime] = [];
+                        // Convertendo o timestamp Unix para uma data JavaScript
+                        const dateTime = new Date(obj.dt * 1000);
+                        // Pegando apenas a data (ignorando a hora)
+                        const dateKey = `${dateTime.getFullYear()}-${dateTime.getMonth() + 1}-${dateTime.getDate()}`;
+                    
+                        if (!acc[dateKey]) {
+                            acc[dateKey] = [];
                         }
-                        acc[dateTime].push(obj);
+                        acc[dateKey].push(obj);
                         return acc;
                     }, {});
+                                     
 
                     setDataForecast(dataReduced);
                     setConnectionF(true);
