@@ -123,7 +123,16 @@ export function IndexScreen() {
 
                 if (dataForecast && dataForecast.cod == '200') {
                 
-                    setDataForecast(dataForecast);
+                    const dataReduced = dataForecast.list.reduce((acc, obj) => {
+                        const dateTime = obj.dt_txt.split(' ')[0]; // Pegando a data sem a hora
+                        if (!acc[dateTime]) {
+                            acc[dateTime] = [];
+                        }
+                        acc[dateTime].push(obj);
+                        return acc;
+                    }, {});
+
+                    setDataForecast(dataReduced);
                     setConnectionF(true);
     
                 } else if (CitiesDBF.length > 0 && CitiesDBF[0].city) {
@@ -287,7 +296,7 @@ export function IndexScreen() {
                     <View style={indexStyle.topframe}>
                         <FrameOne connection={connection} data={data} />
                         <FrameTwo connection={connection} data={data} />
-                        <FrameThree connectionF={connectionF} data={dataForecast} />
+                        <FrameThree connectionF={connectionF} dataForecast={dataForecast} />
                     </View>
 
                     <BottomFrameCity

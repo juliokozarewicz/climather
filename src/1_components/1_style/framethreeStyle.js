@@ -85,7 +85,9 @@ export default StyleSheet.create(
 
       color: colors.gray2,
 
-      marginLeft: 30,
+      marginLeft: 20,
+
+      width: 28,
     },
 
     txttop3: {
@@ -93,6 +95,10 @@ export default StyleSheet.create(
       fontFamily: 'title',
 
       color: colors.gray2,
+
+      marginLeft: 0,
+
+      flex: 1,
     },
 
     txtbottom: {
@@ -100,6 +106,10 @@ export default StyleSheet.create(
       fontFamily: 'title',
 
       color: colors.gray2,
+
+      marginLeft: 10,
+
+      width: 30,
     },
 
     imgcentererro: {
@@ -113,7 +123,7 @@ export default StyleSheet.create(
       width: 30,
       height: 30,
 
-      marginRight: 30,
+      marginRight: 20,
     },
 
     contenttemphori: {
@@ -125,8 +135,6 @@ export default StyleSheet.create(
 
       alignItems: 'center',
       justifyContent: 'space-between',
-
-      gap: 20,
     },
 
   }
