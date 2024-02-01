@@ -63,7 +63,7 @@ export function FrameThree(props) {
 
                                 {props.dataForecast[date].map((item, innerIndex) => (
 
-                                    console.log(item),
+                                    console.log(item.dt),
 
                                     <View style={framethreeStyle.contenttemphori} key={innerIndex}>
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop2}>** h</Text>
@@ -87,21 +87,21 @@ export function FrameThree(props) {
         
         :
 
-        <ScrollView
+        <View
             horizontal
             showsHorizontalScrollIndicator={false}
             style={framethreeStyle.scrollall}
         >
-            <View style={framethreeStyle.framethreeall} >
+            <View style={framethreeStyle.framethreeallerror} >
 
                 <View style={framethreeStyle.allsquare}>
                     <View style={framethreeStyle.backgrprp}></View>
-                    <View style={framethreeStyle.contenttexts}>
+                    <View style={framethreeStyle.contenttextserror}>
                         <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
                     </View>
                 </View>
             </View>
-        </ScrollView>    
+        </View>    
     
     );
     

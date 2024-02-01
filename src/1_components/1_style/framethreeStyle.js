@@ -33,9 +33,18 @@ export default StyleSheet.create(
       gap: 10,
     },
 
-    allsquare: {
-      position: 'relative',
+    framethreeallerror: {
+      width: '100%',
+      height: '100%',
+      
+      alignItems: 'flex-start',
+      justifyContent: 'center',
 
+      paddingLeft: 21,
+      paddingRight: 21,
+    },
+
+    allsquare: {
       width: 250,
       height: 200,
 
@@ -60,7 +69,13 @@ export default StyleSheet.create(
 
       width: '100%',
       height: 120,
+    },
 
+    contenttextserror: {
+      position: 'absolute',
+
+      alignItems: 'center',
+      justifyContent: 'center',
     },
 
     txttop: {
