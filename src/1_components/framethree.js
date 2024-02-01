@@ -57,13 +57,11 @@ export function FrameThree(props) {
                         <View style={framethreeStyle.allsquare} key={index}>
 
                             <View style={framethreeStyle.backgrprp}></View>
-                            <Text style={framethreeStyle.txttop}>1</Text>
+                            <Text style={framethreeStyle.txttop}>{date}</Text>
 
                             <ScrollView style={framethreeStyle.contenttexts} showsVerticalScrollIndicator={false} key={index}>
 
                                 {props.dataForecast[date].map((item, innerIndex) => (
-
-                                    console.log(item.dt),
 
                                     <View style={framethreeStyle.contenttemphori} key={innerIndex}>
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop2}>** h</Text>
