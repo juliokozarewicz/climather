@@ -9,7 +9,7 @@ export async function getDataWeather (city) {
 };
 
 export async function getDataForecast(city) {
-        const requestF = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&&units=metric&appid=${GET_API_KEY}`);
+        const requestF = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=&units=metric&appid=${GET_API_KEY}`);
         const resultF = await requestF.json();
         return resultF;
 };

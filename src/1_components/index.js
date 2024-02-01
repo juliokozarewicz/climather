@@ -137,7 +137,7 @@ export function IndexScreen() {
                     }, {});
                                      
 
-                    setDataForecast(dataReduced);
+                    setDataForecast({'dataReduced': dataReduced, 'timezone': dataForecast.city.timezone});
                     setConnectionF(true);
     
                 } else if (CitiesDBF.length > 0 && CitiesDBF[0].city) {

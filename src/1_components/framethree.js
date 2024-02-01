@@ -53,9 +53,7 @@ export function FrameThree(props) {
                 <View style={framethreeStyle.framethreeall} >
 
                 {
-                    Object.keys(props.dataForecast).map((date, index) => (
-
-                        console.log(date),
+                    Object.keys(props.dataForecast.dataReduced).map((date, index) => (
 
                         <View style={framethreeStyle.allsquare} key={index}>
 
@@ -64,12 +62,10 @@ export function FrameThree(props) {
 
                             <ScrollView style={framethreeStyle.contenttexts} showsVerticalScrollIndicator={false} key={index}>
 
-                                {props.dataForecast[date].map((item, innerIndex) => (
-
-                                  
+                                {props.dataForecast.dataReduced[date].map((item, innerIndex) => (
 
                                     <View style={framethreeStyle.contenttemphori} key={innerIndex}>
-                                        <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop2}>{loadForecastData(item.dt, -10800).daymonth} {loadForecastData(item.dt, -10800).hours} h</Text>
+                                        <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop2}>{loadForecastData(item.dt, props.dataForecast.timezone).daymonth} {loadForecastData(item.dt, props.dataForecast.timezone).hours} h</Text>
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txtbottom}>{Math.ceil(item.main.temp)}°</Text>
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop3}>{item.weather[0].description}</Text>
                                         <Image source={{ uri: `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` }} style={framethreeStyle.imgcenter} />
