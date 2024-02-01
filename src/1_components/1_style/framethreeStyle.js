@@ -102,7 +102,7 @@ export default StyleSheet.create(
 
       marginLeft: 20,
 
-      width: 28,
+      width: 40,
     },
 
     txttop3: {

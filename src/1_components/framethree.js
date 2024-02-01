@@ -39,6 +39,30 @@ export function FrameThree(props) {
 
     };
 
+    function loadForecastDataLocal(dateunix) {
+
+        const dateconv = new Intl.DateTimeFormat('en-GB', {
+            day: '2-digit',
+            month: '2-digit',
+            year: '2-digit',
+            hour: '2-digit',
+            minute: '2-digit',
+            hour12: false,
+            timeZone: 'UTC'
+        });
+
+        const datetimezone = dateconv.format(new Date(dateunix * 1e3));
+
+        const day = datetimezone.substring(0, 2);
+        //const month = datetimezone.substring(3, 5);
+        //const year = datetimezone.substring(6, 8);
+        const hours = datetimezone.substring(10, 12);
+        //const minutes = datetimezone.substring(13, 15);
+
+        return ({"daymonth": day, "hours": hours});
+
+    };
+
     return (
 
         props.connectionF 
@@ -63,8 +87,10 @@ export function FrameThree(props) {
 
                                 {props.dataForecast[date].map((item, innerIndex) => (
 
+                                    console.log(item),
+
                                     <View style={framethreeStyle.contenttemphori} key={innerIndex}>
-                                        <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop2}>** h</Text>
+                                        <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop2}>{loadForecastDataLocal(item.dt).daymonth} {loadForecastDataLocal(item.dt).hours} h</Text>
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txtbottom}>{Math.ceil(item.main.temp)}°</Text>
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop3}>{item.weather[0].description}</Text>
                                         <Image source={{ uri: `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` }} style={framethreeStyle.imgcenter} />
