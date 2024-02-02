@@ -80,11 +80,11 @@ export default StyleSheet.create(
 
     txttop: {
       position: 'absolute',
-      top: 15,
+      top: 20,
   
       width: '90%',
 
-      fontSize: 20,
+      fontSize: 15,
       fontFamily: 'title',
 
       color: colors.white,
