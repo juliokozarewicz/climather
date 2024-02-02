@@ -24,6 +24,9 @@ import { getDataWeather, getDataForecast} from './0_functions/apirequest';
 // database
 import {CreateItemDataBase, ReadDataBase, deleteItemFromDatabase} from './0_functions/CRUD'
 
+// unix dt convert
+import {loadForecastData} from './0_functions/unixdatetimeconvert'
+
 
 // External components (INIT)
 // ===============================
@@ -122,19 +125,33 @@ export function IndexScreen() {
                 const CitiesDBF = await ReadDataBase();
 
                 if (dataForecast && dataForecast.cod == '200') {
-                
+
                     const dataReduced = dataForecast.list.reduce((acc, obj) => {
-                        // Convertendo o timestamp Unix para uma data JavaScript
-                        const dateTime = new Date(obj.dt * 1000);
-                        // Pegando apenas a data (ignorando a hora)
-                        const dateKey = `${dateTime.getFullYear()}-${dateTime.getMonth() + 1}-${dateTime.getDate()}`;
+
+                        const localTimestamp = (obj.dt + dataForecast.city.timezone);
+
+                        const dateTime = new Date(localTimestamp * 1000);
+
+                        dateTime.setHours(0, 0, 0, 0);
                     
+
+                        const options = { weekday: 'long' };
+                        const locale = navigator.language;
+                        const dayOfWeek = dateTime.toLocaleDateString(locale, options);
+                        
+
+                        const dateKey = `${dayOfWeek}`;
+                        
+
                         if (!acc[dateKey]) {
                             acc[dateKey] = [];
                         }
                         acc[dateKey].push(obj);
+                    
                         return acc;
                     }, {});
+                    
+                    
                                      
 
                     setDataForecast({'dataReduced': dataReduced, 'timezone': dataForecast.city.timezone});
