@@ -127,39 +127,27 @@ export function IndexScreen() {
                 if (dataForecast && dataForecast.cod == '200') {
 
                     const dataReduced = dataForecast.list.reduce((acc, obj) => {
-
-                        const localTimestamp = (obj.dt + dataForecast.city.timezone);
-
-                        const dateTime = new Date(localTimestamp * 1000);
-
-                        dateTime.setHours(0, 0, 0, 0);
-                    
-
+                        const localTimestamp = (obj.dt * 1000 + dataForecast.city.timezone * 1000);
+                        const dateTime = new Date(localTimestamp);
+                        
                         const options = { weekday: 'long' };
                         const locale = navigator.language;
                         const dayOfWeek = dateTime.toLocaleDateString(locale, options);
-                        
-
                         const dateKey = `${dayOfWeek}`;
                         
-
                         if (!acc[dateKey]) {
                             acc[dateKey] = [];
                         }
                         acc[dateKey].push(obj);
-                    
+                        
                         return acc;
                     }, {});
-                    
-                    
-                                     
 
                     setDataForecast({'dataReduced': dataReduced, 'timezone': dataForecast.city.timezone});
                     setConnectionF(true);
     
                 } else if (CitiesDBF.length > 0 && CitiesDBF[0].city) {
-                    
-                    console.log(CitiesDBF[0].city)
+
                     const dataForecast = await getDataForecast(CitiesDBF[0].city);
                     setDataForecast(dataForecast);
                     
