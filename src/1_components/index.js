@@ -134,23 +134,23 @@ export function IndexScreen() {
                         const locale = navigator.language;
                         const dayOfWeek = dateTime.toLocaleDateString(locale, options);
                         const dateKey = `${dayOfWeek}`;
-                        
+
                         if (!acc[dateKey]) {
                             acc[dateKey] = [];
                         }
                         acc[dateKey].push(obj);
-                        
+
                         return acc;
                     }, {});
 
                     setDataForecast({'dataReduced': dataReduced, 'timezone': dataForecast.city.timezone});
                     setConnectionF(true);
-    
+
                 } else if (CitiesDBF.length > 0 && CitiesDBF[0].city) {
 
                     const dataForecast = await getDataForecast(CitiesDBF[0].city);
                     setDataForecast(dataForecast);
-                    
+
                 } else {
                     const dataForecast = await getDataForecast('New York, US');
                     setDataForecast(dataForecast);
@@ -161,7 +161,7 @@ export function IndexScreen() {
                 setConnectionF(false);
                 setErrorGetData(true);
                 setErrorGetDataMSG('Communication failure: Forecast.');
-            } 
+            }
 
         };
 
@@ -169,13 +169,13 @@ export function IndexScreen() {
 
             try {
                 const result = await ReadDataBase();
-        
+
                 const dataDictArray = [];
-        
+
                 for (const item of result) {
-                    
+
                     const citiData = await getDataWeather(item.city);
-        
+
                     if (citiData && citiData.name && citiData.main && citiData.main.temp) {
 
                         const dataReturn = {
@@ -184,7 +184,7 @@ export function IndexScreen() {
                             "temp": citiData.main.temp,
                             "icon": citiData.weather[0].icon,
                         };
-        
+
                         dataDictArray.push(dataReturn);
 
                     } else {
@@ -193,11 +193,11 @@ export function IndexScreen() {
                 }
 
                 const initCityValue = initcity ? initcity : result.length > 0 && result[0].city ? result[0].city : 'New York, US';
-        
+
                 setGetcity(dataDictArray);
                 fetchDataFromApi(initCityValue);
                 fetchForecast(initCityValue);
-        
+
             } catch (error) {
 
                 console.error(error);
@@ -208,7 +208,7 @@ export function IndexScreen() {
         fetchDataBase();
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
-    
+
     // loadscreen
     // -------------------------------------------------------------------------------------
     function LoadingScreen (props) {
