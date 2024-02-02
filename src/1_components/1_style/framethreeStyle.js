@@ -114,6 +114,8 @@ export default StyleSheet.create(
       marginLeft: 0,
 
       flex: 1,
+
+      textTransform: 'capitalize',
     },
 
     txtbottom: {

@@ -24,9 +24,6 @@ import { getDataWeather, getDataForecast} from './0_functions/apirequest';
 // database
 import {CreateItemDataBase, ReadDataBase, deleteItemFromDatabase} from './0_functions/CRUD'
 
-// unix dt convert
-import {loadForecastData} from './0_functions/unixdatetimeconvert'
-
 
 // External components (INIT)
 // ===============================
@@ -143,7 +140,7 @@ export function IndexScreen() {
                         return acc;
                     }, {});
 
-                    setDataForecast({'dataReduced': dataReduced, 'timezone': dataForecast.city.timezone});
+                    setDataForecast({'dataReduced': dataReduced, 'timezone': dataForecast.city.timezone, 'datetime': dataForecast.city.timezone});
                     setConnectionF(true);
 
                 } else if (CitiesDBF.length > 0 && CitiesDBF[0].city) {
@@ -216,7 +213,7 @@ export function IndexScreen() {
         useEffect(() => {
             const timer = setTimeout(() => {
                 setloading(false);
-            }, 3000);
+            }, 5000);
 
             return () => clearTimeout(timer);
           }, []);
@@ -228,14 +225,7 @@ export function IndexScreen() {
             ?
                 <View style={indexStyle.loadingpage}>
                     <View style={indexStyle.loadback}></View>
-                    <Text style={indexStyle.logoload} >loading</Text>
-
-                    <View style={indexStyle.allcricle}>
-                        <View style={[indexStyle.circle]}></View>
-                        <View style={[indexStyle.circle]}></View>
-                        <View style={[indexStyle.circle]}></View>
-                        <View style={[indexStyle.circle]}></View>
-                    </View>
+                    <Text style={indexStyle.logoload} >loading...</Text>
 
                 </View>
 

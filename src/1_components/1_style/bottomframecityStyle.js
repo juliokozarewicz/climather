@@ -144,6 +144,8 @@ export default StyleSheet.create(
       fontSize: 10,
 
       color: colors.white,
+
+      textTransform: 'capitalize',
     },
 
     txttemp: {
