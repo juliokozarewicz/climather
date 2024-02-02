@@ -243,7 +243,7 @@ export function IndexScreen() {
         useEffect(() => {
             const timer = setTimeout(() => {
                 setloadingINIT(false);
-            }, 2500);
+            }, 7000);
 
             return () => clearTimeout(timer);
           }, []);
