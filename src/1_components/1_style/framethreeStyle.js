@@ -98,11 +98,11 @@ export default StyleSheet.create(
       fontSize: 10,
       fontFamily: 'title',
 
-      color: colors.gray2,
+      color: colors.bluelight,
 
       marginLeft: 20,
 
-      width: 40,
+      width: 30,
     },
 
     txttop3: {
