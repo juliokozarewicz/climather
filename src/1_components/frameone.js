@@ -16,7 +16,7 @@ import frameoneStyle from './1_style/frameoneStyle';
 export function FrameOne(props) {
 
     return (
-        
+
         <>
 
             {
@@ -28,7 +28,7 @@ export function FrameOne(props) {
                     props.data
 
                     ?
-                
+
                         <View style={frameoneStyle.frameoneall}>
 
                             <View style={frameoneStyle.temperature}>

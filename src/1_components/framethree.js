@@ -31,6 +31,9 @@ export function FrameThree(props) {
                 <View style={framethreeStyle.framethreeall} >
 
                 {
+
+                    props.dataForecast.dataReduced
+                    ?
                     Object.keys(props.dataForecast.dataReduced).map((date, index) => (
 
                         <View style={framethreeStyle.allsquare} key={index}>
@@ -55,7 +58,22 @@ export function FrameThree(props) {
                 
                         </View>
                     ))
+                    :
+                    <View
+                        horizontal
+                        showsHorizontalScrollIndicator={false}
+                        style={framethreeStyle.scrollall}
+                    >
+                        <View style={framethreeStyle.framethreeallerror} >
 
+                            <View style={framethreeStyle.allsquare}>
+                                <View style={framethreeStyle.backgrprp}></View>
+                                <View style={framethreeStyle.contenttextserror}>
+                                    <Image source={require('./3_img/noconnectionblue.png')} style={framethreeStyle.imgcentererro} />
+                                </View>
+                            </View>
+                        </View>
+                    </View>
                 }
 
 
