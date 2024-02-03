@@ -9,11 +9,16 @@ import {
 // import style sheet
 import frameoneStyle from './1_style/frameoneStyle';
 
+// translation
+import { useTranslation } from 'react-i18next'; // Importe o hook useTranslation
+import i18n from './locales/1_i18n';
 
 
 // index screen function
 // -------------------------------------------------------------------------------------
 export function FrameOne(props) {
+
+    const { t } = useTranslation();
 
     return (
 
@@ -40,7 +45,7 @@ export function FrameOne(props) {
                                         numberOfLines={1}
                                         ellipsizeMode="tail"
                                     >
-                                        now [ min: { Math.floor(props.data.main.temp_min) }° | max: {Math.floor(props.data.main.temp_max) }° ]
+                                        {t('now')} [ {t('min')}: { Math.floor(props.data.main.temp_min) }° | {t('max')}: {Math.floor(props.data.main.temp_max) }° ]
                                     </Text>
 
                                     <Text

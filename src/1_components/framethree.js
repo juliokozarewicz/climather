@@ -10,9 +10,6 @@ import {
 // import style sheet
 import framethreeStyle from './1_style/framethreeStyle';
 
-// unix dt convert
-import {loadForecastData} from './0_functions/unixdatetimeconvert'
-
 
 // index screen function
 // -------------------------------------------------------------------------------------
