@@ -61,7 +61,7 @@ export function FrameOne(props) {
                                         numberOfLines={1}
                                         ellipsizeMode="tail"
                                     >
-                                        fells like: {Math.ceil(props.data.main.feels_like)}°
+                                        {t('fells like')}: {Math.ceil(props.data.main.feels_like)}°
                                     </Text>
 
                                 </View>

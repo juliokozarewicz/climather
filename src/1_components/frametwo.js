@@ -9,11 +9,17 @@ import {
 // import style sheet
 import frametwoStyle from './1_style/frametwoStyle';
 
+// translation
+import { useTranslation } from 'react-i18next'; // Importe o hook useTranslation
+import i18n from './locales/1_i18n';
+
 
 
 // index screen function
 // -------------------------------------------------------------------------------------
 export function FrameTwo(props) {
+
+    const { t } = useTranslation();
 
     function getdateformated(request) {
 
@@ -47,17 +53,17 @@ export function FrameTwo(props) {
                             <View style={frametwoStyle.leftside}>
 
                                 <View style={frametwoStyle.linetext}>
-                                    <Text style={frametwoStyle.textpurple}>pressure:</Text>
+                                    <Text style={frametwoStyle.textpurple}>{t('pressure')}:</Text>
                                     <Text style={frametwoStyle.textblack}>  {props.data.main.pressure} hPa</Text>
                                 </View>
 
                                 <View style={frametwoStyle.linetext}>
-                                    <Text style={frametwoStyle.textpurple}>humidity:</Text>
+                                    <Text style={frametwoStyle.textpurple}>{t('humidity')}:</Text>
                                     <Text style={frametwoStyle.textblack}>  {props.data.main.humidity} %</Text>
                                 </View>
 
                                 <View style={frametwoStyle.linetext}>
-                                    <Text style={frametwoStyle.textpurple}>sunrise:</Text>
+                                    <Text style={frametwoStyle.textpurple}>{t('sunrise')}:</Text>
                                     <Text style={frametwoStyle.textblack}>  {getdateformated(props.data.sys.sunrise)}</Text>
                                 </View>
 
@@ -66,17 +72,17 @@ export function FrameTwo(props) {
                             <View style={frametwoStyle.rightside}>
 
                                 <View style={frametwoStyle.linetext}>
-                                    <Text style={frametwoStyle.textpurple}>visibility:</Text>
+                                    <Text style={frametwoStyle.textpurple}>{t('visibility')}:</Text>
                                     <Text style={frametwoStyle.textblack}>  {props.data.visibility} m</Text>
                                 </View>
 
                                 <View style={frametwoStyle.linetext}>
-                                    <Text style={frametwoStyle.textpurple}>wind:</Text>
+                                    <Text style={frametwoStyle.textpurple}>{t('wind')}:</Text>
                                     <Text style={frametwoStyle.textblack}>  {(props.data.wind.speed * 3.6).toFixed(0)} km/h  [ {props.data.wind.deg}° ]</Text>
                                 </View>
 
                                 <View style={frametwoStyle.linetext}>
-                                    <Text style={frametwoStyle.textpurple}>sunset:</Text>
+                                    <Text style={frametwoStyle.textpurple}>{t('sunset')}:</Text>
                                     <Text style={frametwoStyle.textblack}>  {getdateformated(props.data.sys.sunset)}</Text>
                                 </View>
 

@@ -24,6 +24,10 @@ import { getDataWeather, getDataForecast} from './0_functions/apirequest';
 // database
 import {CreateItemDataBase, ReadDataBase, deleteItemFromDatabase} from './0_functions/CRUD'
 
+// translation
+import { useTranslation } from 'react-i18next'; // Importe o hook useTranslation
+import i18n from './locales/1_i18n';
+
 
 // External components (INIT)
 // ===============================
@@ -42,6 +46,8 @@ import {BottomFrameCity} from './bottomframecity';
 // index screen function
 // -------------------------------------------------------------------------------------
 export function IndexScreen() {
+
+    const { t } = useTranslation();
 
     // states
     // -------------------------------------------------------------------------------------
@@ -109,7 +115,7 @@ export function IndexScreen() {
             } catch {
                 setErrorGetData(true);
                 setConnection(false);
-                setErrorGetDataMSG('Communication failure: Weather.');
+                setErrorGetDataMSG(t('Communication failure: Weather.'));
 
             }
 
@@ -157,7 +163,7 @@ export function IndexScreen() {
             } catch {
                 setConnectionF(false);
                 setErrorGetData(true);
-                setErrorGetDataMSG('Communication failure: Forecast.');
+                setErrorGetDataMSG(t('Communication failure: Forecast.'));
             }
 
         };
@@ -225,7 +231,7 @@ export function IndexScreen() {
             ?
                 <View style={indexStyle.loadingpage}>
                     <View style={indexStyle.loadback}></View>
-                    <Text style={indexStyle.logoload} >loading...</Text>
+                    <Text style={indexStyle.logoload} >{t('loading')}...</Text>
 
                 </View>
 
@@ -337,13 +343,13 @@ export function IndexScreen() {
                                 }}>
                                     <Text style={indexStyle.closeaddcitytxt}>x</Text>
                                 </TouchableOpacity>
-                                <Text style={indexStyle.txtaddcity}>Add a City</Text>
-                                <Text style={indexStyle.txtdesccity}>Add multiple cities and keep an eye on their weather conditions. This is very useful, for example, before planning a trip.</Text>
+                                <Text style={indexStyle.txtaddcity}>{t('Add a City')}</Text>
+                                <Text style={indexStyle.txtdesccity}>{t('Add multiple cities and keep an eye on their weather conditions. This is very useful, for example, before planning a trip')}.</Text>
                                 <TextInput
                                     style={inputFocused ? indexStyle.textcitiesaddFocus : indexStyle.textcitiesadd}
 
                                     value={citytext}
-                                    placeholder={'Please enter a city. (Ex: New York, US)'}
+                                    placeholder={ t('Please enter a city. (Ex: New York, US)') }
                                     placeholderTextColor={indexStyle.placeholdertextcolor.color}
                                     onChangeText={(text) => setCitytext(text)}
                                     onFocus={() => setInputFocused(true)}
@@ -360,7 +366,7 @@ export function IndexScreen() {
                                     setInputFocused(false);
                                     setinitcity(citytext);
                                 }}>
-                                    <Text style={indexStyle.sendbtntxt}>+ Add City</Text>
+                                    <Text style={indexStyle.sendbtntxt}>+ {t('Add City')}</Text>
                                 </TouchableOpacity>
                             </View>
 

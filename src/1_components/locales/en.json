@@ -3,6 +3,19 @@
     "now": "now",
     "min": "min",
     "max": "max",
-    
+    "fells like": "fells like" ,
+    "pressure": "pressure",
+    "humidity": "humidity",
+    "sunrise": "sunrise", 
+    "visibility": "visibility", 
+    "wind": "wind", 
+    "sunset": "sunset",
+    "Add City": "Add City",
+    "loading": "loading",
+    "Add a City": "Add a City",
+    "Add multiple cities and keep an eye on their weather conditions. This is very useful, for example, before planning a trip": "Add multiple cities and keep an eye on their weather conditions. This is very useful, for example, before planning a trip",
+    "Please enter a city. (Ex: New York, US)": "Please enter a city. (Ex: New York, US)",
+    "Communication failure: Weather.": "Communication failure: Weather.",
+    "Communication failure: Forecast.": "Communication failure: Forecast.",
  }
 }

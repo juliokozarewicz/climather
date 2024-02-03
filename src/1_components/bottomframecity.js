@@ -12,6 +12,10 @@ import {
 // import style sheet
 import bottomframecityStyle from './1_style/bottomframecityStyle';
 
+// translation
+import { useTranslation } from 'react-i18next'; // Importe o hook useTranslation
+import i18n from './locales/1_i18n';
+
 
 // index screen function
 // -------------------------------------------------------------------------------------
@@ -21,6 +25,8 @@ export function BottomFrameCity(props) {
     // -------------------------------------------------------------------------------------
     const imagePath = props.menuActivate ? require('./3_img/tobottom.png') : require('./3_img/totop.png');
     // -------------------------------------------------------------------------------------
+
+    const { t } = useTranslation();
 
     return (
 
@@ -68,7 +74,7 @@ export function BottomFrameCity(props) {
                                             <View style={bottomframecityStyle.backgcity} ></View>
                                             <View style={bottomframecityStyle.addcitiadd} ></View>
                                             <View style={bottomframecityStyle.addcitiadd2} ></View>
-                                            <Text style={bottomframecityStyle.addcitytxt} >Add City</Text>
+                                            <Text style={bottomframecityStyle.addcitytxt} >{t('Add City')}</Text>
                                         </View>
                                     </TouchableOpacity>
 
