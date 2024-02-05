@@ -68,10 +68,7 @@ export function FrameTwo(props) {
 
                                 <View style={frametwoStyle.linetext}>
                                     <Text style={frametwoStyle.textpurple}>{t('sunrise')}:</Text>
-                                    <Text style={frametwoStyle.textblack}> {`${String(new Date((props.data.sys.sunrise + props.data.timezone) * 1000).getUTCHours())} h`}</Text>
-
-
-
+                                    <Text style={frametwoStyle.textblack}> {`${String(new Date((props.data.sys.sunrise + props.data.timezone) * 1000).getUTCHours()).padStart(2, '0')}:${String(new Date((props.data.sys.sunrise + props.data.timezone) * 1000).getUTCMinutes()).padStart(2, '0')} h`}</Text>
                                 </View>
 
                             </View>
@@ -90,7 +87,7 @@ export function FrameTwo(props) {
 
                                 <View style={frametwoStyle.linetext}>
                                     <Text style={frametwoStyle.textpurple}>{t('sunset')}:</Text>
-                                    <Text style={frametwoStyle.textblack}>  {`${String(new Date((props.data.sys.sunset + props.data.timezone) * 1000).getUTCHours())} h`}</Text>
+                                    <Text style={frametwoStyle.textblack}> {`${String(new Date((props.data.sys.sunset + props.data.timezone) * 1000).getUTCHours()).padStart(2, '0')}:${String(new Date((props.data.sys.sunset + props.data.timezone) * 1000).getUTCMinutes()).padStart(2, '0')} h`}</Text>
                                 </View>
 
                             </View>
