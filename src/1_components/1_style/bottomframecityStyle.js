@@ -234,6 +234,7 @@ export default StyleSheet.create(
       zIndex: 10,
       position: 'absolute',
       top: -20,
+      right: 40,
 
       width: 40,
       height: 40,
@@ -250,6 +251,7 @@ export default StyleSheet.create(
       zIndex: 10,
       position: 'absolute',
       top: -20,
+      right: 40,
 
       width: 40,
       height: 40,
@@ -257,6 +259,22 @@ export default StyleSheet.create(
       borderRadius: 25,
 
       backgroundColor: colors.purple,
+      
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    refreshall: {
+      zIndex: 10,
+      position: 'absolute',
+      top: -15,
+
+      width: 80,
+      height: 30,
+
+      borderRadius: 25,
+
+      backgroundColor: colors.white,
       
       alignItems: 'center',
       justifyContent: 'center',
@@ -277,6 +295,33 @@ export default StyleSheet.create(
       backgroundColor: colors.black,
 
       opacity: 0.87,
+    },
+
+    txttimeupdate: {
+      position: 'absolute',
+      left: 15,
+
+      fontSize: 10,
+      fontFamily: 'title',
+
+      color: colors.purple,
+
+      height: '100%',
+
+      marginLeft: 0,
+
+      flex: 1,
+
+      textAlign: 'center',
+      textAlignVertical: 'center',
+    },
+
+    refreshimg: {
+      position: 'absolute',
+      right: 10,
+    
+      width: 15,
+      height: 15,
     },
 
   }

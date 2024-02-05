@@ -8,7 +8,7 @@ const lang = Platform.OS === 'ios' ? NativeModules.SettingsManager.settings.Appl
 let units;
 
 if (lang.slice(-2).toLowerCase() === 'us') {
-    units = 'standard';
+    units = 'imperial';
 } else {
     units = 'metric';
 }

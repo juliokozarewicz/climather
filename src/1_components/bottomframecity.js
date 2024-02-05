@@ -28,6 +28,14 @@ export function BottomFrameCity(props) {
 
     const { t } = useTranslation();
 
+    let currenthour;
+
+    if (props.data) {
+        currenthour = `${String(new Date((props.data.dt + props.data.timezone) * 1000).getUTCHours()).padStart(2, '0')}:${String(new Date((props.data.dt + props.data.timezone) * 1000).getUTCMinutes()).padStart(2, '0')} h`;
+    } else {
+        currenthour = '...'
+    };
+
     return (
 
         <>
@@ -149,6 +157,19 @@ export function BottomFrameCity(props) {
                                     style={bottomframecityStyle.closeimg}
                                 />
                             </TouchableOpacity>
+
+                            <TouchableOpacity 
+                                style={bottomframecityStyle.refreshall}
+                                onPress={() => { props.menuActivate ? props.setMenuActivate(false) : props.setMenuActivate(false); props.reloadViewFunc(); }}
+                                
+                            >
+                                <Text numberOfLines={1} ellipsizeMode="tail" style={bottomframecityStyle.txttimeupdate}>{currenthour}</Text>
+                                <Image
+                                    source={require('./3_img/refreshicon.png')}
+                                    style={bottomframecityStyle.refreshimg}
+                                />
+                            </TouchableOpacity>
+
                             <View style={bottomframecityStyle.allcontentOff} ></View>
                         </View>
                     </View>

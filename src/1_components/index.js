@@ -315,6 +315,7 @@ export function IndexScreen() {
                         setinitcity={setinitcity}
                         setloading={setloading}
                         setMenuActivate={setMenuActivate}
+                        data={data}
                     />
 
                 </View>
