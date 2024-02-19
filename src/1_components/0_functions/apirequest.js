@@ -20,7 +20,7 @@ export async function getDataWeather (city) {
 };
 
 export async function getDataForecast(city) {
-        const requestF = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=${lang}&cnt=&units=${units}&appid=${GET_API_KEY}`);
-        const resultF = await requestF.json();
-        return resultF;
+    const requestF = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&lang=${lang}&cnt=&units=${units}&appid=${GET_API_KEY}`);
+    const resultF = await requestF.json();
+    return resultF;
 };
