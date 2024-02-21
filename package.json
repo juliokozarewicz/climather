@@ -10,6 +10,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "i18n-js": "^4.3.2",
     "i18next": "^23.8.2",
     "moment-timezone": "^0.5.44",
