@@ -133,10 +133,8 @@ export function IndexScreen() {
                         const localTimestamp = (obj.dt * 1000 + dataForecast.city.timezone * 1000);
                         const dateTime = new Date(localTimestamp);
                         
-                        const options = { weekday: 'long' };
-                        const locale = navigator.language;
-                        const dayOfWeek = dateTime.toLocaleDateString(locale, options);
-                        const dateKey = `${dayOfWeek}`;
+                        const dateKeyRaw = dateTime.toISOString().split('T')[0];
+                        const dateKey = new Date(dateKeyRaw).toLocaleDateString(navigator.language, { weekday: 'long' });
 
                         if (!acc[dateKey]) {
                             acc[dateKey] = [];
