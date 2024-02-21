@@ -92,10 +92,6 @@ export function IndexScreen() {
 
         const fetchDataFromApi = async (city) => {
 
-            console.log('**********************************')
-            console.log(`REALTIME: ${city}`)
-            console.log('**********************************')
-
             try {
 
                 const result = await getDataWeather(city);
@@ -126,9 +122,6 @@ export function IndexScreen() {
         };
 
         const fetchForecast = async (city) => {
-            console.log('**********************************')
-            console.log(`FORECAST: ${city}`)
-            console.log('**********************************')
             
             try {
                 const dataForecast = await getDataForecast(city);
