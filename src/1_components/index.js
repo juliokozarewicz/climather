@@ -92,6 +92,10 @@ export function IndexScreen() {
 
         const fetchDataFromApi = async (city) => {
 
+            console.log('**********************************')
+            console.log(`REALTIME: ${city}`)
+            console.log('**********************************')
+
             try {
 
                 const result = await getDataWeather(city);
@@ -122,6 +126,9 @@ export function IndexScreen() {
         };
 
         const fetchForecast = async (city) => {
+            console.log('**********************************')
+            console.log(`FORECAST: ${city}`)
+            console.log('**********************************')
             
             try {
                 const dataForecast = await getDataForecast(city);
@@ -152,11 +159,49 @@ export function IndexScreen() {
                 } else if (CitiesDBF.length > 0 && CitiesDBF[0].city) {
 
                     const dataForecast = await getDataForecast(CitiesDBF[0].city);
-                    setDataForecast(dataForecast);
+
+                    const dataReduced = dataForecast.list.reduce((acc, obj) => {
+                        const localTimestamp = (obj.dt * 1000 + dataForecast.city.timezone * 1000);
+                        const dateTime = new Date(localTimestamp);
+                        
+                        const options = { weekday: 'long' };
+                        const locale = navigator.language;
+                        const dayOfWeek = dateTime.toLocaleDateString(locale, options);
+                        const dateKey = `${dayOfWeek}`;
+
+                        if (!acc[dateKey]) {
+                            acc[dateKey] = [];
+                        }
+                        acc[dateKey].push(obj);
+
+                        return acc;
+                    }, {});
+
+                    setDataForecast({'dataReduced': dataReduced, 'timezone': dataForecast.city.timezone, 'datetime': dataForecast.city.timezone});
+                    setConnectionF(true);
 
                 } else {
                     const dataForecast = await getDataForecast('New York, US');
-                    setDataForecast(dataForecast);
+                    
+                    const dataReduced = dataForecast.list.reduce((acc, obj) => {
+                        const localTimestamp = (obj.dt * 1000 + dataForecast.city.timezone * 1000);
+                        const dateTime = new Date(localTimestamp);
+                        
+                        const options = { weekday: 'long' };
+                        const locale = navigator.language;
+                        const dayOfWeek = dateTime.toLocaleDateString(locale, options);
+                        const dateKey = `${dayOfWeek}`;
+
+                        if (!acc[dateKey]) {
+                            acc[dateKey] = [];
+                        }
+                        acc[dateKey].push(obj);
+
+                        return acc;
+                    }, {});
+
+                    setDataForecast({'dataReduced': dataReduced, 'timezone': dataForecast.city.timezone, 'datetime': dataForecast.city.timezone});
+                    setConnectionF(true);
 
                 };
 
