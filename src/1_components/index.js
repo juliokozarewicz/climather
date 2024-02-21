@@ -133,8 +133,7 @@ export function IndexScreen() {
                         const localTimestamp = (obj.dt * 1000 + dataForecast.city.timezone * 1000);
                         const dateTime = new Date(localTimestamp);
                         
-                        const dateKeyRaw = dateTime.toISOString().split('T')[0];
-                        const dateKey = new Date(dateKeyRaw).toLocaleDateString(navigator.language, { weekday: 'long' });
+                        const dateKey = `${dateTime.toISOString().split('T')[0]}`;
 
                         if (!acc[dateKey]) {
                             acc[dateKey] = [];

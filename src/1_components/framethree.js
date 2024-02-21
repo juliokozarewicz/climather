@@ -15,6 +15,15 @@ import framethreeStyle from './1_style/framethreeStyle';
 // -------------------------------------------------------------------------------------
 export function FrameThree(props) {
 
+    function convertDateToWeekDay(dateconv) {
+        const options = { weekday: 'long' };
+        const locale = navigator.language;
+        const dayOfWeek = new Date(dateconv).toLocaleDateString(locale, options);
+    
+        return dateconv;
+    }
+    
+
     return (
 
         props.connectionF 
@@ -36,7 +45,7 @@ export function FrameThree(props) {
                         <View style={framethreeStyle.allsquare} key={index}>
 
                             <View style={framethreeStyle.backgrprp}></View>
-                            <Text style={framethreeStyle.txttop}>{date}</Text>
+                            <Text style={framethreeStyle.txttop}>{convertDateToWeekDay(date)}</Text>
 
                             <ScrollView style={framethreeStyle.contenttexts} showsVerticalScrollIndicator={false} key={index}>
 
