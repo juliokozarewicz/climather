@@ -16,13 +16,13 @@ import framethreeStyle from './1_style/framethreeStyle';
 export function FrameThree(props) {
 
     function convertDateToWeekDay(dateconv) {
+        const dateconvraw = dateconv; // 'yyyy-MM-dd'
         const options = { weekday: 'long', timeZone: 'UTC'};
         const locale = navigator.language;
-        const dayOfWeek = new Date(dateconv).toLocaleDateString(locale, options);
+        const dayOfWeek = new Date(dateconvraw).toLocaleDateString(locale, options);
     
         return dayOfWeek;
-    }
-    
+    }    
 
     return (
 
