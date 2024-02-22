@@ -325,31 +325,34 @@ export default StyleSheet.create(
     },
 
     changeunitsall: {
-      zIndex: 102,
+      zIndex: 30,
 
       position: 'absolute',
-      bottom: 205,
-
-      width: '100%',
+      top: -12.5,
 
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'center',
+
+      gap: 10,
     },
 
     textchangeunits: {
       fontFamily: 'title',
-      fontSize: 10,
+      fontSize: 8,
 
-      paddingLeft: 15,
-      paddingRight: 15,
-
-      paddingTop: 10,
-      paddingBottom: 10,
-
-      color: colors.gray3,
+      width: 80,
+      height: 25,
 
       textTransform: 'uppercase',
+
+      backgroundColor: colors.white,
+      color: colors.blue,
+
+      borderRadius: 25,
+
+      textAlign: 'center',
+      textAlignVertical: 'center',
     },
 
   }
