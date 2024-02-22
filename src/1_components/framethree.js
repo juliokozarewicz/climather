@@ -48,7 +48,6 @@ export function FrameThree(props) {
 
                             <View style={framethreeStyle.backgrprp}></View>
                             <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop}>{convertDateToWeekDay(date)}</Text>
-                            <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txtsubtop}>(***{props.dataForecast.dataReduced[date][0].weather[0].description}***)</Text>
 
                             <ScrollView style={framethreeStyle.contenttexts} showsVerticalScrollIndicator={false} key={index}>
 
