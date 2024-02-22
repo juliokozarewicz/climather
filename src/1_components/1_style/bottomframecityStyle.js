@@ -328,7 +328,7 @@ export default StyleSheet.create(
       zIndex: 30,
 
       position: 'absolute',
-      top: -12.5,
+      top: -10,
 
       flexDirection: 'row',
       alignItems: 'center',
@@ -341,8 +341,8 @@ export default StyleSheet.create(
       fontFamily: 'title',
       fontSize: 8,
 
-      width: 80,
-      height: 25,
+      width: 70,
+      height: 20,
 
       textTransform: 'uppercase',
 
