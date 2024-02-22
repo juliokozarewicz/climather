@@ -17,5 +17,7 @@
     "Please enter a city. (Ex: New York, US)": "Please enter a city. (Ex: New York, US)",
     "Communication failure: Weather.": "Communication failure: Weather.",
     "Communication failure: Forecast.": "Communication failure: Forecast.",
+    "imperial": "imperial",
+    "metrics": "metric",
  }
 }
