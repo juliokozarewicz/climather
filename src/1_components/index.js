@@ -5,6 +5,8 @@ import React, {
 } from 'react'
 
 import {
+    NativeModules,
+    Platform,
     View,
     Text,
     StatusBar,
@@ -60,6 +62,7 @@ export function IndexScreen() {
         const [errorGetData, setErrorGetData] = useState(false);
         const [errorGetDataMSG, setErrorGetDataMSG] = useState('');
         const [reloadDataAPI, setReloadDataAPI] = useState(0);
+        const [unitsPassed, setunitsPassed] = useState('');
 
         // cities
         const [getcity, setGetcity] = useState([]);
@@ -79,6 +82,28 @@ export function IndexScreen() {
 
     // -------------------------------------------------------------------------------------
 
+    // init units configs
+    // -------------------------------------------------------------------------------------
+    useEffect(() => {
+
+        function setUnits() {
+            const lang = Platform.OS === 'ios' ? NativeModules.SettingsManager.settings.AppleLocale : NativeModules.I18nManager.localeIdentifier;
+            if (lang.slice(-2).toLowerCase() === 'us') {
+                return 'imperial';
+            } else {
+                return 'metric';
+            }
+        };
+
+        function initializeUnits () {
+            const units = setUnits();
+            setunitsPassed(units);
+        };
+
+        initializeUnits();
+    }, []);
+    // -------------------------------------------------------------------------------------
+
     // reload
     // -------------------------------------------------------------------------------------
     const reloadViewFunc = () => {
@@ -94,7 +119,7 @@ export function IndexScreen() {
 
             try {
 
-                const result = await getDataWeather(city);
+                const result = await getDataWeather(city, unitsPassed);
                 const CitiesDB = await ReadDataBase();
 
                 if (result && result.cod == '200') {
@@ -103,11 +128,11 @@ export function IndexScreen() {
                     setConnection(true);
 
                 } else if (CitiesDB.length > 0 && CitiesDB[0].city) {
-                    const result = await getDataWeather(CitiesDB[0].city);
+                    const result = await getDataWeather(CitiesDB[0].city, unitsPassed);
                     setData(result);
                     
                 } else {
-                    const result = await getDataWeather('New York, US');
+                    const result = await getDataWeather('New York, US', unitsPassed);
                     setData(result);
 
                 };
@@ -124,7 +149,7 @@ export function IndexScreen() {
         const fetchForecast = async (city) => {
             
             try {
-                const dataForecast = await getDataForecast(city);
+                const dataForecast = await getDataForecast(city, unitsPassed);
                 const CitiesDBF = await ReadDataBase();
 
                 if (dataForecast && dataForecast.cod == '200') {
@@ -148,7 +173,7 @@ export function IndexScreen() {
 
                 } else if (CitiesDBF.length > 0 && CitiesDBF[0].city) {
 
-                    const dataForecast = await getDataForecast(CitiesDBF[0].city);
+                    const dataForecast = await getDataForecast(CitiesDBF[0].city, unitsPassed);
 
                     const dataReduced = dataForecast.list.reduce((acc, obj) => {
                         const localTimestamp = (obj.dt * 1000 + dataForecast.city.timezone * 1000);
@@ -171,7 +196,7 @@ export function IndexScreen() {
                     setConnectionF(true);
 
                 } else {
-                    const dataForecast = await getDataForecast('New York, US');
+                    const dataForecast = await getDataForecast('New York, US', unitsPassed);
                     
                     const dataReduced = dataForecast.list.reduce((acc, obj) => {
                         const localTimestamp = (obj.dt * 1000 + dataForecast.city.timezone * 1000);
@@ -212,7 +237,7 @@ export function IndexScreen() {
 
                 for (const item of result) {
 
-                    const citiData = await getDataWeather(item.city);
+                    const citiData = await getDataWeather(item.city, unitsPassed);
 
                     if (citiData && citiData.name && citiData.main && citiData.main.temp) {
 
@@ -243,7 +268,13 @@ export function IndexScreen() {
             }
         };
 
-        fetchDataBase();
+        // data call to initialize the application
+        if (unitsPassed) {
+            fetchDataBase();
+        } else {
+            reloadViewFunc();
+        };
+
     }, [reloadDataAPI]);
     // -------------------------------------------------------------------------------------
 
@@ -290,11 +321,13 @@ export function IndexScreen() {
           }, []);
 
         return(
+            
 
             loadingINIT
 
             ?
                 <View style={indexStyle.loadingpageinit}>
+
                     <View style={indexStyle.loadbackinit}></View>
 
                     <View style={indexStyle.centercontent}>
