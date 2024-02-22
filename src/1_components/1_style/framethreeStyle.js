@@ -80,7 +80,7 @@ export default StyleSheet.create(
 
     txttop: {
       position: 'absolute',
-      top: 20,
+      top: 15,
   
       width: '90%',
 
@@ -152,6 +152,22 @@ export default StyleSheet.create(
 
       alignItems: 'center',
       justifyContent: 'space-between',
+    },
+
+    txtsubtop: {
+      position: 'absolute',
+      top: 42,
+  
+      width: '90%',
+
+      fontSize: 9,
+      fontFamily: 'text',
+
+      color: colors.bluelight,
+
+      textAlign: 'center',
+
+      textTransform: 'capitalize',
     },
 
   }

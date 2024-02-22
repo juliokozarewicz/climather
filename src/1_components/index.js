@@ -178,7 +178,7 @@ export function IndexScreen() {
                     const dataReduced = dataForecast.list.reduce((acc, obj) => {
                         const localTimestamp = (obj.dt * 1000 + dataForecast.city.timezone * 1000);
                         const dateTime = new Date(localTimestamp);
-                        
+
                         const options = { weekday: 'long' };
                         const locale = navigator.language;
                         const dayOfWeek = dateTime.toLocaleDateString(locale, options);

@@ -22,12 +22,12 @@ export function FrameThree(props) {
         const dayOfWeek = new Date(dateconvraw).toLocaleDateString(locale, options);
     
         return dayOfWeek;
-    }    
+    }
 
     return (
 
         props.connectionF 
-        
+
         ?
             <ScrollView
                 horizontal
@@ -39,13 +39,16 @@ export function FrameThree(props) {
                 {
 
                     props.dataForecast.dataReduced
+
                     ?
+
                     Object.keys(props.dataForecast.dataReduced).map((date, index) => (
 
                         <View style={framethreeStyle.allsquare} key={index}>
 
                             <View style={framethreeStyle.backgrprp}></View>
-                            <Text style={framethreeStyle.txttop}>{convertDateToWeekDay(date)}</Text>
+                            <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop}>{convertDateToWeekDay(date)}</Text>
+                            <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txtsubtop}>(***{props.dataForecast.dataReduced[date][0].weather[0].description}***)</Text>
 
                             <ScrollView style={framethreeStyle.contenttexts} showsVerticalScrollIndicator={false} key={index}>
 
