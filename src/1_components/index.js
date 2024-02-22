@@ -298,7 +298,6 @@ export function IndexScreen() {
                 <View style={indexStyle.loadingpage}>
                     <View style={indexStyle.loadback}></View>
                     <Text style={indexStyle.logoload} >{t('loading')}...</Text>
-
                 </View>
 
             :
@@ -384,6 +383,7 @@ export function IndexScreen() {
                         setloading={setloading}
                         setMenuActivate={setMenuActivate}
                         data={data}
+                        setunitsPassed={setunitsPassed}
                     />
 
                 </View>

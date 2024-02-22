@@ -324,6 +324,34 @@ export default StyleSheet.create(
       height: 15,
     },
 
+    changeunitsall: {
+      zIndex: 102,
+
+      position: 'absolute',
+      bottom: 205,
+
+      width: '100%',
+
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+
+    textchangeunits: {
+      fontFamily: 'title',
+      fontSize: 10,
+
+      paddingLeft: 15,
+      paddingRight: 15,
+
+      paddingTop: 10,
+      paddingBottom: 10,
+
+      color: colors.gray3,
+
+      textTransform: 'uppercase',
+    },
+
   }
 
 );

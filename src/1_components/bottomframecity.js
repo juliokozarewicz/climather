@@ -57,6 +57,17 @@ export function BottomFrameCity(props) {
                             <View style={bottomframecityStyle.backgroundColorBlack}></View>
                         </TouchableWithoutFeedback>
 
+                        <View style={bottomframecityStyle.changeunitsall}>
+
+                            <TouchableOpacity onPress={ () => { props.setloading(true); props.setMenuActivate(false); props.setunitsPassed('imperial'); props.reloadViewFunc() } }>
+                                <Text style={bottomframecityStyle.textchangeunits}>imperial</Text>
+                            </TouchableOpacity>
+                            
+                            <TouchableOpacity onPress={ () => { props.setloading(true); props.setMenuActivate(false); props.setunitsPassed('metric'); props.reloadViewFunc() } } >
+                                <Text style={bottomframecityStyle.textchangeunits}>metrics</Text>
+                            </TouchableOpacity>
+                        </View>
+
                         <View style={bottomframecityStyle.allcontent} >
 
                             <TouchableOpacity 
