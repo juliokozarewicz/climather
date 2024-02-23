@@ -1,0 +1,23 @@
+{
+  "translation": {
+    "now": "agora",
+    "min": "mín",
+    "max": "máx",
+    "fells like": "sensação térmica" ,
+    "pressure": "pressão",
+    "humidity": "humidade",
+    "sunrise": "nascer do sol", 
+    "visibility": "visibilidade", 
+    "wind": "vento", 
+    "sunset": "pôr do sol",
+    "Add City": "Adicionar Cidade",
+    "loading": "carregando",
+    "Add a City": "Adicionar Cidade",
+    "Add multiple cities and keep an eye on their weather conditions. This is very useful, for example, before planning a trip": "Adicione várias cidades e acompanhe suas condições climáticas. Isso é muito útil, por exemplo, antes de planejar uma viagem.",
+    "Please enter a city. (Ex: New York, US)": "Insira uma cidade. (Ex: São Paulo, BR)",
+    "Communication failure: Weather.": "Falha na comunicação: Tempo.",
+    "Communication failure: Forecast.": "Falha na comunicação: Previsão.",
+    "imperial": "imperial",
+    "metrics": "métrico",
+ }
+}
