@@ -2,7 +2,7 @@
 
 Climather is a mobile application designed for weather monitoring and forecasting. It allows users to track weather conditions for multiple cities, providing forecasts for the upcoming days.
 
-<img src="src\0_utils\1_design\0_readme\logo.jpg" >
+<img src="./src/0_utils/1_design/0_readme/logo.jpg" >
 
 ## Features
 
