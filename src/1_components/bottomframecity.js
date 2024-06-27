@@ -130,7 +130,7 @@ export function BottomFrameCity(props) {
                                                             <Image source={require('./3_img/deleteicon.png')} style={bottomframecityStyle.deleteimg} />
                                                         </TouchableOpacity>
 
-                                                        <Image style={bottomframecityStyle.imgtemp2} source={{ uri: `http://openweathermap.org/img/wn/${item.icon}@4x.png` }} />
+                                                        <Image style={bottomframecityStyle.imgtemp2} source={{ uri: `https://openweathermap.org/img/wn/${item.icon}@4x.png` }} />
 
                                                         <Text
                                                             numberOfLines={1}

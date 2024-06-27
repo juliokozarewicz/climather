@@ -57,7 +57,7 @@ export function FrameThree(props) {
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop2}>{`${String(new Date((item.dt + props.dataForecast.timezone) * 1000).getUTCHours()).padStart(2, '0')} h`}</Text>
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txtbottom}>{Math.ceil(item.main.temp)}°</Text>
                                         <Text numberOfLines={1} ellipsizeMode="tail" style={framethreeStyle.txttop3}>{item.weather[0].description}</Text>
-                                        <Image source={{ uri: `http://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` }} style={framethreeStyle.imgcenter} />
+                                        <Image source={{ uri: `https://openweathermap.org/img/wn/${item.weather[0].icon}@4x.png` }} style={framethreeStyle.imgcenter} />
                                     </View>
 
                                 ))}
